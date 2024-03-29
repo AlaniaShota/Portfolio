@@ -1,0 +1,1 @@
+export { SlidingImages } from "./SlidingImages";
