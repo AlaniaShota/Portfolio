@@ -17,7 +17,26 @@ export const Contact = () => {
   const y = useTransform(scrollYProgress, [0, 1], [-500, 0]);
   const rotate = useTransform(scrollYProgress, [0, 1], [120, 90]);
 
-  const socialMediaData = ["Instagram", "Dribbble", "Linkedin"];
+  const socialMediaData = [
+    { id: 1, title: "Instagram", link: "https://www.instagram.com/alania126/" },
+    {
+      id: 2,
+      title: "Linkedin",
+      link: "https://www.linkedin.com/in/shota-alania-0a705820b/",
+    },
+    {
+      id: 3,
+      title: "GitHub",
+      link: "https://github.com/AlaniaShota",
+    },
+  ];
+  const mail = "alaniashota08@gmail.com";
+  const subject = "Lest's work together";
+  const tel = "+995568820317";
+  const formattedTel = tel.replace(
+    /(\d{3})(\d{3})(\d{2})(\d{2})(\d{2})/,
+    "$1 $2 $3 $4 $5",
+  );
 
   return (
     <motion.div style={{ y }} ref={container} className="contact">
@@ -51,13 +70,17 @@ export const Contact = () => {
             />
           </motion.svg>
         </div>
-        <div className="contact-navigation-section">
-          <Rounded>
-            <p>info@dennissnellenberg.com</p>
-          </Rounded>
-          <Rounded>
-            <p>+31 6 27 84 74 30</p>
-          </Rounded>
+        <div className="contact-navigation-section" id="contact">
+          <a href={`mailto:${mail}?subject=${subject}`}>
+            <Rounded>
+              <p>{mail}</p>
+            </Rounded>
+          </a>
+          <a href={`tel:${tel}`}>
+            <Rounded>
+              <p>{formattedTel}</p>
+            </Rounded>
+          </a>
         </div>
         <div className="contact-information">
           <div>
@@ -66,21 +89,30 @@ export const Contact = () => {
               <p>2022 © Edition</p>
             </span>
             <span>
-              <h3>Version</h3>
-              <p>11:49 PM GMT+2</p>
+              <h3>Code</h3>
+              <a href="https://dennissnellenberg.com/" target="_blank">
+                <p>Dennis Snellenberg</p>
+              </a>
             </span>
           </div>
           <div>
             <span>
               <h3>socials</h3>
-              <Magnetic>
-                <p>Awwwards</p>
-              </Magnetic>
+              <a
+                href="https://www.facebook.com/profile.php?id=100006923223734"
+                target="_blank"
+              >
+                <Magnetic>
+                  <p>FaceBook</p>
+                </Magnetic>
+              </a>
             </span>
-            {socialMediaData.map((item, index) => (
-              <Magnetic key={index}>
-                <p>{item}</p>
-              </Magnetic>
+            {socialMediaData.map((item) => (
+              <a href={item.link} target="_blank" key={item.id}>
+                <Magnetic>
+                  <p>{item.title}</p>
+                </Magnetic>
+              </a>
             ))}
           </div>
         </div>

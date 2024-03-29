@@ -8,7 +8,7 @@ import { useRef } from "react";
 
 export const Description = () => {
   const phrase =
-    "Helping brands to stand out in the digital era. Together we will set the new status quo. No nonsense, always on the cutting edge.";
+    "I'm a beginner front-end developer, i have worked on my personal projects, and my enthusiasm to learn makes me a great fit. I am ready to put in maximum effort and succeed in web development.";
   const description = useRef(null);
   const isInView = useInView(description);
   return (
@@ -30,9 +30,14 @@ export const Description = () => {
             );
           })}
         </p>
-        <motion.p className="description-secondary-text" variants={opacity} animate={isInView ? "open" : "closed"}>
-          The combination of my passion for design, code & interaction positions
-          me in a unique place in the web design world.
+        <motion.p
+          className="description-secondary-text"
+          variants={opacity}
+          animate={isInView ? "open" : "closed"}
+        >
+          HTML, CSS, JavaScript, React, Vite, React Router, SCSS, Formik,
+          Zustand, TailwindCSS, Material-UI (MUI), Yup, React Hook Form,
+          Framer-motion, GSAP, Swiper, Redux, Redux Toolkit
         </motion.p>
         <div data-scroll data-scroll-speed={0.1}>
           <Rounded className="button">

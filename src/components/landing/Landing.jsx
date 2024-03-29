@@ -11,34 +11,19 @@ import { Preloader } from "../preloader";
 
 import { SlidingImages } from "../slidingImages";
 
-import { Contact } from "../contact";
-
-import { useRef, useLayoutEffect, useEffect, useState } from "react";
+import { useRef, useLayoutEffect, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
 import { AnimatePresence, motion } from "framer-motion";
 
 export const Landing = () => {
+  const [isLoading, setIsLoading] = useState(true);
   const firstText = useRef(null);
   const secondText = useRef(null);
   const slider = useRef(null);
 
   let xPercent = 0;
   const direction = -1;
-  const [isLoading, setIsLoading] = useState(true);
-
-  useEffect(() => {
-    (async () => {
-      const LocomotiveScroll = (await import("locomotive-scroll")).default;
-      const locomotiveScroll = new LocomotiveScroll();
-
-      setTimeout(() => {
-        setIsLoading(false);
-        document.body.style.cursor = "default";
-        window.scrollTo(0, 0);
-      }, 2000);
-    })();
-  }, []);
 
   useLayoutEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
@@ -65,10 +50,24 @@ export const Landing = () => {
     xPercent += 0.1 * direction;
   };
 
+  const preloadData = [
+    "გამარჯობა",
+    "Hello",
+    "Bonjour",
+    "Ciao",
+    "Olà",
+    "やあ",
+    "Hallå",
+    "Guten tag",
+    "Hallo",
+  ];
+
   return (
     <>
       <AnimatePresence mode="wait">
-        {isLoading && <Preloader />}
+        {isLoading && (
+          <Preloader preloadData={preloadData} setIsLoading={setIsLoading} />
+        )}
       </AnimatePresence>
       <motion.main
         variants={slideUp}
@@ -80,10 +79,10 @@ export const Landing = () => {
         <div className="slider-container">
           <div ref={slider} className="slider">
             <p ref={firstText} className="main-slider-text">
-              React Developer -
+              Shota Alania -
             </p>
             <p ref={secondText} className="main-slider-text">
-              React Developer -
+              Shota Alania -
             </p>
           </div>
         </div>
@@ -101,13 +100,12 @@ export const Landing = () => {
             />
           </svg>
           <p className="user-status">Developer</p>
-          <h1 className="user">Shota Alania</h1>
+          <h1 className="user">React Developer</h1>
         </div>
       </motion.main>
       <Description />
       <Projects />
       <SlidingImages />
-      <Contact />
     </>
   );
 };

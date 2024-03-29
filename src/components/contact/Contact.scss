@@ -90,6 +90,11 @@
             margin-top: 100px;
             margin-left: 200px;
             margin-right: 200px;
+
+            a {
+                text-decoration: none !important;
+                color: white !important;
+            }
         }
 
         .contact-information {
@@ -131,6 +136,11 @@
                     }
                 }
 
+                a {
+                    text-decoration: none !important;
+                    color: white !important;
+                }
+
                 span {
                     display: flex;
                     flex-direction: column;
@@ -148,4 +158,8 @@
         }
     }
 
+}
+
+a {
+    text-decoration: none;
 }

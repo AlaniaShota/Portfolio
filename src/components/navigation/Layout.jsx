@@ -1,5 +1,7 @@
 import { Header } from "./header";
 
+import { Contact } from "../contact";
+
 import { Outlet } from "react-router-dom";
 
 export const Layout = () => {
@@ -9,6 +11,7 @@ export const Layout = () => {
       <section>
         <Outlet />
       </section>
+      {/* <Contact /> */}
     </>
   );
 };

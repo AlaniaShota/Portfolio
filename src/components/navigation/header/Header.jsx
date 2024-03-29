@@ -7,7 +7,7 @@ import { AnimatePresence } from "framer-motion";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
 import { useEffect, useLayoutEffect, useRef, useState } from "react";
-import { useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 import "./Header.scss";
 
@@ -18,7 +18,11 @@ export const Header = () => {
   const { pathname } = location;
   const button = useRef(null);
 
-  const navData = ["Work", "About", "Contact"];
+  const navData = [
+    { id: 1, title: "Work", href: "/work" },
+    { id: 2, title: "About", href: "/about" },
+    { id: 3, title: "Contact", href: "#contact" },
+  ];
 
   useEffect(() => {
     if (isActive) setIsActive(false);
@@ -52,19 +56,21 @@ export const Header = () => {
   return (
     <>
       <div ref={header} className="header">
-        <div className="logo">
-          <p className="copyright">©</p>
-          <div className="name">
-            <p className="codeBy">Code by</p>
-            <p className="dennis">Dennis</p>
-            <p className="snellenberg">Snellenberg</p>
+        <Link to="/">
+          <div className="logo">
+            <p className="copyright">©</p>
+            <div className="name">
+              <p className="codeBy">Code by</p>
+              <p className="dennis">Shota</p>
+              <p className="snellenberg">Alania</p>
+            </div>
           </div>
-        </div>
+        </Link>
         <div className="nav">
-          {navData.map((item, index) => (
-            <Magnetic key={index}>
+          {navData.map((item) => (
+            <Magnetic key={item.id}>
               <div className="el">
-                <a>{item}</a>
+                <a href={item.href}>{item.title}</a>
                 <div className="indicator"></div>
               </div>
             </Magnetic>

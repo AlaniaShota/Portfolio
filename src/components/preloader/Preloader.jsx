@@ -4,27 +4,29 @@ import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import "./Preloader.scss";
 
-const words = [
-  "გამარჯობა",
-  "Hello",
-  "Bonjour",
-  "Ciao",
-  "Olà",
-  "やあ",
-  "Hallå",
-  "Guten tag",
-  "Hallo",
-];
-export const Preloader = () => {
+export const Preloader = ({ preloadData, setIsLoading }) => {
   const [index, setIndex] = useState(0);
   const [dimension, setDimension] = useState({ width: 0, height: 0 });
+
+  useEffect(() => {
+    (async () => {
+      const LocomotiveScroll = (await import("locomotive-scroll")).default;
+      const locomotiveScroll = new LocomotiveScroll();
+
+      setTimeout(() => {
+        setIsLoading(false);
+        document.body.style.cursor = "default";
+        window.scrollTo(0, 0);
+      }, 2000);
+    })();
+  }, []);
 
   useEffect(() => {
     setDimension({ width: window.innerWidth, height: window.innerHeight });
   }, []);
 
   useEffect(() => {
-    if (index == words.length - 1) return;
+    if (index == preloadData.length - 1) return;
     setTimeout(
       () => {
         setIndex(index + 1);
@@ -68,7 +70,7 @@ export const Preloader = () => {
             animate="enter"
             className="preloader-text"
           >
-            {words[index]}
+            {preloadData[index]}
           </motion.p>
           <svg className="preloader-svg">
             <motion.path

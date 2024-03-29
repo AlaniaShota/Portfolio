@@ -1,3 +1,4 @@
+import { About } from "../components/about";
 import { Landing } from "../components/landing/Landing";
 
 import { Layout } from "../components/navigation";
@@ -9,10 +10,10 @@ export const routes = createBrowserRouter([
     element: <Layout />,
     children: [
       { path: "/", element: <Landing /> },
-      // {
-      //   path: "/faq",
-      //   element: <FAQ />,
-      // },
+      {
+        path: "/about",
+        element: <About />,
+      },
       // {
       //   path: "/blog",
       //   element: <Blog />,
