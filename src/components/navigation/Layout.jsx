@@ -11,7 +11,7 @@ export const Layout = () => {
       <section>
         <Outlet />
       </section>
-      {/* <Contact /> */}
+      <Contact />
     </>
   );
 };

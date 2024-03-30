@@ -7,6 +7,7 @@ import "./About.scss";
 import { AnimatePresence } from "framer-motion";
 
 import { AboutDescription } from "./components/aboutDescription";
+import { AboutMain } from "./components/aboutMain";
 
 export const About = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -21,6 +22,7 @@ export const About = () => {
       </AnimatePresence>
       <AboutHeader />
       <AboutDescription />
+      <AboutMain />
     </>
   );
 };

@@ -23,7 +23,7 @@ export const AboutHeader = () => {
               animate={{ rotate: 360 }}
               transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
             >
-              <CiGlobe className="icon-glob" size='lg' />
+              <CiGlobe className="icon-glob" size={80} />
             </motion.div>
           </div>
         </div>

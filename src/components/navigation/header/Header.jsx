@@ -8,7 +8,6 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
 import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-
 import "./Header.scss";
 
 export const Header = () => {
@@ -53,16 +52,29 @@ export const Header = () => {
     });
   }, []);
 
+  const determineTextColorClass = () => {
+    const isDarkBackground =
+      header.current && header.current.classList.contains("white");
+    return isDarkBackground ? "light-text" : "dark-text";
+  };
+
+  const isDarkBackground = () => {
+    const headerElement = header.current;
+    return headerElement && headerElement.classList.contains("dark");
+  };
+
   return (
     <>
-      <div ref={header} className="header">
+      <div ref={header} className="header dark white">
         <Link to="/">
           <div className="logo">
-            <p className="copyright">©</p>
+            <p className={`copyright ${determineTextColorClass()}`}>©</p>
             <div className="name">
-              <p className="codeBy">Code by</p>
-              <p className="dennis">Shota</p>
-              <p className="snellenberg">Alania</p>
+              <p className={`codeBy ${determineTextColorClass()}`}>
+                Code by
+              </p>
+              <p className={`shota ${determineTextColorClass()}`}>Shota</p>
+              <p className={`alania ${determineTextColorClass()}`}>Alania</p>
             </div>
           </div>
         </Link>
@@ -70,8 +82,17 @@ export const Header = () => {
           {navData.map((item) => (
             <Magnetic key={item.id}>
               <div className="el">
-                <a href={item.href}>{item.title}</a>
-                <div className="indicator"></div>
+                <a
+                  href={item.href}
+                  className={`nav-link-main ${determineTextColorClass()}`}
+                >
+                  {item.title}
+                </a>
+                <div
+                  className={`indicator ${
+                    isDarkBackground() ? "light-bg " : "dark-bg"
+                  }`}
+                ></div>
               </div>
             </Magnetic>
           ))}
