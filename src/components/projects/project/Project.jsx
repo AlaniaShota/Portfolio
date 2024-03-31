@@ -12,7 +12,7 @@ export const Project = ({ index, title, manageModal }) => {
       className="project"
     >
       <h2 className="project-title">{title}</h2>
-      <p className="project-description">Design & Development</p>
+      <p className="project-description">ReactJS</p>
     </div>
   );
 };

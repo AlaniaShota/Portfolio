@@ -2,31 +2,36 @@ import { Project } from "./project/Project";
 
 import { Rounded } from "../Rounded";
 
-import { useState, useEffect, useRef } from "react";
-import { motion } from "framer-motion";
-import gsap from "gsap";
-
 import "./Projects.scss";
+
+import georgia1 from "../../assets/img/why-georgia1.png";
+import vibrant1 from "../../assets/img/vibrant1.png";
+import marvel1 from "../../assets/img/marvel1.png";
+import namari1 from "../../assets/img/namari1.png";
+
+import gsap from "gsap";
+import { motion } from "framer-motion";
+import { useState, useEffect, useRef } from "react";
 
 const projects = [
   {
-    title: "C2 Montreal",
-    src: "c2montreal.png",
+    title: "Georgia",
+    src: georgia1,
     color: "#000000",
   },
   {
-    title: "Office Studio",
-    src: "officestudio.png",
+    title: "Vibrant",
+    src: vibrant1,
     color: "#8C8C8C",
   },
   {
-    title: "Locomotive",
-    src: "locomotive.png",
+    title: "Marvel",
+    src: marvel1,
     color: "#EFE8D3",
   },
   {
-    title: "Silencio",
-    src: "silencio.png",
+    title: "Namari",
+    src: namari1,
     color: "#706D63",
   },
 ];
@@ -123,9 +128,6 @@ export const Projects = () => {
           );
         })}
       </div>
-      <Rounded>
-        <p className="projects-btn">More work</p>
-      </Rounded>
       <>
         <motion.div
           ref={modalContainer}
@@ -143,12 +145,7 @@ export const Projects = () => {
                   style={{ backgroundColor: color }}
                   key={`modal_${index}`}
                 >
-                  <img
-                    src={`/images/${src}`}
-                    width={300}
-                    height={0}
-                    alt="image"
-                  />
+                  <img src={src} width={300} height={0} alt="image" />
                 </div>
               );
             })}

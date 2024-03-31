@@ -1,4 +1,15 @@
-import slideImg from "../../assets/img/locomotive.png";
+import georgia1 from "../../assets/img/why-georgia1.png";
+import georgia2 from "../../assets/img/why-georgia2.png";
+import georgia3 from "../../assets/img/why-georgia3.png";
+import vibrant1 from "../../assets/img/vibrant1.png";
+import vibrant2 from "../../assets/img/vibrant2.png";
+import vibrant3 from "../../assets/img/vibrant3.png";
+import marvel1 from "../../assets/img/marvel1.png";
+import marvel2 from "../../assets/img/marvel2.png";
+import marvel3 from "../../assets/img/marvel3.png";
+import namari1 from "../../assets/img/namari1.png";
+import namari2 from "../../assets/img/namari2.png";
+import namari3 from "../../assets/img/namari3.png";
 
 import { useRef } from "react";
 import { useScroll, useTransform, motion } from "framer-motion";
@@ -7,38 +18,38 @@ import "./SlidingImages.scss";
 const slider1 = [
   {
     color: "#e3e5e7",
-    src: slideImg,
+    src: georgia1,
   },
   {
     color: "#d6d7dc",
-    src: slideImg,
+    src: georgia2,
   },
   {
     color: "#e3e3e3",
-    src: slideImg,
+    src: vibrant1,
   },
   {
     color: "#21242b",
-    src: slideImg,
+    src: vibrant2,
   },
 ];
 
 const slider2 = [
   {
     color: "#d4e3ec",
-    src: slideImg,
+    src: marvel1,
   },
   {
     color: "#e5e0e1",
-    src: slideImg,
+    src: marvel2,
   },
   {
     color: "#d7d4cf",
-    src: slideImg,
+    src: namari1,
   },
   {
     color: "#e1dad6",
-    src: slideImg,
+    src: namari2,
   },
 ];
 
@@ -64,7 +75,7 @@ export const SlidingImages = () => {
               style={{ backgroundColor: project.color }}
             >
               <div className="slider-img-content">
-                <img alt="image" src={project.src} className="img-slider"/>
+                <img alt="image" src={project.src} className="img-slider" />
               </div>
             </div>
           );
@@ -79,7 +90,7 @@ export const SlidingImages = () => {
               style={{ backgroundColor: project.color }}
             >
               <div key={index} className="slider-img-content">
-                <img alt="image" src={project.src} className="img-slider"/>
+                <img alt="image" src={project.src} className="img-slider" />
               </div>
             </div>
           );

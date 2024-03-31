@@ -52,9 +52,11 @@ export const Contact = () => {
             together
           </h2>
           <motion.div style={{ x }} className="contact-btn-content">
-            <Rounded backgroundColor={"#334BD3"} className="contact-btn">
-              <p className="contact-btn-text">Get in touch</p>
-            </Rounded>
+            <a href={`mailto:${mail}?subject=${subject}`}>
+              <Rounded backgroundColor={"#334BD3"} className="contact-btn">
+                <p className="contact-btn-text">Get in touch</p>
+              </Rounded>
+            </a>
           </motion.div>
           <motion.svg
             style={{ rotate, scale: 2 }}
