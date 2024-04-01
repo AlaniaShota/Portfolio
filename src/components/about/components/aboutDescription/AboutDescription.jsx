@@ -1,10 +1,8 @@
-import userImg from "../../../../assets/img/background.jpg";
-
 import { HiArrowNarrowRight } from "react-icons/hi";
 import { useEffect, useState } from "react";
 import { motion, useAnimation, useViewportScroll } from "framer-motion";
-import "./AboutDescription.scss";
 import gsap from "gsap";
+import "./AboutDescription.scss";
 
 export const AboutDescription = () => {
   const [scrollDirection, setScrollDirection] = useState("up");
@@ -19,13 +17,33 @@ export const AboutDescription = () => {
   }, [scrollY]);
 
   useEffect(() => {
-    if (scrollDirection === "down") {
-      controls.start({ y: 100 });
-      arrowControls.start({ rotate: 30 });
-    } else {
-      controls.start({ y: 0 });
-      arrowControls.start({ rotate: 0 });
+    const mediaQuery = window.matchMedia("(max-width: 800px)");
+
+    function handleResize() {
+      if (mediaQuery.matches) {
+        controls.start({ y: 10 });
+      } else {
+        if (scrollDirection === "down") {
+          controls.start({ y: 100 });
+          arrowControls.start({ rotate: 30 });
+        } else {
+          controls.start({ y: 0 });
+          arrowControls.start({ rotate: 0 });
+        }
+      }
     }
+
+    handleResize();
+
+    const resizeListener = () => {
+      handleResize();
+    };
+
+    window.addEventListener("resize", resizeListener);
+
+    return () => {
+      window.removeEventListener("resize", resizeListener);
+    };
   }, [scrollDirection, controls, arrowControls]);
 
   useEffect(() => {

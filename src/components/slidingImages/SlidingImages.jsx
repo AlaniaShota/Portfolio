@@ -14,7 +14,10 @@ import namari3 from "../../assets/img/namari3.png";
 import { useRef } from "react";
 import { useScroll, useTransform, motion } from "framer-motion";
 import "./SlidingImages.scss";
-
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Pagination } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/pagination";
 const slider1 = [
   {
     color: "#e3e5e7",
@@ -28,10 +31,10 @@ const slider1 = [
     color: "#e3e3e3",
     src: vibrant1,
   },
-  {
-    color: "#21242b",
-    src: vibrant2,
-  },
+  // {
+  //   color: "#21242b",
+  //   src: vibrant2,
+  // },
 ];
 
 const slider2 = [
@@ -47,10 +50,10 @@ const slider2 = [
     color: "#d7d4cf",
     src: namari1,
   },
-  {
-    color: "#e1dad6",
-    src: namari2,
-  },
+  // {
+  //   color: "#e1dad6",
+  //   src: namari2,
+  // },
 ];
 
 export const SlidingImages = () => {
@@ -101,4 +104,41 @@ export const SlidingImages = () => {
       </motion.div>
     </div>
   );
+
+  // return (
+  //   <>
+  //     <Swiper
+  //       className="mySwiper swiper-h"
+  //       spaceBetween={50}
+  //       pagination={{
+  //         clickable: true,
+  //       }}
+  //       modules={[Pagination]}
+  //     >
+  //       <SwiperSlide>Horizontal Slide 1</SwiperSlide>
+  //       <SwiperSlide>
+  //         <Swiper
+  //           className="mySwiper2 swiper-v"
+  //           direction={"vertical"}
+  //           spaceBetween={50}
+  //           pagination={{
+  //             clickable: true,
+  //           }}
+  //           modules={[Pagination]}
+  //         >
+  //           {slider1.map((item) => (
+  //             <SwiperSlide key={item.color}>{item.src}</SwiperSlide>
+  //           ))}
+
+  //           {/* <SwiperSlide>Vertical Slide 2</SwiperSlide>
+  //           <SwiperSlide>Vertical Slide 3</SwiperSlide>
+  //           <SwiperSlide>Vertical Slide 4</SwiperSlide>
+  //           <SwiperSlide>Vertical Slide 5</SwiperSlide> */}
+  //         </Swiper>
+  //       </SwiperSlide>
+  //       <SwiperSlide>Horizontal Slide 3</SwiperSlide>
+  //       <SwiperSlide>Horizontal Slide 4</SwiperSlide>
+  //     </Swiper>
+  //   </>
+  // );
 };
