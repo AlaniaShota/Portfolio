@@ -2,7 +2,12 @@ import { Magnetic } from "../Magnetic";
 import { Rounded } from "../Rounded";
 import userImg from "../../assets/img/background.jpg";
 
-import { useScroll, useTransform, motion, useViewportScroll } from "framer-motion";
+import {
+  useScroll,
+  useTransform,
+  motion,
+  useViewportScroll,
+} from "framer-motion";
 import "./Contact.scss";
 import { useEffect, useRef, useState } from "react";
 
@@ -150,7 +155,7 @@ export const Contact = () => {
 
   const x = useTransform(scrollYProgress, [0, 1], [0, 100]);
   const [y, setY] = useState([-500, 0]);
-  const rotate = useTransform(scrollYProgress, [0, 1], [120, 90]);
+  // const rotate = useTransform(scrollYProgress, [0, 1], [120, 90]);
 
   useEffect(() => {
     function handleResize() {
@@ -222,9 +227,9 @@ export const Contact = () => {
             </a>
           </div>
           <svg
-            style={{ rotate, scale: 2 }}
-            width="9"
-            height="9"
+            // style={{ rotate, scale: 2 }}
+            width="14"
+            height="14"
             viewBox="0 0 9 9"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
