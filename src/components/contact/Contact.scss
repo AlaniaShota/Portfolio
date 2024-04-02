@@ -346,7 +346,7 @@ a {
                 // justify-content: space-between;
                 // flex-direction: column;
                 // margin-top: 100px;
-                padding: 20px 0;
+                padding: 20px 0 0 0;
                 width: 100%;
                 flex-direction: column;
                 align-items: flex-start;
@@ -413,13 +413,13 @@ a {
     }
 }
 
-@media(max-width:430px) {
+@media(max-width:435px) {
     .contact {
-
+        height: 100vh;
 
 
         .contact-body {
-
+            height: 100vh;
             padding-top: 100px;
 
             .contact-section-title {
