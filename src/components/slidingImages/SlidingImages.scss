@@ -3,7 +3,7 @@
     width: 90%;
     margin: 50px 0 200px 0;
 
-    .swiper-slide {
+    & .swiper-slide {
         position: relative; // Для позиционирования вложенных элементов относительно слайда
     }
 
@@ -22,7 +22,7 @@
             left: 50%; // Размещение важного изображения по горизонтали посередине
             transform: translate(-50%, -50%); // Сдвигаем изображение на половину его собственной ширины и высоты, чтобы оно оказалось по центру
 
-            & img {
+            & .important-img {
 
                 width: 100%;
                 height: 100%;
@@ -32,19 +32,20 @@
         }
 
         & .secondary-img-content {
-            position: absolute; // Позиционирование дополнительного контента
-            bottom: 25px; // Размещение дополнительного контента внизу
-            left: 10px; // Размещение дополнительного контента слева
-            width: 100%; // Ширина контейнера дополнительного контента
-            display: flex; // Флексбокс для выравнивания изображений по горизонтали
-            justify-content: flex-start; // Располагаем изображения внутри контейнера слева
-            gap: 10px; // Промежуток между изображениями
-            // box-shadow: 0px 60px 50px rgba(0, 0, 0, 0.748);
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: flex-start;
+            gap: 10px;
 
-            & img {
+
+
+            & .secondary-img {
                 width: 30%; // Ширина изображений внутри контейнера
                 // height: 50%;
                 object-fit: contain;
+                object-position: right bottom; // Задаем смещение относительно верхнего левого угла контейнера
                 // box-shadow: 0px 20px 20px rgba(0, 0, 0, 0.748);
             }
         }
@@ -52,4 +53,130 @@
 
     }
 
+}
+
+@media (max-width:1024px) {
+    .mySwiper {
+        // height: 90vh;
+        // width: 90%;
+        margin: 30px 0 150px 0;
+
+        & .slider-content {
+
+            // position: relative;
+            // width: 100%; // Ширина контейнера, содержащего все изображения
+            // height: 100%; // Высота контейнера, содержащего все изображения
+
+            // & .important-img-content {
+
+            //     width: 100%; // Ширина важного изображения
+            //     height: 100%;
+            //     position: absolute; // Позиционирование важного изображения
+            //     top: 50%; // Размещение важного изображения по вертикали посередине
+            //     left: 50%; // Размещение важного изображения по горизонтали посередине
+            //     transform: translate(-50%, -50%); // Сдвигаем изображение на половину его собственной ширины и высоты, чтобы оно оказалось по центру
+
+            //     & img {
+
+            //         width: 100%;
+            //         height: 100%;
+            //         object-fit: contain;
+            //     }
+
+            // }
+
+            & .secondary-img-content {
+                // position: absolute; // Позиционирование дополнительного контента
+                bottom: 45px; // Размещение дополнительного контента внизу
+                left: 5px; // Размещение дополнительного контента слева
+                // width: 100%; // Ширина контейнера дополнительного контента
+                // display: flex; // Флексбокс для выравнивания изображений по горизонтали
+                // justify-content: flex-start; // Располагаем изображения внутри контейнера слева
+                // gap: 10px; // Промежуток между изображениями
+                // box-shadow: 0px 60px 50px rgba(0, 0, 0, 0.748);
+
+                // & img {
+                //     width: 30%; // Ширина изображений внутри контейнера
+                //     // height: 50%;
+                //     object-fit: contain;
+                //     // box-shadow: 0px 20px 20px rgba(0, 0, 0, 0.748);
+                // }
+            }
+
+
+        }
+
+    }
+}
+
+@media (max-width:1024px) {
+    .mySwiper {
+        // height: 90vh;
+        // width: 90%;
+        margin: 30px 0 100px 0;
+
+        & .slider-content {
+
+            // position: relative;
+            // width: 100%; // Ширина контейнера, содержащего все изображения
+            height: 100vh; // Высота контейнера, содержащего все изображения
+
+            // & .important-img-content {
+
+            //     width: 100%; // Ширина важного изображения
+            //     height: 100%;
+            //     position: absolute; // Позиционирование важного изображения
+            //     top: 50%; // Размещение важного изображения по вертикали посередине
+            //     left: 50%; // Размещение важного изображения по горизонтали посередине
+            //     transform: translate(-50%, -50%); // Сдвигаем изображение на половину его собственной ширины и высоты, чтобы оно оказалось по центру
+
+            //     & img {
+
+            //         width: 100%;
+            //         height: 100%;
+            //         object-fit: contain;
+            //     }
+
+            // }
+
+            & .secondary-img-content {
+                // position: absolute; // Позиционирование дополнительного контента
+                bottom: 45px; // Размещение дополнительного контента внизу
+                left: 5px; // Размещение дополнительного контента слева
+                // width: 100%; // Ширина контейнера дополнительного контента
+                // display: flex; // Флексбокс для выравнивания изображений по горизонтали
+                // justify-content: flex-start; // Располагаем изображения внутри контейнера слева
+                // gap: 10px; // Промежуток между изображениями
+                // box-shadow: 0px 60px 50px rgba(0, 0, 0, 0.748);
+
+                // & img {
+                //     width: 30%; // Ширина изображений внутри контейнера
+                //     // height: 50%;
+                //     object-fit: contain;
+                //     // box-shadow: 0px 20px 20px rgba(0, 0, 0, 0.748);
+                // }
+            }
+
+
+        }
+
+    }
+}
+
+@media (max-width: 430px) {
+
+    .swiper,
+    .swiper-initialized,
+    .swiper-horizontal,
+    .swiper-backface-hidden,
+    .swiper-wrapper,
+    .mySwiper,
+    .mySwiper,
+    .mySwiper .swiper-slide,
+    .mySwiper .slider-content,
+    .swiper-wrapper,
+    .mySwiper .important-img-content,
+    .mySwiper .secondary-img-content {
+        display: none;
+    }
 }

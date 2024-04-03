@@ -425,7 +425,7 @@ a {
             .contact-section-title {
                 border-bottom: none;
                 padding-bottom: 30px;
-
+                // text-wrap: wrap;
                 flex-direction: row;
                 align-items: center;
 
@@ -439,12 +439,12 @@ a {
 
                     .contact-section-description-title {
                         padding-left: 15px;
-                        font-size: 28px;
+                        font-size: 24px;
                     }
                 }
 
                 .contact-section-secondary-description-title {
-                    font-size: 28px;
+                    font-size: 24px;
                     margin: 0px 10px;
                 }
 

@@ -1,7 +1,5 @@
 import { Project } from "./project/Project";
 
-import { Rounded } from "../Rounded";
-
 import "./Projects.scss";
 
 import georgia1 from "../../assets/img/why-georgia1.png";
@@ -124,6 +122,7 @@ export const Projects = () => {
               title={project.title}
               manageModal={manageModal}
               key={index}
+              imgSrc={project.src}
             />
           );
         })}
