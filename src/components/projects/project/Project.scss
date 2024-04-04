@@ -63,14 +63,14 @@
         flex-direction: column;
         // align-items: center;
         width: 90%;
-        height: 70vh;
+        height: auto;
         margin-top: 30px;
         // gap: 15px;
 
         & .mob-project-img {
             width: 100%;
             height: 100%;
-            object-fit: cover;
+            object-fit: contain;
         }
 
         & .mob-project-content {

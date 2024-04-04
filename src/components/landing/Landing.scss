@@ -17,10 +17,10 @@
     & .slider-container {
         position: absolute;
         margin-bottom: auto;
-        height: 100vh;
+        height: 100%;
         display: flex;
         justify-content: flex-end;
-        align-items: end;
+        align-items: flex-end;
 
         & .slider {
             position: relative;
@@ -110,9 +110,10 @@
 
     .main {
 
+        height: 100vh;
 
         .description {
-            
+
             top: 52%;
             left: 0;
 

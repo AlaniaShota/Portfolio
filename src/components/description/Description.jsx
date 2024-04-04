@@ -4,16 +4,27 @@ import { Rounded } from "../Rounded";
 import "./Description.scss";
 
 import { useInView, motion } from "framer-motion";
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 export const Description = () => {
-  const phrase =
-    "I'm a beginner front-end developer, i have worked on my personal projects, and my enthusiasm to learn makes me a great fit. I am ready to put in maximum effort and succeed in web development.";
+  const { t } = useTranslation();
+  const phrase = t("welcome");
+
   const description = useRef(null);
   const isInView = useInView(description);
+
+  // useEffect(() => {
+  //   const lng = navigator.language;
+  //   i18n.changeLanguage(lng);
+  // }, []);
+  // const lng = navigator.language;
+
   return (
     <div ref={description} className="description-content">
+      {/* <p>{t("translation.welcome")}</p> */}
+      {/* <p>{phrase}</p> */}
       <div className="description-body">
         <p className="description-section">
           {phrase.split(" ").map((word, index) => {
@@ -40,7 +51,7 @@ export const Description = () => {
           Zustand, TailwindCSS, Material-UI (MUI), Yup, React Hook Form,
           Framer-motion, GSAP, Swiper, Redux, Redux Toolkit
         </motion.p>
-        <Link to='/about'>
+        <Link to="/about">
           <div data-scroll data-scroll-speed={0.1}>
             <Rounded className="button">
               <p className="description-btn-text">About me</p>

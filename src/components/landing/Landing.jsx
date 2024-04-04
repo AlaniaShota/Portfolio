@@ -16,6 +16,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
 import { AnimatePresence, motion } from "framer-motion";
 
+
 export const Landing = () => {
   const [isLoading, setIsLoading] = useState(true);
   const firstText = useRef(null);
