@@ -22,7 +22,7 @@ export const Preloader = ({ preloadData, setIsLoading }) => {
   }, []);
 
   useEffect(() => {
-    setDimension({ width: window.innerWidth, height: window.innerHeight });
+    setDimension({ width: window.innerWidth });
   }, []);
 
   useEffect(() => {
@@ -31,29 +31,29 @@ export const Preloader = ({ preloadData, setIsLoading }) => {
       () => {
         setIndex(index + 1);
       },
-      index == 0 ? 1000 : 150,
+      index == 0 ? 1000 : 150
     );
   }, [index]);
 
-  const initialPath = `M0 0 L${dimension.width} 0 L${dimension.width} ${
-    dimension.height
-  } Q${dimension.width / 2} ${dimension.height + 300} 0 ${
-    dimension.height
-  }  L0 0`;
-  const targetPath = `M0 0 L${dimension.width} 0 L${dimension.width} ${
-    dimension.height
-  } Q${dimension.width / 2} ${dimension.height} 0 ${dimension.height}  L0 0`;
+  // const initialPath = `M0 0 L${dimension.width} 0 L${dimension.width} ${
+  //   dimension.height
+  // } Q${dimension.width / 2} ${dimension.height + 300} 0 ${
+  //   dimension.height
+  // }  L0 0`;
+  // const targetPath = `M0 0 L${dimension.width} 0 L${dimension.width} ${
+  //   dimension.height
+  // } Q${dimension.width / 2} ${dimension.height} 0 ${dimension.height}  L0 0`;
 
-  const curve = {
-    initial: {
-      d: initialPath,
-      transition: { duration: 0.7, ease: [0.76, 0, 0.24, 1] },
-    },
-    exit: {
-      d: targetPath,
-      transition: { duration: 0.7, ease: [0.76, 0, 0.24, 1], delay: 0.3 },
-    },
-  };
+  // const curve = {
+  //   initial: {
+  //     d: initialPath,
+  //     transition: { duration: 0.7, ease: [0.76, 0, 0.24, 1] },
+  //   },
+  //   exit: {
+  //     d: targetPath,
+  //     transition: { duration: 0.7, ease: [0.76, 0, 0.24, 1], delay: 0.3 },
+  //   },
+  // };
 
   return (
     <motion.div
@@ -63,7 +63,7 @@ export const Preloader = ({ preloadData, setIsLoading }) => {
       className="preloader"
     >
       {dimension.width > 0 && (
-        <>
+        // <>
           <motion.p
             variants={opacity}
             initial="initial"
@@ -72,15 +72,7 @@ export const Preloader = ({ preloadData, setIsLoading }) => {
           >
             {preloadData[index]}
           </motion.p>
-          <svg className="preloader-svg">
-            <motion.path
-              variants={curve}
-              initial="initial"
-              exit="exit"
-              className="preloader-path"
-            ></motion.path>
-          </svg>
-        </>
+        // {/* </> */}
       )}
     </motion.div>
   );

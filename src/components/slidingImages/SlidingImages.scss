@@ -4,31 +4,29 @@
     margin: 50px 0 200px 0;
 
     & .swiper-slide {
-        position: relative; // Для позиционирования вложенных элементов относительно слайда
+        position: relative;
     }
 
     & .slider-content {
 
         position: relative;
-        width: 100%; // Ширина контейнера, содержащего все изображения
-        height: 100%; // Высота контейнера, содержащего все изображения
+        width: 100%;
+        height: 100%;
 
         & .important-img-content {
 
-            width: 100%; // Ширина важного изображения
+            width: 100%;
             height: 100%;
-            position: absolute; // Позиционирование важного изображения
-            top: 50%; // Размещение важного изображения по вертикали посередине
-            left: 50%; // Размещение важного изображения по горизонтали посередине
-            transform: translate(-50%, -50%); // Сдвигаем изображение на половину его собственной ширины и высоты, чтобы оно оказалось по центру
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
 
             & .important-img {
-
                 width: 100%;
                 height: 100%;
                 object-fit: contain;
             }
-
         }
 
         & .secondary-img-content {
@@ -39,14 +37,11 @@
             justify-content: flex-start;
             gap: 10px;
 
-
-
             & .secondary-img {
-                width: 30%; // Ширина изображений внутри контейнера
-                // height: 50%;
+                width: 30%;
                 object-fit: contain;
-                object-position: right bottom; // Задаем смещение относительно верхнего левого угла контейнера
-                // box-shadow: 0px 20px 20px rgba(0, 0, 0, 0.748);
+                padding: 0 0 25px 15px;
+                object-position: right bottom;
             }
         }
 
@@ -57,50 +52,24 @@
 
 @media (max-width:1024px) {
     .mySwiper {
-        // height: 90vh;
-        // width: 90%;
-        margin: 30px 0 150px 0;
+        height: 90vh;
+        width: 90%;
+        margin: 50px 0 150px 0;
+
+
+
 
         & .slider-content {
 
-            // position: relative;
-            // width: 100%; // Ширина контейнера, содержащего все изображения
-            // height: 100%; // Высота контейнера, содержащего все изображения
-
-            // & .important-img-content {
-
-            //     width: 100%; // Ширина важного изображения
-            //     height: 100%;
-            //     position: absolute; // Позиционирование важного изображения
-            //     top: 50%; // Размещение важного изображения по вертикали посередине
-            //     left: 50%; // Размещение важного изображения по горизонтали посередине
-            //     transform: translate(-50%, -50%); // Сдвигаем изображение на половину его собственной ширины и высоты, чтобы оно оказалось по центру
-
-            //     & img {
-
-            //         width: 100%;
-            //         height: 100%;
-            //         object-fit: contain;
-            //     }
-
-            // }
-
             & .secondary-img-content {
-                // position: absolute; // Позиционирование дополнительного контента
-                bottom: 45px; // Размещение дополнительного контента внизу
-                left: 5px; // Размещение дополнительного контента слева
-                // width: 100%; // Ширина контейнера дополнительного контента
-                // display: flex; // Флексбокс для выравнивания изображений по горизонтали
-                // justify-content: flex-start; // Располагаем изображения внутри контейнера слева
-                // gap: 10px; // Промежуток между изображениями
-                // box-shadow: 0px 60px 50px rgba(0, 0, 0, 0.748);
+                width: auto;
+                height: 93%;
 
-                // & img {
-                //     width: 30%; // Ширина изображений внутри контейнера
-                //     // height: 50%;
-                //     object-fit: contain;
-                //     // box-shadow: 0px 20px 20px rgba(0, 0, 0, 0.748);
-                // }
+                & .secondary-img {
+                    width: 35%;
+                    padding: 0 0 5px 5px;
+                    object-position: right bottom;
+                }
             }
 
 
@@ -109,57 +78,9 @@
     }
 }
 
-@media (max-width:1024px) {
+@media (max-width:800px) {
     .mySwiper {
-        // height: 90vh;
-        // width: 90%;
-        margin: 30px 0 100px 0;
-
-        & .slider-content {
-
-            // position: relative;
-            // width: 100%; // Ширина контейнера, содержащего все изображения
-            height: 100vh; // Высота контейнера, содержащего все изображения
-
-            // & .important-img-content {
-
-            //     width: 100%; // Ширина важного изображения
-            //     height: 100%;
-            //     position: absolute; // Позиционирование важного изображения
-            //     top: 50%; // Размещение важного изображения по вертикали посередине
-            //     left: 50%; // Размещение важного изображения по горизонтали посередине
-            //     transform: translate(-50%, -50%); // Сдвигаем изображение на половину его собственной ширины и высоты, чтобы оно оказалось по центру
-
-            //     & img {
-
-            //         width: 100%;
-            //         height: 100%;
-            //         object-fit: contain;
-            //     }
-
-            // }
-
-            & .secondary-img-content {
-                // position: absolute; // Позиционирование дополнительного контента
-                bottom: 45px; // Размещение дополнительного контента внизу
-                left: 5px; // Размещение дополнительного контента слева
-                // width: 100%; // Ширина контейнера дополнительного контента
-                // display: flex; // Флексбокс для выравнивания изображений по горизонтали
-                // justify-content: flex-start; // Располагаем изображения внутри контейнера слева
-                // gap: 10px; // Промежуток между изображениями
-                // box-shadow: 0px 60px 50px rgba(0, 0, 0, 0.748);
-
-                // & img {
-                //     width: 30%; // Ширина изображений внутри контейнера
-                //     // height: 50%;
-                //     object-fit: contain;
-                //     // box-shadow: 0px 20px 20px rgba(0, 0, 0, 0.748);
-                // }
-            }
-
-
-        }
-
+        height: 75vh;
     }
 }
 

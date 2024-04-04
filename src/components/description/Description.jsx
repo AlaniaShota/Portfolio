@@ -5,6 +5,7 @@ import "./Description.scss";
 
 import { useInView, motion } from "framer-motion";
 import { useRef } from "react";
+import { Link } from "react-router-dom";
 
 export const Description = () => {
   const phrase =
@@ -39,11 +40,13 @@ export const Description = () => {
           Zustand, TailwindCSS, Material-UI (MUI), Yup, React Hook Form,
           Framer-motion, GSAP, Swiper, Redux, Redux Toolkit
         </motion.p>
-        <div data-scroll data-scroll-speed={0.1}>
-          <Rounded className="button">
-            <p className="description-btn-text">About me</p>
-          </Rounded>
-        </div>
+        <Link to='/about'>
+          <div data-scroll data-scroll-speed={0.1}>
+            <Rounded className="button">
+              <p className="description-btn-text">About me</p>
+            </Rounded>
+          </div>
+        </Link>
       </div>
     </div>
   );

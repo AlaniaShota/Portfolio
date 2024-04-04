@@ -21,22 +21,26 @@ import { Autoplay, Pagination } from "swiper/modules";
 import { useEffect, useState } from "react";
 
 export const SlidingImages = () => {
-  const [isWideScreen, setIsWideScreen] = useState(window.innerWidth > 430);
+  const [isMobScreen, setIsMobScreen] = useState(window.innerWidth > 430);
+  const [isWideScreen, setIsWideScreen] = useState(window.innerWidth > 1024);
 
   useEffect(() => {
-    // Обновляем состояние isWideScreen при изменении размеров окна
     const handleResize = () => {
-      setIsWideScreen(window.innerWidth > 430);
+      setIsMobScreen(window.innerWidth > 430);
+      setIsWideScreen(window.innerWidth > 1024);
     };
+
     window.addEventListener("resize", handleResize);
+
     return () => {
       window.removeEventListener("resize", handleResize);
     };
   }, []);
 
-  if (!isWideScreen) {
-    return null; // Возвращаем null, чтобы компонент не отрисовывался в DOM дереве
+  if (!isMobScreen) {
+    return null;
   }
+
   const slider = [
     {
       id: 1,
@@ -83,7 +87,11 @@ export const SlidingImages = () => {
         className="mySwiper"
       >
         {slider.map((item) => (
-          <SwiperSlide key={item.id}>
+          <SwiperSlide
+            key={item.id}
+            // className={isWideScreen ? "" : "bg-color"}
+            style={isWideScreen ? null : { backgroundColor: item.color }}
+          >
             <div className="slider-content">
               <div className="important-img-content">
                 <img src={item.img} alt="Img" className="important-img" />

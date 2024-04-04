@@ -64,11 +64,13 @@ export const Landing = () => {
 
   return (
     <>
-      <AnimatePresence mode="wait">
-        {isLoading && (
-          <Preloader preloadData={preloadData} setIsLoading={setIsLoading} />
-        )}
-      </AnimatePresence>
+      <div className="preload-content">
+        <AnimatePresence mode="wait">
+          {isLoading && (
+            <Preloader preloadData={preloadData} setIsLoading={setIsLoading} />
+          )}
+        </AnimatePresence>
+      </div>
       <motion.main
         variants={slideUp}
         initial="initial"
