@@ -1,3 +1,10 @@
 {
-    "welcome": "I'm a beginner front-end developer, i have worked on my personal projects, and my enthusiasm to learn makes me a great fit. I am ready to put in maximum effort and succeed in web development."
+    "welcome": "I'm a beginner front-end developer, i have worked on my personal projects, and my enthusiasm to learn makes me a great fit. I am ready to put in maximum effort and succeed in web development.",
+    "subject_email": "Let's work together",
+    "subject_first_word": "Let's work",
+    "subject_second_word": "together",
+    "connect": "Get in touch",
+    "socials": "Socials",
+    "version": "Version",
+    "code": "Code"
 }

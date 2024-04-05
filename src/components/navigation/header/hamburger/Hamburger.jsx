@@ -59,7 +59,7 @@ export const Hamburger = () => {
                 data={{ ...data, index }}
                 isActive={selectedIndicator === data.href}
                 setSelectedIndicator={setSelectedIndicator}
-              ></LinkNav>
+              />
             );
           })}
         </div>

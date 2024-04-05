@@ -1,5 +1,7 @@
 import { Hamburger } from "./hamburger/Hamburger";
 
+import { MultiLanguage } from "./multiLanguage";
+
 import { Magnetic } from "../../Magnetic";
 import { Rounded } from "../../Rounded";
 
@@ -8,7 +10,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
 import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { useTranslation } from "react-i18next";
+
 import "./Header.scss";
 
 export const Header = () => {
@@ -17,11 +19,6 @@ export const Header = () => {
   const location = useLocation();
   const { pathname } = location;
   const button = useRef(null);
-  const { i18n } = useTranslation();
-  const lng = [
-    { id: 1, code: "en", name: "English" },
-    { id: 2, code: "ka", name: "ქართული" },
-  ];
 
   const navData = [
     { id: 1, title: "Work", href: "/work" },
@@ -83,14 +80,6 @@ export const Header = () => {
           </div>
         </Link>
         <div className="nav">
-          {lng.map((item) => (
-            <button
-              key={item.id}
-              onClick={() => i18n.changeLanguage(item.code)}
-            >
-              {item.name}
-            </button>
-          ))}
           {navData.map((item) => (
             <Magnetic key={item.id}>
               <div className="el">
@@ -108,6 +97,7 @@ export const Header = () => {
               </div>
             </Magnetic>
           ))}
+          <MultiLanguage />
         </div>
       </div>
       <div ref={button} className="headerButtonContainer">

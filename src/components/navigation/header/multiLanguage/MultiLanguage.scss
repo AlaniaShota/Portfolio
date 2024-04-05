@@ -1,0 +1,34 @@
+.select-language {
+    padding: 0;
+    /* Добавляем отступы вокруг текста внутри списка */
+    // border: 1px solid #ccc;
+    width: auto;
+    /* Добавляем границу */
+
+    /* Закругляем углы */
+
+
+    & .select {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        border-radius: 105px;
+
+        & .lng-text {
+            padding: 0;
+            margin: 0;
+            font-weight: 400;
+        }
+    }
+
+    /* Указатель при наведении */
+    .custom-select__control {
+        cursor: pointer;
+    }
+
+    .custom-select__indicator {
+        cursor: pointer;
+    }
+}

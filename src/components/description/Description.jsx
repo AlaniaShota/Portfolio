@@ -4,7 +4,7 @@ import { Rounded } from "../Rounded";
 import "./Description.scss";
 
 import { useInView, motion } from "framer-motion";
-import { useEffect, useRef } from "react";
+import {  useRef } from "react";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
@@ -15,16 +15,9 @@ export const Description = () => {
   const description = useRef(null);
   const isInView = useInView(description);
 
-  // useEffect(() => {
-  //   const lng = navigator.language;
-  //   i18n.changeLanguage(lng);
-  // }, []);
-  // const lng = navigator.language;
-
   return (
     <div ref={description} className="description-content">
-      {/* <p>{t("translation.welcome")}</p> */}
-      {/* <p>{phrase}</p> */}
+     
       <div className="description-body">
         <p className="description-section">
           {phrase.split(" ").map((word, index) => {
