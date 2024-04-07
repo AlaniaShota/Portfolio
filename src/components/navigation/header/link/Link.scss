@@ -48,3 +48,37 @@
         }
     }
 }
+
+@media(max-width:435px) {
+    .link {
+        position: relative;
+        display: flex;
+        align-items: center;
+
+        & .indicator {
+            width: 10px;
+            height: 10px;
+            background-color: white;
+            border-radius: 50%;
+            position: absolute;
+            left: 10%;
+
+
+        }
+
+        & a {
+            text-decoration: none !important;
+            color: white;
+            font-size: 36px;
+            padding-left: 30px;
+        }
+
+        .link-style {
+            padding-left: 30px;
+            text-decoration: none !important;
+            color: white !important;
+            font-weight: 300;
+            font-size: 36px;
+        }
+    }
+}
