@@ -6,5 +6,10 @@
     "connect": "დაკავშირება",
     "socials": "სოც ქსელი",
     "version": "ვერსია",
-    "code":"კოდი"
+    "code": "კოდი",
+    "navigation": "ნავიგაცია",
+    "link_home": "მთავარი",
+    "link_work": "პროექტები",
+    "link_about": "ჩემს შესახებ",
+    "link_contact": "კონტაქტი"
 }

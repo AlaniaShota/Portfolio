@@ -12,8 +12,10 @@ import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 
 import "./Header.scss";
+import { useTranslation } from "react-i18next";
 
 export const Header = () => {
+  const { t } = useTranslation();
   const header = useRef(null);
   const [isActive, setIsActive] = useState(false);
   const location = useLocation();
@@ -21,9 +23,9 @@ export const Header = () => {
   const button = useRef(null);
 
   const navData = [
-    { id: 1, title: "Work", href: "/work" },
-    { id: 2, title: "About", href: "/about" },
-    { id: 3, title: "Contact", href: "#contact" },
+    { id: 1, title: t("link_work"), href: "/work" },
+    { id: 2, title: t("link_about"), href: "/about" },
+    { id: 3, title: t("link_contact"), href: "#contact" },
   ];
 
   useEffect(() => {
@@ -48,7 +50,7 @@ export const Header = () => {
           gsap.to(
             button.current,
             { scale: 0, duration: 0.25, ease: "power1.out" },
-            setIsActive(false),
+            setIsActive(false)
           );
         },
       },
@@ -83,12 +85,22 @@ export const Header = () => {
           {navData.map((item) => (
             <Magnetic key={item.id}>
               <div className="el">
-                <a
-                  href={item.href}
-                  className={`nav-link-main ${determineTextColorClass()}`}
-                >
-                  {item.title}
-                </a>
+                {item.href === "#contact" ? (
+                  // Для "contact" использовать прокрутку по id
+                  <a
+                    href={item.href}
+                    className={`nav-link-main ${determineTextColorClass()}`}
+                  >
+                    {item.title}
+                  </a>
+                ) : (
+                  <Link
+                    to={item.href} // использовать "to" вместо "href"
+                    className={`nav-link-main ${determineTextColorClass()}`}
+                  >
+                    {item.title}
+                  </Link>
+                )}
                 <div
                   className={`indicator ${
                     isDarkBackground() ? "light-bg " : "dark-bg"
@@ -97,6 +109,7 @@ export const Header = () => {
               </div>
             </Magnetic>
           ))}
+
           <MultiLanguage />
         </div>
       </div>

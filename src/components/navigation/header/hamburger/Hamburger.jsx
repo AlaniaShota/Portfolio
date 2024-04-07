@@ -2,38 +2,37 @@ import "./Hamburger.scss";
 import { menuSlide } from "../animation";
 import { Footer } from "../../footer/Footer";
 
-import { Curve } from "../curve/Curve";
-
 import { LinkNav } from "../link/Link";
 
 import { useState } from "react";
 
 import { motion } from "framer-motion";
-import { Link, useLocation } from "react-router-dom";
-
-const navItems = [
-  {
-    title: "Home",
-    href: "/",
-  },
-  {
-    title: "Work",
-    href: "/work",
-  },
-  {
-    title: "About",
-    href: "/about",
-  },
-  {
-    title: "Contact",
-    href: "/contact",
-  },
-];
+import { useLocation } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 export const Hamburger = () => {
   const pathname = useLocation();
   const [selectedIndicator, setSelectedIndicator] = useState(pathname);
+  const { t } = useTranslation();
 
+  const navItems = [
+    {
+      title: t("link_home"),
+      href: "/",
+    },
+    {
+      title: t("link_work"),
+      href: "/work",
+    },
+    {
+      title: t("link_about"),
+      href: "/about",
+    },
+    {
+      title: t("link_contact"),
+      href: "#contact",
+    },
+  ];
   return (
     <motion.div
       variants={menuSlide}
@@ -50,7 +49,7 @@ export const Hamburger = () => {
           className="hamburger-nav"
         >
           <div className="hamburger-header">
-            <p>Navigation</p>
+            <p>{t("navigation")}</p>
           </div>
           {navItems.map((data, index) => {
             return (
@@ -65,7 +64,6 @@ export const Hamburger = () => {
         </div>
         <Footer />
       </div>
-      <Curve />
     </motion.div>
   );
 };

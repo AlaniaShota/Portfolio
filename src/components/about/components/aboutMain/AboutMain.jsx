@@ -81,11 +81,6 @@ export const AboutMain = () => {
           ))}
         </div>
       </div>
-      <motion.div style={{ height }} className="circle-container-section-test">
-        <div className="circle-content-test"></div>
-      </motion.div>
     </div>
-
-    //  </div>
   );
 };

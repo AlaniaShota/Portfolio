@@ -6,5 +6,10 @@
     "connect": "Get in touch",
     "socials": "Socials",
     "version": "Version",
-    "code": "Code"
+    "code": "Code",
+    "navigation":"Navigation",
+    "link_home":"Home",
+    "link_work": "Work",
+    "link_about": "About",
+    "link_contact": "Contact"
 }

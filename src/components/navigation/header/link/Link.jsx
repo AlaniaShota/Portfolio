@@ -24,7 +24,13 @@ export const LinkNav = ({ data, isActive, setSelectedIndicator }) => {
         animate={isActive ? "open" : "closed"}
         className="indicator"
       ></motion.div>
-      <Link className="link-style" to={href}>{title}</Link>
+      {href === "#contact" ? (
+        <a href={href}>{title}</a>
+      ) : (
+        <Link className="link-style" to={href}>
+          {title}
+        </Link>
+      )}
     </motion.div>
   );
 };

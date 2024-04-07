@@ -32,10 +32,11 @@
 
         & .about-description-img-content {
             width: auto;
+            // width: 100%;
             background: url('../../../../assets/img/background.jpg') center center no-repeat;
             background-size: cover;
             background-attachment: fixed;
-            object-fit: contain;
+            // object-fit: cover;
             height: 105vh;
         }
 

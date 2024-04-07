@@ -31,7 +31,7 @@ export const Preloader = ({ preloadData, setIsLoading }) => {
       () => {
         setIndex(index + 1);
       },
-      index == 0 ? 1000 : 150
+      index == 0 ? 1000 : 150,
     );
   }, [index]);
 
@@ -64,14 +64,14 @@ export const Preloader = ({ preloadData, setIsLoading }) => {
     >
       {dimension.width > 0 && (
         // <>
-          <motion.p
-            variants={opacity}
-            initial="initial"
-            animate="enter"
-            className="preloader-text"
-          >
-            {preloadData[index]}
-          </motion.p>
+        <motion.p
+          variants={opacity}
+          initial="initial"
+          animate="enter"
+          className="preloader-text"
+        >
+          {preloadData[index]}
+        </motion.p>
         // {/* </> */}
       )}
     </motion.div>

@@ -8,11 +8,14 @@ import { Preloader } from "../preloader";
 import { useState } from "react";
 import "./About.scss";
 import { AnimatePresence } from "framer-motion";
+import { useTranslation } from "react-i18next";
 
 export const About = () => {
   const [isLoading, setIsLoading] = useState(true);
+  const { t } = useTranslation();
 
-  const preloadData = ["About"];
+  const preloadData = [t("link_about")];
+
   return (
     <div className="about">
       <AnimatePresence mode="wait">
