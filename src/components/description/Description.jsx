@@ -47,7 +47,7 @@ export const Description = () => {
         <Link to="/about">
           <div data-scroll data-scroll-speed={0.1}>
             <Rounded className="button">
-              <p className="description-btn-text">About me</p>
+              <p className="description-btn-text">{t('about_me')}</p>
             </Rounded>
           </div>
         </Link>

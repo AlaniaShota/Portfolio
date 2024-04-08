@@ -16,7 +16,6 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
 import { AnimatePresence, motion } from "framer-motion";
 
-
 export const Landing = () => {
   const [isLoading, setIsLoading] = useState(true);
   const firstText = useRef(null);
@@ -107,7 +106,7 @@ export const Landing = () => {
         </div>
       </motion.main>
       <Description />
-      <Projects />
+      <Projects marginTop="300px" />
       <SlidingImages />
     </>
   );

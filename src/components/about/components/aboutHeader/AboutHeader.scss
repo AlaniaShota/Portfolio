@@ -66,22 +66,14 @@
 @media(max-width:1024px) {
     .about-header-section {
 
-        & .about-header-title-content {
-            width: 70%;
 
-            & .about-header-title {
-                font-size: 62.5px;
-                height: 100%;
-                font-weight: 300;
-            }
-        }
 
         & .glob-animation-content {
             width: 70%;
 
             & .digital-ball {
                 right: 150px;
-                
+
             }
         }
     }

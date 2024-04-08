@@ -50,7 +50,7 @@ const scaleAnimation = {
   },
 };
 
-export const Projects = () => {
+export const Projects = ({ marginTop }) => {
   const [modal, setModal] = useState({ active: false, index: 0 });
   const { active, index } = modal;
   const modalContainer = useRef(null);
@@ -113,6 +113,7 @@ export const Projects = () => {
         moveItems(e.clientX, e.clientY);
       }}
       className="projects"
+      style={{ marginTop: marginTop }}
     >
       <div className="projects-body">
         {projects.map((project, index) => {
