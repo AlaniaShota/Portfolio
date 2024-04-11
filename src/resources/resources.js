@@ -28,3 +28,54 @@
 //     escapeValue: false, // React уже защищает от XSS
 //   },
 // });
+import georgia1 from "../assets/img/why-georgia1.png";
+import vibrant1 from "../assets/img/vibrant1.png";
+import marvel1 from "../assets/img/marvel1.png";
+import namari1 from "../assets/img/namari1.png";
+
+export const dataProject = [
+  {
+    id: 1,
+    title: "Georgia",
+    preloader_title: ["Georgia"],
+    src: georgia1,
+    color: "#000000",
+    type: "ReactJS",
+    liberties: ["TailwindCSS", "Framer-Motion", "GSAP", "Swiper"],
+    github_link: "https://github.com/AlaniaShota/Georgia",
+    live_link: "https://travel-georgia.netlify.app/",
+  },
+  {
+    id: 2,
+    title: "Vibrant",
+    preloader_title: ["Vibrant"],
+    src: vibrant1,
+    color: "#8C8C8C",
+    type: "Lending",
+    liberties: ["SASS", "Framer-Motion"],
+    github_link: "https://github.com/AlaniaShota/vibrant",
+    live_link: "https://vibrant-framer-motion.netlify.app/",
+  },
+  {
+    id: 3,
+    title: "Marvel",
+    preloader_title: ["Marvel"],
+    src: marvel1,
+    color: "#EFE8D3",
+    type: "ReactJS",
+    liberties: ["SASS", "Zustand"],
+    github_link: "https://github.com/AlaniaShota/Marvel",
+    // live_link: "https://vibrant-framer-motion.netlify.app/",
+  },
+  {
+    id: 4,
+    title: "Namari",
+    preloader_title: ["Namari"],
+    src: namari1,
+    color: "#706D63",
+    type: "Lending",
+    liberties: ["SASS", "React Icons", "Framer-Motion"],
+    github_link: "https://github.com/AlaniaShota/Namari",
+    live_link: "https://namari-vite.netlify.app/",
+  },
+];

@@ -5,6 +5,8 @@ import { Layout } from "../components/navigation";
 
 import { Work } from "../components/work";
 
+import { SinglePage } from "../components/work/component/singlePage";
+
 import { createBrowserRouter } from "react-router-dom";
 
 export const routes = createBrowserRouter([
@@ -20,7 +22,7 @@ export const routes = createBrowserRouter([
         path: "/work",
         element: <Work />,
       },
-      // { path: "/blog/:id", element: <SinglePage /> },
+      { path: "/work/:id", element: <SinglePage /> },
     ],
   },
 ]);

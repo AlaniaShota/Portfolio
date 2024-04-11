@@ -31,7 +31,7 @@ export const Preloader = ({ preloadData, setIsLoading }) => {
       () => {
         setIndex(index + 1);
       },
-      index == 0 ? 1000 : 150,
+      index == 0 ? 1000 : 150
     );
   }, [index]);
 

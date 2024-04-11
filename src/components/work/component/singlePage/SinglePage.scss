@@ -1,0 +1,150 @@
+.single-page-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 250px;
+    width: auto;
+    height: min-content;
+
+    & .project-title {
+        display: flex;
+        // border: 1px solid red;
+        width: 60%;
+        font-size: 101px;
+        font-weight: 500;
+    }
+
+    & .single-page-header-section {
+        // margin: 100px 0;
+        display: grid;
+        grid-template-columns: 270px 270px;
+        justify-content: flex-start; // Выравнивание дочерних элементов по центру
+        align-items: flex-start;
+        gap: 30px;
+        margin: 30px 0;
+        width: 60%;
+
+        & .stripe {
+            display: block;
+            width: 100%;
+            height: 1px;
+            background-color: rgba(28, 29, 32, 0.175);
+            margin: 20px 0;
+        }
+
+        & .type-section-header {
+            font-size: 18px;
+            font-weight: 500;
+            transition: all 0.4s;
+        }
+    }
+
+    & .single-page-header-liberties-section {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+
+        & ul {
+            list-style-type: none;
+
+            transition: all 0.4s;
+
+
+            & li {
+
+                font-size: 18px;
+                font-weight: 500;
+            }
+        }
+    }
+
+    & .single-page-img-content {
+        position: relative;
+        /* Обязательно делаем родительский элемент позиционированным */
+        display: flex;
+        width: 90%;
+        height: auto;
+        margin: 70px 0;
+
+        & img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            // background-size: cover;
+            // background-attachment: fixed;
+            // object-fit: cover;
+            // height: 105vh;
+        }
+    }
+
+    & .btn-code-links {
+        position: absolute;
+        /* Задаем абсолютное позиционирование */
+        top: 75%;
+        /* Располагаем элементы сверху */
+        right: 7%;
+        /* Располагаем элементы справа */
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 20px;
+
+        & .button {
+            z-index: 1;
+            // left: calc(100% );
+            width: 180px;
+            height: 180px;
+            background-color: #1C1D20;
+            color: white !important;
+            border-radius: 50%;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+
+            .description-btn-text {
+                margin: 0px;
+                font-size: 18px;
+                font-weight: 400;
+                position: relative;
+                z-index: 1;
+                // color: white;
+            }
+
+
+        }
+
+        &:hover {
+            .type-section-header {
+                transform: translateX(15px);
+            }
+
+            .single-page-header-liberties-section ul {
+                transform: translateX(-15px);
+            }
+        }
+    }
+}
+
+.section-title {
+    font-size: 12px;
+    font-weight: 400;
+    opacity: 0.5;
+}
+
+.arrow {
+    rotate: 330deg;
+    font-size: 18px;
+
+    // margin: 0 5px;
+    margin-left: 5px;
+    color: #fff;
+    z-index: 1;
+}
+
+// .arrow:hover {
+//     color: white;
+// }

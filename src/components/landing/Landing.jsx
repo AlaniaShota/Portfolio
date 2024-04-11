@@ -11,6 +11,8 @@ import { Preloader } from "../preloader";
 
 import { SlidingImages } from "../slidingImages";
 
+import { dataProject } from "../../resources/resources";
+
 import { useRef, useLayoutEffect, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
@@ -106,7 +108,7 @@ export const Landing = () => {
         </div>
       </motion.main>
       <Description />
-      <Projects marginTop="300px" />
+      <Projects marginTop="300px" data={dataProject} />
       <SlidingImages />
     </>
   );

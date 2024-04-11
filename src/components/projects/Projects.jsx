@@ -2,37 +2,10 @@ import { Project } from "./project/Project";
 
 import "./Projects.scss";
 
-import georgia1 from "../../assets/img/why-georgia1.png";
-import vibrant1 from "../../assets/img/vibrant1.png";
-import marvel1 from "../../assets/img/marvel1.png";
-import namari1 from "../../assets/img/namari1.png";
-
 import gsap from "gsap";
 import { motion } from "framer-motion";
 import { useState, useEffect, useRef } from "react";
-
-const projects = [
-  {
-    title: "Georgia",
-    src: georgia1,
-    color: "#000000",
-  },
-  {
-    title: "Vibrant",
-    src: vibrant1,
-    color: "#8C8C8C",
-  },
-  {
-    title: "Marvel",
-    src: marvel1,
-    color: "#EFE8D3",
-  },
-  {
-    title: "Namari",
-    src: namari1,
-    color: "#706D63",
-  },
-];
+import { Link } from "react-router-dom";
 
 const scaleAnimation = {
   initial: { scale: 0, x: "-50%", y: "-50%" },
@@ -50,7 +23,7 @@ const scaleAnimation = {
   },
 };
 
-export const Projects = ({ marginTop }) => {
+export const Projects = ({ marginTop, data, categoryFilter }) => {
   const [modal, setModal] = useState({ active: false, index: 0 });
   const { active, index } = modal;
   const modalContainer = useRef(null);
@@ -107,6 +80,10 @@ export const Projects = ({ marginTop }) => {
     setModal({ active, index });
   };
 
+  const displayedProject = categoryFilter
+    ? data.filter((item) => item.type === categoryFilter)
+    : data;
+
   return (
     <main
       onMouseMove={(e) => {
@@ -116,7 +93,7 @@ export const Projects = ({ marginTop }) => {
       style={{ marginTop: marginTop }}
     >
       <div className="projects-body">
-        {projects.map((project, index) => {
+        {displayedProject.map((project, index) => {
           return (
             <Project
               index={index}
@@ -137,7 +114,7 @@ export const Projects = ({ marginTop }) => {
           className="modalContainer"
         >
           <div style={{ top: index * -100 + "%" }} className="modalSlider">
-            {projects.map((project, index) => {
+            {displayedProject.map((project, index) => {
               const { src, color } = project;
               return (
                 <div
@@ -158,15 +135,17 @@ export const Projects = ({ marginTop }) => {
           initial="initial"
           animate={active ? "enter" : "closed"}
         ></motion.div>
-        <motion.div
-          ref={cursorLabel}
-          className="cursorLabel"
-          variants={scaleAnimation}
-          initial="initial"
-          animate={active ? "enter" : "closed"}
-        >
-          View
-        </motion.div>
+        <Link >
+          <motion.div
+            ref={cursorLabel}
+            className="cursorLabel"
+            variants={scaleAnimation}
+            initial="initial"
+            animate={active ? "enter" : "closed"}
+          >
+            View
+          </motion.div>
+        </Link>
       </>
     </main>
   );

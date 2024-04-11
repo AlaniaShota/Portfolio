@@ -7,10 +7,11 @@
     "socials": "სოც ქსელი",
     "version": "ვერსია",
     "code": "კოდი",
-    "about_me":"ჩემს შესახებ",
+    "about_me": "ჩემს შესახებ",
     "navigation": "ნავიგაცია",
     "link_home": "მთავარი",
     "link_work": "პროექტები",
+    "work_title": "ჩემი პროექტები",
     "link_about": "ჩემს შესახებ",
     "link_contact": "კონტაქტი"
 }

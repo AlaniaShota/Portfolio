@@ -17,7 +17,7 @@ export const Project = ({ index, title, manageModal, imgSrc }) => {
   if (isSmallScreen) {
     return (
       <div className="mob-project">
-        <img src={imgSrc} alt={title} className="mob-project-img"/>
+        <img src={imgSrc} alt={title} className="mob-project-img" />
         <div className="mob-project-content">
           <h2 className="mob-project-title">{title}</h2>
           <div className="stripe"></div>
@@ -42,9 +42,3 @@ export const Project = ({ index, title, manageModal, imgSrc }) => {
     );
   }
 };
-{
-  /* <h2 className="project-title">{title}</h2>;
-{
-  !isSmallScreen && <img src={imgSrc} alt={title} />;
-} */
-}
