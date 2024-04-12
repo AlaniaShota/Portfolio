@@ -1,12 +1,14 @@
 .work {
     display: flex;
     justify-content: center;
-    padding-top: 250px;
+    width: auto;
+    // height: auto;
     flex-direction: column;
     align-items: center;
     background-color: rgb(255, 255, 255);
 
     & .render-component {
+
         width: 100%;
         display: flex;
         justify-content: center;

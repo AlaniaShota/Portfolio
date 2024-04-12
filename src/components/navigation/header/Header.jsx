@@ -86,7 +86,6 @@ export const Header = () => {
             <Magnetic key={item.id}>
               <div className="el">
                 {item.href === "#contact" ? (
-                  // Для "contact" использовать прокрутку по id
                   <a
                     href={item.href}
                     className={`nav-link-main ${determineTextColorClass()}`}
@@ -95,7 +94,7 @@ export const Header = () => {
                   </a>
                 ) : (
                   <Link
-                    to={item.href} // использовать "to" вместо "href"
+                    to={item.href} 
                     className={`nav-link-main ${determineTextColorClass()}`}
                   >
                     {item.title}

@@ -37,6 +37,11 @@
     }
 }
 
+a {
+    text-decoration: none !important;
+    color: black !important;
+}
+
 @media (max-width:1024px) {
     .project {
         width: 80%;

@@ -3,11 +3,12 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin-top: 250px;
+
+    // height: 100%;
     width: auto;
-    height: min-content;
 
     & .project-title {
+        margin-top: 250px;
         display: flex;
         // border: 1px solid red;
         width: 60%;
@@ -17,116 +18,208 @@
 
     & .single-page-header-section {
         // margin: 100px 0;
-        display: grid;
-        grid-template-columns: 270px 270px;
+        display: flex;
+        // grid-template-columns: auto;
+        flex-direction: column;
         justify-content: flex-start; // Выравнивание дочерних элементов по центру
         align-items: flex-start;
-        gap: 30px;
+        // gap: 30px;
         margin: 30px 0;
         width: 60%;
 
-        & .stripe {
-            display: block;
-            width: 100%;
-            height: 1px;
-            background-color: rgba(28, 29, 32, 0.175);
-            margin: 20px 0;
-        }
 
-        & .type-section-header {
+
+        & .project-description {
             font-size: 18px;
             font-weight: 500;
-            transition: all 0.4s;
         }
     }
 
-    & .single-page-header-liberties-section {
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-        align-items: flex-start;
+    // & .single-page-header-liberties-section {
+    //     display: flex;
+    //     flex-direction: column;
+    //     justify-content: flex-start;
+    //     align-items: flex-start;
 
-        & ul {
-            list-style-type: none;
+    //     & ul {
+    //         list-style-type: none;
 
-            transition: all 0.4s;
+    //         transition: all 0.4s;
 
 
-            & li {
+    //         & li {
 
-                font-size: 18px;
-                font-weight: 500;
-            }
-        }
-    }
+    //             font-size: 18px;
+    //             font-weight: 500;
+    //         }
+    //     }
+    // }
 
     & .single-page-img-content {
         position: relative;
-        /* Обязательно делаем родительский элемент позиционированным */
+
         display: flex;
         width: 90%;
-        height: auto;
+        height: 100vh;
         margin: 70px 0;
+        border-radius: 15px !important;
+        // border: 2px solid transparent;
+        // position: relative;
 
         & img {
             width: 100%;
             height: 100%;
-            object-fit: contain;
+            // object-fit: contain;
+            border-radius: 15px;
+            // border: 2px solid transparent;
             // background-size: cover;
             // background-attachment: fixed;
             // object-fit: cover;
             // height: 105vh;
         }
-    }
 
-    & .btn-code-links {
-        position: absolute;
-        /* Задаем абсолютное позиционирование */
-        top: 75%;
-        /* Располагаем элементы сверху */
-        right: 7%;
-        /* Располагаем элементы справа */
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        gap: 20px;
-
-        & .button {
-            z-index: 1;
-            // left: calc(100% );
-            width: 180px;
-            height: 180px;
-            background-color: #1C1D20;
-            color: white !important;
-            border-radius: 50%;
-            position: relative;
+        & .btn-code-links {
+            position: absolute;
+            /* Position relative to .single-page-img-content */
+            top: -70px;
+            /* Align to the top */
+            left: 0;
+            /* Align to the left */
             display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
+            flex-direction: row;
+            width: 95%;
+            justify-content: flex-end;
+            /* Align to the start (left) */
+            gap: 20px;
+            z-index: 3;
+            padding: 20px;
 
-            .description-btn-text {
-                margin: 0px;
-                font-size: 18px;
-                font-weight: 400;
-                position: relative;
+            & .button {
                 z-index: 1;
-                // color: white;
+                // left: calc(100% );
+                width: 180px;
+                height: 180px;
+                background-color: #1C1D20;
+                color: white !important;
+                border-radius: 50%;
+                position: relative;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                cursor: pointer;
+
+                .description-btn-text {
+                    margin: 0px;
+                    font-size: 18px;
+                    font-weight: 400;
+                    position: relative;
+                    z-index: 1;
+                    // color: white;
+                }
+
+
+            }
+        }
+
+
+
+    }
+
+    & .main-content {
+        display: flex;
+        justify-content: flex-start;
+        flex-direction: row;
+        align-items: flex-start;
+        gap: 50px;
+        width: 80%;
+        flex-grow: 1;
+        margin: 70px 0;
+
+        & .single-page-main-content {
+            display: grid;
+            grid-template-columns: 220px 220px;
+            // justify-content: center;
+            align-items: flex-start;
+            // border: 1px solid red;
+            width: auto;
+            gap: 50px;
+            margin: 50px 0;
+            flex-grow: 1;
+
+            & .single-page-type-section {
+                display: flex;
+                justify-content: flex-start;
+                align-items: flex-start;
+                flex-direction: column;
+
+
+                & .type-section-text {
+                    font-size: 18px;
+                    font-weight: 500;
+                    // transition: all 0.4s;
+                }
+            }
+
+            & .single-page-main-liberties-section {
+                display: flex;
+                justify-content: flex-start;
+                align-items: flex-start;
+                flex-direction: column;
+
+                & ul {
+                    list-style-type: none;
+
+                    // transition: all 0.4s;
+
+
+                    & li {
+
+                        font-size: 18px;
+                        font-weight: 500;
+                    }
+                }
             }
 
 
         }
 
-        &:hover {
-            .type-section-header {
-                transform: translateX(15px);
+        & .single-page-main-img-section {
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            flex-direction: column;
+            // border: 1px solid red;
+
+            & .single-page-main-img-first-content {
+                width: 70%;
+                height: auto;
+                border-radius: 15px;
+
+                & img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    border-radius: 15px;
+                }
             }
 
-            .single-page-header-liberties-section ul {
-                transform: translateX(-15px);
+            & .single-page-main-img-second-content {
+                width: 150%;
+                height: auto;
+                border-radius: 15px;
+                // position: relative;
+
+                & img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    border-radius: 15px;
+                }
             }
         }
     }
+
+
 }
 
 .section-title {
@@ -143,6 +236,14 @@
     margin-left: 5px;
     color: #fff;
     z-index: 1;
+}
+
+.stripe {
+    display: block;
+    width: 100%;
+    height: 1px;
+    background-color: rgba(28, 29, 32, 0.175);
+    margin: 20px 0;
 }
 
 // .arrow:hover {
