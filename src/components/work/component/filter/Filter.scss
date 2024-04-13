@@ -6,3 +6,14 @@
     align-items: center;
     margin: 70px 0;
 }
+
+@media(max-width:800px) {
+    .filter-container {
+        display: flex;
+        width: 90%;
+        height: auto;
+        justify-content: space-between;
+        align-items: center;
+        margin: 40px 0 0 0;
+    }
+}

@@ -5,7 +5,6 @@ export const ImgProject = ({ data, categoryFilter }) => {
   const displayedProject = categoryFilter
     ? data.filter((item) => item.type === categoryFilter)
     : data;
-  console.log(data, "data");
 
   return (
     <div className="project-img-content">
@@ -16,7 +15,7 @@ export const ImgProject = ({ data, categoryFilter }) => {
               className="project-img-content-img"
               style={{ background: item.color }}
             >
-              <img src={item.src} alt={item.title} className="" />
+              <img src={item.src} alt={item.title} loading="lazy" />
             </div>
             <div className="project-img-content-content">
               <h2 className="project-img-content-title">{item.title}</h2>

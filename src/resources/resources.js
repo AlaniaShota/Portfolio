@@ -49,10 +49,13 @@ export const dataProject = [
     secondary_img: [marvel4, marvel3],
     color: "#EFE8D3",
     type: "ReactJS",
+    alert_smg:
+      "There is'n demo version of the site, Marvel Api data is'n displayed for live versions",
     liberties: ["SASS", "Zustand"],
     github_link: "https://github.com/AlaniaShota/Marvel",
     // live_link: "https://vibrant-framer-motion.netlify.app/",
-    description: "test",
+    description:
+      "The Marvel project, as utilized the Marvel API, which is one of the largest mock data available. It was built using Vite + ReactJS. Designed the project's UI system using SCSS. Data management was efficiently handled through Zustand",
   },
   {
     id: 4,
