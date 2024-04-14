@@ -1,0 +1,31 @@
+.hamburger-footer {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    font-size: 14px;
+    gap: 30px;
+
+    a {
+        text-decoration: none !important;
+        color: #fff !important;
+        font-weight: 300;
+        margin: 10px 0;
+    }
+}
+
+@media(max-width:430px) {
+    .hamburger-footer {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        font-size: 12px;
+        gap: 10px;
+
+        a {
+            text-decoration: none !important;
+            color: #fff !important;
+            font-weight: 300;
+            margin: 10px;
+        }
+    }
+}

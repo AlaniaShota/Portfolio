@@ -1,3 +1,5 @@
+@import '../../../../../../style/variables.scss';
+
 .icon-filter {
     display: flex;
     justify-content: center;
@@ -13,15 +15,12 @@
         align-items: center;
         justify-content: center;
         cursor: pointer;
-        color: white;
-        color: black;
-
 
         & .filter-icon {
-            transition: color 0.4s linear;
+            transition: color $transition-bg;
             margin: 0px;
             font-size: 24px;
-            font-weight: 400;
+           
             position: relative;
             z-index: 1;
         }
@@ -34,8 +33,8 @@
     }
 
     .active {
-        transition: color 0.4s linear;
-        background-color: #1C1D20;
+        transition: color $transition-bg;
+        background-color: $secondary-black;
         color: white;
     }
 }

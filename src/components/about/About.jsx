@@ -10,6 +10,8 @@ import "./About.scss";
 import { AnimatePresence } from "framer-motion";
 import { useTranslation } from "react-i18next";
 
+import { Contact } from "../contact";
+
 export const About = () => {
   const [isLoading, setIsLoading] = useState(true);
   const { t } = useTranslation();
@@ -26,6 +28,7 @@ export const About = () => {
       <AboutHeader />
       <AboutDescription />
       <AboutMain />
+      <Contact />
     </div>
   );
 };

@@ -1,38 +1,39 @@
+@import '../../../style/variables.scss';
+
 .project {
     display: flex;
     width: 100%;
     justify-content: space-between;
     align-items: center;
     padding: 50px 100px 50px 100px;
-    border-top: 1px solid rgb(201, 201, 201);
+    border-top: $border-project-indentation;
     cursor: pointer;
-    transition: all 0.2s;
+    transition: $transition-project-img;
 
     .project-title {
         font-size: 60px;
         margin: 0px;
-        font-weight: 400;
-        transition: all 0.4s;
+        transition: $transition-project-img;
     }
 
     .project-description {
-        transition: all 0.4s;
+        transition: $transition-project-img;
         font-weight: 300;
     }
 
     &:last-of-type {
-        border-bottom: 1px solid rgb(201, 201, 201);
+        border-bottom: $border-project-indentation;
     }
 
     &:hover {
         opacity: 0.5;
 
         .project-title {
-            transform: translateX(-15px);
+            transform: $transform-text-left;
         }
 
         .project-description {
-            transform: translateX(15px);
+            transform: $transform-text-right;
         }
     }
 }
@@ -50,8 +51,7 @@ a {
         .project-title {
             font-size: 31px;
             margin: 0px;
-            font-weight: 400;
-            transition: all 0.4s;
+            transition: $transition-project-img;
         }
     }
 }
@@ -59,18 +59,15 @@ a {
 @media (max-width: 430px) {
     .project {
         display: none;
-
     }
 
     .mob-project {
         display: flex;
         justify-content: center;
         flex-direction: column;
-        // align-items: center;
         width: 90%;
         height: auto;
         margin-top: 30px;
-        // gap: 15px;
 
         & .mob-project-img {
             width: 100%;
@@ -86,21 +83,11 @@ a {
             margin: 15px 0;
 
             & .mob-project-title {
-                font-weight: 400;
                 font-size: 27px;
             }
 
             & .mob-project-description {
-                font-weight: 400;
                 font-size: 16px;
-            }
-
-            & .stripe {
-                display: block;
-                width: 100%;
-                margin: 10px 0;
-                height: 1px;
-                background-color: rgba(28, 29, 32, 0.175)
             }
         }
     }

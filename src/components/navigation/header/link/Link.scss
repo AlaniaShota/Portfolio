@@ -6,22 +6,20 @@
     & .indicator {
         width: 10px;
         height: 10px;
-        background-color: white;
+        background-color: #fff;
         border-radius: 50%;
         position: absolute;
         left: -30px;
-
-
     }
 
     & a {
         text-decoration: none !important;
-        color: white;
+        color: #fff;
     }
 
     .link-style {
         text-decoration: none !important;
-        color: white !important;
+        color: #fff !important;
         font-weight: 300;
     }
 }
@@ -35,7 +33,7 @@
         & .indicator {
             width: 10px;
             height: 10px;
-            background-color: white;
+            background-color: #fff;
             border-radius: 50%;
             position: absolute;
             left: -30px;
@@ -43,7 +41,7 @@
 
         .link-style {
             text-decoration: none !important;
-            color: white !important;
+            color: #fff !important;
             font-weight: 300;
         }
     }
@@ -55,16 +53,14 @@
         display: flex;
         width: 100%;
         align-items: center;
-        // justify-content: center;
 
         & .indicator {
-         display: none;
-
+            display: none;
         }
 
         & a {
             text-decoration: none !important;
-            color: white;
+            color: #fff;
             font-size: 36px;
             padding-left: 30px;
         }
@@ -72,7 +68,7 @@
         .link-style {
             padding-left: 30px;
             text-decoration: none !important;
-            color: white !important;
+            color: #fff !important;
             font-weight: 300;
             font-size: 36px;
         }

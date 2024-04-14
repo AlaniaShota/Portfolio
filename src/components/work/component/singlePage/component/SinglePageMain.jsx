@@ -7,7 +7,7 @@ import { useEffect, useRef } from "react";
 
 gsap.registerPlugin(TextPlugin);
 
-export const SinglePageMain = ({ project }) => {
+export const SinglePageMain = ({ project, onNextProject }) => {
   const descriptionTextRef = useRef(null);
   const descriptionAnimation = useAnimation();
   const [ref, inView] = useInView({
@@ -78,6 +78,7 @@ export const SinglePageMain = ({ project }) => {
           )}
         </div>
       </div>
+      <button onClick={onNextProject}>Next Project</button>
     </AnimatePresence>
   );
 };

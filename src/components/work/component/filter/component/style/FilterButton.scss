@@ -1,3 +1,5 @@
+@import '../../../../../../style/variables.scss';
+
 .filter-btn-section {
     display: flex;
     flex-direction: row;
@@ -14,14 +16,14 @@
         cursor: pointer;
         padding: 0px 35px;
 
-        color: black;
+        color: $secondary-black;
 
 
         & .filter-btn-text {
-            transition: color 0.4s linear;
+            transition: color $transition-bg;
             margin: 15px 0;
             font-size: 21px;
-            font-weight: 400;
+            // font-weight: 400;
             position: relative;
             z-index: 1;
 
@@ -31,37 +33,29 @@
     }
 
     .filter-btn.active {
-        background-color: #1C1D20;
+        background-color: $secondary-black;
     }
 
     .filter-btn.active .filter-btn-text {
-        color: white;
+        color: #fff;
     }
 
     & :hover {
-        color: white;
+        color: #fff;
     }
 
     & .filter-btn.all-btn {
-        // background-color: #1C1D20;
         border-radius: 50%;
         padding: 25px;
 
         & .filter-btn-text.all-text-btn {
             margin: 0px;
             font-size: 21px;
-            font-weight: 400;
+            // font-weight: 400;
             position: relative;
             z-index: 1;
-            // color: white;
         }
     }
-
-    // .filter-btn.active-btn {
-    //     background-color: #1C1D20;
-    //     border-radius: 50%;
-    //     padding: 25px;
-    // }
 
 }
 
@@ -71,7 +65,7 @@
 
         & .filter-btn {
             padding: 0px 30px;
-            color: black;
+            color: $secondary-black;
         }
 
         & .filter-btn.all-btn {

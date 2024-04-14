@@ -9,6 +9,8 @@ import { Projects, ImgProject } from "../projects";
 
 import { dataProject } from "../../resources/resources";
 
+import { Contact } from "../contact";
+
 import { motion, AnimatePresence } from "framer-motion";
 
 import { useState } from "react";
@@ -79,6 +81,7 @@ export const Work = () => {
           </motion.div>
         </AnimatePresence>
       </div>
+      <Contact />
     </>
   );
 };

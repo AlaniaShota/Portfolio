@@ -1,8 +1,9 @@
 import "./Hamburger.scss";
 import { menuSlide } from "../animation";
-import { Footer } from "../../footer/Footer";
 
 import { LinkNav } from "../link/Link";
+
+import { HamburgerFooter } from "../../footer/HamburgerFooter";
 
 import { useState } from "react";
 
@@ -62,7 +63,7 @@ export const Hamburger = () => {
             );
           })}
         </div>
-        <Footer />
+        <HamburgerFooter />
       </div>
     </motion.div>
   );

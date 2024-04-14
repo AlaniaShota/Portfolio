@@ -1,31 +1,147 @@
-.footer {
+@import '../../../style/variables.scss';
+
+.contact-information {
     display: flex;
-    width: 100%;
     justify-content: space-between;
-    font-size: 14px;
-    gap: 30px;
+    width: auto;
+    background: black;
 
-    a {
-        text-decoration: none !important;
-        color: white !important;
-        font-weight: 300;
-        margin: 10px 0;
-    }
-}
-
-@media(max-width:430px) {
-    .footer {
+    div {
         display: flex;
-        width: 100%;
-        justify-content: space-between;
-        font-size: 12px;
         gap: 10px;
+        align-items: flex-end;
+        justify-content: center;
+        padding: 20px;
+
+        p,
+        h3 {
+            margin: 0px;
+            padding: 2.5px;
+            cursor: pointer;
+            color: white;
+        }
+
+        p {
+            &::after {
+                content: "";
+                width: 0%;
+                height: 1px;
+                background-color: white;
+                display: block;
+                margin-top: 2px;
+                position: relative;
+                left: 50%;
+                transform: translateX(-50%);
+                transition: width 0.2s linear;
+            }
+
+            &:hover {
+                &::after {
+                    width: 100%;
+                }
+            }
+        }
 
         a {
             text-decoration: none !important;
             color: white !important;
+        }
+
+        span {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        h3 {
+            color: grey;
+            cursor: default;
             font-weight: 300;
-            margin: 10px;
+            font-size: 1em;
+        }
+    }
+
+}
+
+
+a {
+    text-decoration: none;
+}
+
+@media (max-width:1024px) {
+
+
+    .contact-information {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 0px;
+
+    }
+}
+
+
+
+@media(max-width:800px) {
+
+    .contact-information {
+        display: flex;
+
+        // padding: 20px;
+        width: 100%;
+        flex-direction: column;
+        align-items: flex-start;
+
+        div {
+            display: flex;
+            gap: 10px;
+            align-items: flex-end;
+            padding: 10px 0 20px 20px;
+
+            p,
+            h3 {
+                margin: 0px;
+                padding: 2.5px;
+                cursor: pointer;
+            }
+
+            p {
+                &::after {
+                    content: "";
+                    width: 0%;
+                    height: 1px;
+                    background-color: white;
+                    display: block;
+                    margin-top: 2px;
+                    position: relative;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    transition: width 0.2s linear;
+                }
+
+                &:hover {
+                    &::after {
+                        width: 100%;
+                    }
+                }
+            }
+
+            a {
+                text-decoration: none !important;
+                color: white !important;
+            }
+
+            span {
+                display: flex;
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            h3 {
+                color: grey;
+                cursor: default;
+                font-weight: 300;
+                font-size: 1em;
+            }
         }
     }
 }

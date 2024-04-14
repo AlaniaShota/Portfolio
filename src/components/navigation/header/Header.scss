@@ -1,25 +1,4 @@
-@mixin text-color($background) {
-    &.light-text {
-        color: black !important;
-        text-decoration: none !important;
-    }
-
-    &.dark-text {
-        color: black !important;
-        text-decoration: none !important;
-    }
-}
-
-
-@mixin indicator-bg($background) {
-    &.light-bg {
-        background-color: white;
-    }
-
-    &.dark-bg {
-        background-color: black;
-    }
-}
+@import '../../../style/variables.scss';
 
 .header {
     position: absolute;
@@ -40,8 +19,8 @@
         & .copyright {
             margin: 0px;
             font-size: 18px;
-            transition: all 0.5s cubic-bezier(0.76, 0, 0.24, 1);
-            @include text-color(#333);
+            transition: all $transition-nav;
+            color: $secondary-black;
 
         }
 
@@ -51,13 +30,13 @@
             overflow: hidden;
             white-space: nowrap;
             margin-left: 5px;
-            transition: all 0.5s cubic-bezier(0.76, 0, 0.24, 1);
+            transition: all $transition-nav;
 
             & p {
                 position: relative;
                 font-size: 18px;
-                transition: transform 0.5s cubic-bezier(0.76, 0, 0.24, 1);
-                @include text-color(#333);
+                transition: transform $transition-nav;
+                color: $secondary-black;
 
                 &:nth-of-type(3) {
                     position: absolute;
@@ -114,23 +93,18 @@
                 border-radius: 50%;
                 transform: scale(0) translateX(-50%);
                 transition: transform 0.2s cubic-bezier(0.76, 0, 0.24, 1);
-                @include indicator-bg(#333);
+                // @include indicator-bg(#333);
+                background-color: $secondary-black;
             }
 
             & .nav-link-main {
                 cursor: pointer;
                 text-decoration: none !important;
                 font-size: 18px;
-                @include text-color(#333);
+                // @include text-color(#333);
+                color: $secondary-black;
             }
         }
-
-        // .select-language {
-        //     // margin-bottom: 10px;
-        //     /* Добавляем немного отступа снизу */
-        // }
-
-
     }
 
     & a {
@@ -153,7 +127,7 @@
         width: 80px;
         height: 80px;
         border-radius: 50%;
-        background-color: #1C1D20;
+        background-color: $secondary-black;
         cursor: pointer;
         display: flex;
         align-items: center;

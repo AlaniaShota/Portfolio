@@ -17,6 +17,7 @@ import { useRef, useLayoutEffect, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
 import { AnimatePresence, motion } from "framer-motion";
+import { Contact } from "../contact";
 
 export const Landing = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -110,6 +111,7 @@ export const Landing = () => {
       <Description />
       <Projects marginTop="300px" data={dataProject} />
       <SlidingImages />
+      <Contact />
     </>
   );
 };

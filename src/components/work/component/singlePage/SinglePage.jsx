@@ -1,17 +1,15 @@
+import { SinglePageMain } from "./component";
+
 import { dataProject } from "../../../../resources/resources";
 
 import { Rounded } from "../../../Rounded";
 import { Preloader } from "../../../preloader";
 
 import { useState, useEffect } from "react";
-import { Link, useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { HiArrowNarrowRight } from "react-icons/hi";
 import { useInView } from "react-intersection-observer";
 import "./SinglePage.scss";
-
-import { SinglePageMain } from "./component";
-
-import { CiCircleAlert } from "react-icons/ci";
 
 import { AnimatePresence, motion } from "framer-motion";
 
@@ -20,10 +18,22 @@ export const SinglePage = () => {
   const { id } = useParams();
   const [project, setProject] = useState(null);
   const [isHovered, setIsHovered] = useState(false);
+
+  const navigate = useNavigate();
   const [ref, inView] = useInView({
     triggerOnce: true,
     threshold: 0.5,
   });
+
+  const handleNextProject = () => {
+    const projectIndex = dataProject.findIndex(
+      (proj) => proj.title === project.title
+    );
+    const nextProjectIndex = (projectIndex + 1) % dataProject.length;
+    const nextProject = dataProject[nextProjectIndex];
+
+    navigate(`/work/${nextProject.title}`);
+  };
 
   useEffect(() => {
     const selectedProject = dataProject.find((project) => project.title === id);
@@ -79,10 +89,7 @@ export const SinglePage = () => {
         </div>
         {project.alert_smg && (
           <div className="single-page-header-alert-section">
-            <div className="alert-text">
-              {/* <CiCircleAlert size='28px'/> */}
-              {project.alert_smg}
-            </div>
+            <div className="alert-text">{project.alert_smg}</div>
           </div>
         )}
       </div>
@@ -128,7 +135,7 @@ export const SinglePage = () => {
           </a>
         </div>
       </motion.div>
-      <SinglePageMain project={project} />
+      <SinglePageMain project={project} onNextProject={handleNextProject} />
     </div>
   );
 };
