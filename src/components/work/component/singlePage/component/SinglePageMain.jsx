@@ -5,9 +5,11 @@ import { TextPlugin } from "gsap/TextPlugin";
 import "./SinglePageMain.scss";
 import { useEffect, useRef } from "react";
 
+import { NextCase } from "./NextCase";
+
 gsap.registerPlugin(TextPlugin);
 
-export const SinglePageMain = ({ project, onNextProject }) => {
+export const SinglePageMain = ({ project, onNextProject, dataProject }) => {
   const descriptionTextRef = useRef(null);
   const descriptionAnimation = useAnimation();
   const [ref, inView] = useInView({
@@ -35,6 +37,12 @@ export const SinglePageMain = ({ project, onNextProject }) => {
     }
   }, [inView, descriptionAnimation, project]);
 
+  const currentIndex = dataProject.findIndex(
+    (proj) => proj.title === project.title,
+  );
+  const nextIndex = (currentIndex + 1) % dataProject.length;
+  const nextProject = dataProject[nextIndex];
+
   const fadeInVariant = {
     hidden: { opacity: 0 },
     visible: { opacity: 1 },
@@ -42,7 +50,7 @@ export const SinglePageMain = ({ project, onNextProject }) => {
 
   return (
     <AnimatePresence>
-      <div className="main-content">
+      <div className="main-content" key={project.id}>
         <div className="single-page-main-section">
           <motion.h3 className="section-title">DESCRIPTION</motion.h3>
           <div ref={ref} className="stripe"></div>
@@ -78,7 +86,7 @@ export const SinglePageMain = ({ project, onNextProject }) => {
           )}
         </div>
       </div>
-      <button onClick={onNextProject}>Next Project</button>
+      <NextCase nextProject={nextProject} onNextProject={onNextProject} />
     </AnimatePresence>
   );
 };

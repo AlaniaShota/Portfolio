@@ -135,7 +135,7 @@ export const Projects = ({ marginTop, data, categoryFilter }) => {
           initial="initial"
           animate={active ? "enter" : "closed"}
         ></motion.div>
-        <Link >
+        <Link>
           <motion.div
             ref={cursorLabel}
             className="cursorLabel"

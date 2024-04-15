@@ -15,6 +15,7 @@ import { AnimatePresence, motion } from "framer-motion";
 
 export const SinglePage = () => {
   const [isLoading, setIsLoading] = useState(true);
+  const [preloaderData, setPreloadData] = useState(null);
   const { id } = useParams();
   const [project, setProject] = useState(null);
   const [isHovered, setIsHovered] = useState(false);
@@ -27,31 +28,46 @@ export const SinglePage = () => {
 
   const handleNextProject = () => {
     const projectIndex = dataProject.findIndex(
-      (proj) => proj.title === project.title
+      (proj) => proj.title === project.title,
     );
+
     const nextProjectIndex = (projectIndex + 1) % dataProject.length;
     const nextProject = dataProject[nextProjectIndex];
 
-    navigate(`/work/${nextProject.title}`);
+    setIsLoading(true); // Показываем preloader перед загрузкой следующего проекта
+
+    setTimeout(() => {
+      setPreloadData(nextProject.preloader_title); // Обновляем preloadData с заголовком следующего проекта
+      navigate(`/work/${nextProject.title}`);
+    }, 1000); // Имитируем загрузку данных (задержка в 1 секунду)
   };
 
   useEffect(() => {
     const selectedProject = dataProject.find((project) => project.title === id);
-
     setProject(selectedProject);
   }, [id]);
+
+  useEffect(() => {
+    if (project) {
+      setPreloadData(project.preloader_title);
+    }
+  }, [project]);
 
   if (!project) {
     return <div>Loading...</div>;
   }
 
-  const preloadData = project.preloader_title;
+  // const preloadData = project.preloader_title;
 
   return (
-    <div className="single-page-content">
+    <div className="single-page-content" key={project.id}>
       <AnimatePresence mode="wait">
         {isLoading && (
-          <Preloader preloadData={preloadData} setIsLoading={setIsLoading} />
+          <Preloader
+            preloadData={preloaderData}
+            preloaderData={preloaderData}
+            setIsLoading={setIsLoading}
+          />
         )}
       </AnimatePresence>
       <motion.div
@@ -61,7 +77,6 @@ export const SinglePage = () => {
       >
         {project.title}
       </motion.div>
-
       <div className="single-page-header-content">
         <div className="single-page-header-type-section">
           <div className="section-title">TYPE</div>
@@ -88,7 +103,7 @@ export const SinglePage = () => {
           ))}
         </div>
         {project.alert_smg && (
-          <div className="single-page-header-alert-section">
+          <div className="single-page-header-alert-section" key={project.id}>
             <div className="alert-text">{project.alert_smg}</div>
           </div>
         )}
@@ -105,7 +120,7 @@ export const SinglePage = () => {
         <div className="btn-code-links">
           {project.live_link && (
             <>
-              <a target="_blank" href={project.live_link}>
+              <a target="_blank" href={project.live_link} key={project.id}>
                 <motion.div
                   data-scroll
                   data-scroll-speed={0.1}
@@ -135,7 +150,11 @@ export const SinglePage = () => {
           </a>
         </div>
       </motion.div>
-      <SinglePageMain project={project} onNextProject={handleNextProject} />
+      <SinglePageMain
+        project={project}
+        dataProject={dataProject}
+        onNextProject={handleNextProject}
+      />
     </div>
   );
 };
