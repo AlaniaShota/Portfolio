@@ -1,11 +1,28 @@
 .about-header-title-content {
-    width: 70%;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    // align-items: center;
 
     & .about-header-title {
         padding-top: 250px;
-        font-size: 62.5px;
+        font-size: 86.5px;
         height: 100%;
         text-align: start;
+    }
+}
+
+@media(max-width:2040px) {
+    .about-header-title-content {
+
+        width: 70%;
+
+        & .about-header-title {
+            padding-top: 250px;
+            font-size: 62.5px;
+            height: 100%;
+            text-align: start;
+        }
     }
 }
 

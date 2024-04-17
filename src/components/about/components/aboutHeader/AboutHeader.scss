@@ -1,3 +1,5 @@
+@import '../../../../style/variables.scss';
+
 .about-header-section {
     height: 100vh;
     width: auto;
@@ -6,19 +8,8 @@
     flex-direction: column;
     align-items: center;
 
-    & .about-header-title-content {
-        width: 66%;
-        margin-top: 70px;
-
-        & .about-header-title {
-            font-size: 94.5px;
-            height: 100%;
-            font-weight: 300;
-        }
-    }
-
     & .glob-animation-content {
-        width: 66%;
+        width: 50%;
         display: flex;
         justify-content: center;
         flex-direction: row;
@@ -28,16 +19,16 @@
             display: block;
             width: 100%;
             height: 1px;
-            background-color: rgba(28, 29, 32, 0.175);
+            background-color: $strip-color;
         }
 
         & .digital-ball {
             width: clamp(9em, 12vw, 11em);
             height: clamp(9em, 12vw, 11em);
-            background: rgba(28, 29, 32, 0.175);
+            background: $strip-color;
             border-radius: 50%;
-            // top: 0;
-            right: 250px;
+            top: 74%;
+            right: 25%;
             transform: translate(-50%, -50%);
             position: absolute;
             overflow: hidden;
@@ -63,10 +54,51 @@
     }
 }
 
-@media(max-width:1024px) {
+@media(max-width:2040px) {
     .about-header-section {
 
+        & .glob-animation-content {
+            width: 70%;
 
+            // & .stripe {
+            //     display: block;
+            //     width: 100%;
+            //     height: 1px;
+            //     background-color: $strip-color;
+            // }
+
+            & .digital-ball {
+                // width: clamp(9em, 12vw, 11em);
+                // height: clamp(9em, 12vw, 11em);
+                // background: $strip-color;
+                // border-radius: 50%;
+                top: 77%;
+                right: 250px;
+                // transform: translate(-50%, -50%);
+                // position: absolute;
+                // overflow: hidden;
+                // background: #455CE9;
+
+                // & .globe {
+                //     width: 100%;
+                //     height: 100%;
+                //     display: flex;
+                //     justify-content: center;
+                //     align-items: center;
+
+                //     & .icon-glob {
+                //         width: 100%;
+                //         height: 100%;
+                //         fill: white;
+                //     }
+                // }
+            }
+        }
+    }
+}
+
+@media(max-width:1024px) {
+    .about-header-section {
 
         & .glob-animation-content {
             width: 70%;

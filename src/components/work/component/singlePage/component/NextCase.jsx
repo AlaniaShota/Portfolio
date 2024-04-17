@@ -124,7 +124,7 @@ export const NextCase = ({ nextProject, onNextProject }) => {
       </motion.div>
       <div className="back-all-link">
         <Link to="/work">
-          <Rounded className="btn-back" backgroundColor={"#334BD3"}>
+          <Rounded className="roundedButton btn-back">
             <p className="btn-back-text">BACK TO ALL</p>
           </Rounded>
         </Link>
