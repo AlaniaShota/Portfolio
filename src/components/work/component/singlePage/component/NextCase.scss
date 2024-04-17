@@ -79,7 +79,7 @@
         // background-color: $round-bg-color;
     }
 
-    & .link {
+    & .back-all-link {
         display: flex;
         justify-content: center;
         align-items: center;
@@ -132,7 +132,7 @@
             }
         }
 
-        & .link {
+        & .back-all-link {
             margin-top: 60px;
         }
     }
@@ -146,7 +146,7 @@
         // flex-direction: column;
         // background-color: black;
         // // border: 1px solid red;
-        padding: 40px 0;
+        padding: 20px 0;
         // width: 100%;
 
         & .next-case-section {
@@ -196,7 +196,7 @@
         & .cursor,
         .cursorLabel {
             width: 80px;
-            // height: 80px;
+            height: 80px;
             // border-radius: 50%;
             // background-color: $round-bg-color;
             // color: #fff;
@@ -210,16 +210,15 @@
             // pointer-events: none;
         }
 
-
-
-        & .link {
+        & .back-all-link {
             display: flex;
             justify-content: center;
             align-items: center;
-            width: 100%;
+            // width: 100%;
+            margin-top: 20px;
 
             & a {
-                width: 90%;
+                // width: 90%;
                 text-decoration: none;
                 color: #fff;
                 display: flex;
@@ -230,13 +229,12 @@
                     background-color: $round-bg-color;
                     color: white;
                     border-radius: 12px;
-                    position: absolute;
+                    position: relative;
                     display: flex;
                     align-items: center;
                     justify-content: center;
                     flex-direction: row;
                     cursor: pointer;
-
 
                     & .btn-back-text {
                         color: #fff;
