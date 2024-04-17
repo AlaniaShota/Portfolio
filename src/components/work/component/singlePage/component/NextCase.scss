@@ -72,41 +72,179 @@
     }
 
     .cursorLabel {
-        width: 100%;
-        height: 100%;
+        // width: 100%;
+        // height: 100%;
         background-color: transparent;
         cursor: pointer;
+        // background-color: $round-bg-color;
     }
 
     & .link {
-        // display: flex;
-        // justify-content: center;
-        // align-items: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        margin-top: 70px;
 
         & a {
             text-decoration: none;
             color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
 
-            // background-color: #fff;
             & .btn-back {
                 background-color: $round-bg-color;
                 color: white;
                 border-radius: 12px;
                 position: absolute;
-                // width: 100%;
                 display: flex;
                 align-items: center;
                 justify-content: center;
+                flex-direction: row;
                 cursor: pointer;
-                margin-top: 30px;
-                padding: 20px 25px;
+
 
                 & .btn-back-text {
                     color: #fff;
                     z-index: 3;
+                    padding: 20px 25px;
                 }
             }
         }
     }
+}
 
+@media(max-width:1024px) {
+
+    .next-case-container {
+
+        padding: 60px 0;
+
+        & .next-case-section {
+
+            & .next-case-image {
+                width: 35%;
+            }
+
+            .stripe {
+                width: 45%;
+            }
+        }
+
+        & .link {
+            margin-top: 60px;
+        }
+    }
+}
+
+@media(max-width:430px) {
+    .next-case-container {
+        // display: flex;
+        // justify-content: center;
+        // align-items: center;
+        // flex-direction: column;
+        // background-color: black;
+        // // border: 1px solid red;
+        padding: 40px 0;
+        // width: 100%;
+
+        & .next-case-section {
+            // display: flex;
+            // justify-content: center;
+            // align-items: center;
+            // flex-direction: column;
+
+
+            & .next-case-header-section {
+                // display: flex;
+                // justify-content: center;
+                // align-items: center;
+                // flex-direction: column;
+                // color: #fff;
+
+                & h4 {
+                    font-size: 18px;
+                }
+
+                & h1 {
+                    font-size: 64px;
+                }
+            }
+
+            & .next-case-image {
+                width: 80%;
+                cursor: pointer;
+
+                // & img {
+                //     width: 100%;
+                //     height: 100%;
+                //     object-fit: cover;
+                //     cursor: pointer;
+                // }
+            }
+
+            .stripe {
+                // border-bottom: 3px solid rgb(134, 134, 134);
+                width: 85%;
+                // margin: auto;
+            }
+
+
+        }
+
+        & .cursor,
+        .cursorLabel {
+            width: 80px;
+            // height: 80px;
+            // border-radius: 50%;
+            // background-color: $round-bg-color;
+            // color: #fff;
+            // position: fixed;
+            // z-index: 3;
+            // display: flex;
+            // align-items: center;
+            // justify-content: center;
+            // font-size: 16px;
+            // font-weight: 300;
+            // pointer-events: none;
+        }
+
+
+
+        & .link {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+
+            & a {
+                width: 90%;
+                text-decoration: none;
+                color: #fff;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                & .btn-back {
+                    background-color: $round-bg-color;
+                    color: white;
+                    border-radius: 12px;
+                    position: absolute;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    flex-direction: row;
+                    cursor: pointer;
+
+
+                    & .btn-back-text {
+                        color: #fff;
+                        z-index: 3;
+                        font-size: 18px;
+                    }
+                }
+            }
+        }
+    }
 }

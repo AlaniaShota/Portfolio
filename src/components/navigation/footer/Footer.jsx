@@ -24,7 +24,7 @@ export const Footer = () => {
 
   return (
     <div className="contact-information">
-      <div>
+      <div className="contact-user-created-design">
         <span>
           <h3>{t("version")}</h3>
           <p>2022 © Edition</p>
@@ -36,7 +36,8 @@ export const Footer = () => {
           </a>
         </span>
       </div>
-      <div>
+      <div className="stripe"></div>
+      <div className="contact-social-link">
         <span>
           <h3>{t("socials")}</h3>
           <a
