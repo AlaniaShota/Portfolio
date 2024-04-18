@@ -48,9 +48,6 @@
                 }
             }
         }
-
-
-
     }
 }
 
@@ -60,38 +57,9 @@
         & .glob-animation-content {
             width: 70%;
 
-            // & .stripe {
-            //     display: block;
-            //     width: 100%;
-            //     height: 1px;
-            //     background-color: $strip-color;
-            // }
-
             & .digital-ball {
-                // width: clamp(9em, 12vw, 11em);
-                // height: clamp(9em, 12vw, 11em);
-                // background: $strip-color;
-                // border-radius: 50%;
                 top: 77%;
                 right: 250px;
-                // transform: translate(-50%, -50%);
-                // position: absolute;
-                // overflow: hidden;
-                // background: #455CE9;
-
-                // & .globe {
-                //     width: 100%;
-                //     height: 100%;
-                //     display: flex;
-                //     justify-content: center;
-                //     align-items: center;
-
-                //     & .icon-glob {
-                //         width: 100%;
-                //         height: 100%;
-                //         fill: white;
-                //     }
-                // }
             }
         }
     }
@@ -105,7 +73,6 @@
 
             & .digital-ball {
                 right: 150px;
-
             }
         }
     }

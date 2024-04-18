@@ -4,8 +4,8 @@
     align-items: center;
 
     & .indicator {
-        width: 10px;
-        height: 10px;
+        width: 15px;
+        height: 15px;
         background-color: #fff;
         border-radius: 50%;
         position: absolute;
@@ -24,35 +24,25 @@
     }
 }
 
-@media(max-width:1024px) {
+@media(max-width:2040px) {
     .link {
-        position: relative;
-        display: flex;
-        align-items: center;
 
         & .indicator {
             width: 10px;
             height: 10px;
-            background-color: #fff;
-            border-radius: 50%;
-            position: absolute;
-            left: -30px;
         }
+    }
+}
 
-        .link-style {
-            text-decoration: none !important;
-            color: #fff !important;
-            font-weight: 300;
-        }
+@media(max-width:1024px) {
+    .link {
+        align-items: center;
     }
 }
 
 @media(max-width:435px) {
     .link {
-        position: relative;
-        display: flex;
         width: 100%;
-        align-items: center;
 
         & .indicator {
             display: none;

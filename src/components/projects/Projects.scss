@@ -8,7 +8,7 @@
     width: 100%;
 
     .projects-body {
-        width: 80%;
+        width: 60%;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -17,8 +17,8 @@
     }
 
     .modalContainer {
-        height: 350px;
-        width: 400px;
+        height: 550px;
+        width: 600px;
         position: fixed;
         top: 50%;
         left: 50%;
@@ -44,13 +44,16 @@
     }
 
     .modal img {
-        height: auto;
+        // height: auto;
+        width: 550px;
+        height: 400px;
+        object-fit: cover;
     }
 
     .cursor,
     .cursorLabel {
-        width: 80px;
-        height: 80px;
+        width: 140px;
+        height: 140px;
         border-radius: 50%;
         background-color: $round-bg-color;
         color: #fff;
@@ -59,7 +62,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        font-size: 14px;
+        font-size: 18px;
         font-weight: 300;
         pointer-events: none;
     }
@@ -67,55 +70,20 @@
     .cursorLabel {
         background-color: transparent;
     }
-
-
 }
 
-@media(max-width:430px) {
+@media(max-width:2060px) {
     .projects {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
-        margin-top: 170px;
-        width: auto;
-        flex-direction: column;
-        z-index: 2;
+
 
         .projects-body {
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 100px;
+            width: 80%;
+
         }
 
         .modalContainer {
             height: 350px;
             width: 400px;
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            background-color: #fff;
-            pointer-events: none;
-            overflow: hidden;
-            z-index: 3;
-        }
-
-        .modalSlider {
-            height: 100%;
-            width: 100%;
-            position: relative;
-            transition: top $transition-project;
-        }
-
-        .modal {
-            height: 100%;
-            width: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
         }
 
         .modal img {
@@ -126,23 +94,30 @@
         .cursorLabel {
             width: 80px;
             height: 80px;
-            border-radius: 50%;
-            background-color: $round-bg-color;
-            color: #fff;
-            position: fixed;
-            z-index: 3;
-            display: flex;
-            align-items: center;
-            justify-content: center;
             font-size: 14px;
             font-weight: 300;
-            pointer-events: none;
         }
+    }
+}
 
-        .cursorLabel {
-            background-color: transparent;
+@media(max-width:430px) {
+    .projects {
+        // display: flex;
+        // align-items: center;
+        // justify-content: center;
+        // flex-direction: column;
+        // margin-top: 100px;
+        // width: auto;
+        // flex-direction: column;
+        // z-index: 2;
+
+        .projects-body {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 100px;
         }
-
-
     }
 }

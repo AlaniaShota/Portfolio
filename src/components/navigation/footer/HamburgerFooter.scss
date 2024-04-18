@@ -1,8 +1,9 @@
 .hamburger-footer {
     display: flex;
     width: 100%;
+    align-items: center;
     justify-content: space-between;
-    font-size: 14px;
+    font-size: 16px;
     gap: 30px;
 
     a {
@@ -13,19 +14,14 @@
     }
 }
 
+@media(max-width:2040px) {
+    .hamburger-footer {
+        font-size: 14px;
+    }
+}
+
 @media(max-width:430px) {
     .hamburger-footer {
-        display: flex;
-        width: 100%;
-        justify-content: space-between;
         font-size: 12px;
-        gap: 10px;
-
-        a {
-            text-decoration: none !important;
-            color: #fff !important;
-            font-weight: 300;
-            margin: 10px;
-        }
     }
 }
