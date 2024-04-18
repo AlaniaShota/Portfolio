@@ -79,7 +79,6 @@
 }
 
 @media(max-width:800px) {
-
     .about-header-section {
 
         & .about-header-title-content {
@@ -90,7 +89,9 @@
             width: 90%;
 
             & .digital-ball {
-                right: 0px;
+                border-radius: 50%;
+                top: 85%;
+                right: 5%;
             }
         }
     }

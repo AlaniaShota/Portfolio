@@ -13,7 +13,6 @@
         height: 100%;
 
         & .important-img-content {
-
             width: 100%;
             height: 100%;
             position: absolute;
@@ -24,7 +23,7 @@
             & .important-img {
                 width: 100%;
                 height: 100%;
-                object-fit: contain;
+                object-fit: cover;
             }
         }
 
@@ -43,16 +42,27 @@
                 object-position: right bottom;
             }
         }
-
-
     }
+}
 
+@media(max-width:2060px) {
+    .mySwiper {
+
+        & .slider-content {
+
+            & .important-img-content {
+
+                & .important-img {
+                    object-fit: contain;
+                }
+            }
+        }
+    }
 }
 
 @media (max-width:1024px) {
     .mySwiper {
         height: 90vh;
-        width: 90%;
         margin: 50px 0 150px 0;
 
         & .slider-content {

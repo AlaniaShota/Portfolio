@@ -6,7 +6,7 @@ import { useState } from "react";
 import "./style/UIFilter.scss";
 
 export const UIFilter = ({ setCustomComponent }) => {
-  const [activeButton, setActiveButton] = useState("A");
+  const [activeButton, setActiveButton] = useState("B");
   const buttonData = [
     { type: "A", icon: <FiLayers className="filter-icon" /> },
     { type: "B", icon: <PiSquaresFour className="filter-icon" /> },

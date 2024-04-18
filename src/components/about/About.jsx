@@ -3,14 +3,14 @@ import { AboutHeader } from "./components/aboutHeader";
 import { AboutDescription } from "./components/aboutDescription";
 import { AboutMain } from "./components/aboutMain";
 
+import { Contact } from "../contact";
+
 import { Preloader } from "../preloader";
 
 import { useState } from "react";
 import "./About.scss";
 import { AnimatePresence } from "framer-motion";
 import { useTranslation } from "react-i18next";
-
-import { Contact } from "../contact";
 
 export const About = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -25,7 +25,7 @@ export const About = () => {
           <Preloader preloadData={preloadData} setIsLoading={setIsLoading} />
         )}
       </AnimatePresence>
-      <AboutHeader />
+      <AboutHeader  />
       <AboutDescription />
       <AboutMain />
       <Contact />

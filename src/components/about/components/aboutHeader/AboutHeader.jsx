@@ -5,9 +5,14 @@ import { motion } from "framer-motion";
 import { CiGlobe } from "react-icons/ci";
 
 export const AboutHeader = () => {
+  const widthAboutSectionClass = "widthAboutSectionClass";
+
   return (
     <div className="about-header-section">
-      <HeaderSection title="Helping brands thrive in the digital world" />
+      <HeaderSection
+        title="Helping brands thrive in the digital world"
+        widthAboutSectionClass={widthAboutSectionClass}
+      />
       <div className="glob-animation-content">
         <div className="stripe"></div>
         <div className="digital-ball">

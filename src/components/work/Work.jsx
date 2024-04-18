@@ -19,7 +19,8 @@ import { useSearchParams } from "react-router-dom";
 
 export const Work = () => {
   const [isLoading, setIsLoading] = useState(true);
-  const [customComponent, setCustomComponent] = useState("A");
+
+  const [customComponent, setCustomComponent] = useState("B"); 
   const [searchParams, setSearchParams] = useSearchParams();
 
   const { t } = useTranslation();
@@ -27,6 +28,9 @@ export const Work = () => {
   const categoryFilter = searchParams.get("type");
 
   const preloadData = [t("link_work")];
+
+  const widthWorkSectionClass = "widthWorkSectionClass";
+
 
   const renderComponent = () => {
     switch (customComponent) {
@@ -62,7 +66,7 @@ export const Work = () => {
             <Preloader preloadData={preloadData} setIsLoading={setIsLoading} />
           )}
         </AnimatePresence>
-        <HeaderSection title={t("work_title")} />
+        <HeaderSection title={t("work_title")} widthWorkSectionClass={widthWorkSectionClass}/>
         <Filter
           categoryFilter={categoryFilter}
           search={setSearchParams}

@@ -18,6 +18,7 @@
 
     .project-description {
         transition: $transition-project-img;
+        font-size: 24px;
         font-weight: 300;
     }
 
@@ -41,6 +42,15 @@
 a {
     text-decoration: none !important;
     color: black !important;
+}
+
+@media(max-width:2060px) {
+    .project {
+
+        .project-description {
+            font-size: 16px;
+        }
+    }
 }
 
 @media (max-width:1024px) {
