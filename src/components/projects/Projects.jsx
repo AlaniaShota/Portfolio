@@ -97,7 +97,9 @@ export const Projects = ({ marginTop, data, categoryFilter }) => {
   if (isSmallScreen) {
     return (
       <div className="mob-projects-container">
+        {/* <Link to={`/work/${data.title}`}> */}
         <ImgProject data={displayedProject} />
+        {/* </Link> */}
       </div>
     );
   } else {

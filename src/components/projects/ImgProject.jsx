@@ -10,7 +10,7 @@ export const ImgProject = ({ data, categoryFilter }) => {
     <div className="project-img-content mob-project">
       {displayedProject.map((item) => (
         <div key={item.id} className="project-img-section">
-          <Link to={item.title}>
+          <Link to={`/work/${item.title}`}>
             <div
               className="project-img-content-img "
               style={{ background: item.color }}
