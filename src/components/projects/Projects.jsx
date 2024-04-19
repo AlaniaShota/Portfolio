@@ -2,6 +2,8 @@ import { Project } from "./project/Project";
 
 import "./Projects.scss";
 
+import { ImgProject } from "./ImgProject";
+
 import gsap from "gsap";
 import { motion } from "framer-motion";
 import { useState, useEffect, useRef } from "react";
@@ -24,6 +26,7 @@ const scaleAnimation = {
 };
 
 export const Projects = ({ marginTop, data, categoryFilter }) => {
+  const [isSmallScreen, setIsSmallScreen] = useState(window.innerWidth <= 430);
   const [modal, setModal] = useState({ active: false, index: 0 });
   const { active, index } = modal;
   const modalContainer = useRef(null);
@@ -38,7 +41,16 @@ export const Projects = ({ marginTop, data, categoryFilter }) => {
   const yMoveCursorLabel = useRef(null);
 
   useEffect(() => {
-    //Move Container
+    const handleResize = () => {
+      setIsSmallScreen(window.innerWidth <= 430);
+    };
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
+  useEffect(() => {
     xMoveContainer.current = gsap.quickTo(modalContainer.current, "left", {
       duration: 0.8,
       ease: "power3",
@@ -47,7 +59,6 @@ export const Projects = ({ marginTop, data, categoryFilter }) => {
       duration: 0.8,
       ease: "power3",
     });
-    //Move cursor
     xMoveCursor.current = gsap.quickTo(cursor.current, "left", {
       duration: 0.5,
       ease: "power3",
@@ -56,7 +67,6 @@ export const Projects = ({ marginTop, data, categoryFilter }) => {
       duration: 0.5,
       ease: "power3",
     });
-    //Move cursor label
     xMoveCursorLabel.current = gsap.quickTo(cursorLabel.current, "left", {
       duration: 0.45,
       ease: "power3",
@@ -84,69 +94,77 @@ export const Projects = ({ marginTop, data, categoryFilter }) => {
     ? data.filter((item) => item.type === categoryFilter)
     : data;
 
-  return (
-    <main
-      onMouseMove={(e) => {
-        moveItems(e.clientX, e.clientY);
-      }}
-      className="projects"
-      style={{ marginTop: marginTop }}
-    >
-      <div className="projects-body">
-        {displayedProject.map((project, index) => {
-          return (
-            <Project
-              index={index}
-              title={project.title}
-              manageModal={manageModal}
-              key={index}
-              imgSrc={project.src}
-            />
-          );
-        })}
+  if (isSmallScreen) {
+    return (
+      <div className="mob-projects-container">
+        <ImgProject data={displayedProject} />
       </div>
-      <>
-        <motion.div
-          ref={modalContainer}
-          variants={scaleAnimation}
-          initial="initial"
-          animate={active ? "enter" : "closed"}
-          className="modalContainer"
-        >
-          <div style={{ top: index * -100 + "%" }} className="modalSlider">
-            {displayedProject.map((project, index) => {
-              const { src, color } = project;
-              return (
-                <div
-                  className="modal"
-                  style={{ backgroundColor: color }}
-                  key={`modal_${index}`}
-                >
-                  <img src={src} width={300} height={0} alt="image" />
-                </div>
-              );
-            })}
-          </div>
-        </motion.div>
-        <motion.div
-          ref={cursor}
-          className="cursor"
-          variants={scaleAnimation}
-          initial="initial"
-          animate={active ? "enter" : "closed"}
-        ></motion.div>
-        <Link>
+    );
+  } else {
+    return (
+      <main
+        onMouseMove={(e) => {
+          moveItems(e.clientX, e.clientY);
+        }}
+        className="projects"
+        style={{ marginTop: marginTop }}
+      >
+        <div className="projects-body">
+          {displayedProject.map((project, index) => {
+            return (
+              <Project
+                index={index}
+                title={project.title}
+                manageModal={manageModal}
+                key={index}
+                imgSrc={project.src}
+              />
+            );
+          })}
+        </div>
+        <>
           <motion.div
-            ref={cursorLabel}
-            className="cursorLabel"
+            ref={modalContainer}
             variants={scaleAnimation}
             initial="initial"
             animate={active ? "enter" : "closed"}
+            className="modalContainer"
           >
-            View
+            <div style={{ top: index * -100 + "%" }} className="modalSlider">
+              {displayedProject.map((project, index) => {
+                const { src, color } = project;
+                return (
+                  <div
+                    className="modal"
+                    style={{ backgroundColor: color }}
+                    key={`modal_${index}`}
+                  >
+                    <img src={src} width={300} height={0} alt="image" />
+                  </div>
+                );
+              })}
+            </div>
           </motion.div>
-        </Link>
-      </>
-    </main>
-  );
+          <motion.div
+            ref={cursor}
+            className="cursor"
+            variants={scaleAnimation}
+            initial="initial"
+            animate={active ? "enter" : "closed"}
+          ></motion.div>
+          <Link>
+            <motion.div
+              ref={cursorLabel}
+              className="cursorLabel"
+              variants={scaleAnimation}
+              initial="initial"
+              animate={active ? "enter" : "closed"}
+            >
+              View
+            </motion.div>
+          </Link>
+        </>
+      </main>
+    );
+  }
 };

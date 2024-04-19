@@ -15,21 +15,16 @@
         justify-content: center;
         cursor: pointer;
         padding: 0px 35px;
-
         color: $secondary-black;
-
 
         & .filter-btn-text {
             transition: color $transition-bg;
             margin: 15px 0;
-            font-size: 21px;
+            font-size: 34px;
             // font-weight: 400;
             position: relative;
             z-index: 1;
-
         }
-
-
     }
 
     .filter-btn.active {
@@ -46,17 +41,35 @@
 
     & .filter-btn.all-btn {
         border-radius: 50%;
-        padding: 25px;
+        padding: 30px;
 
         & .filter-btn-text.all-text-btn {
             margin: 0px;
-            font-size: 21px;
-            // font-weight: 400;
+            font-size: 34px;
             position: relative;
             z-index: 1;
         }
     }
+}
 
+@media(max-width:2060px) {
+    .filter-btn-section {
+
+        & .filter-btn {
+
+            & .filter-btn-text {
+                font-size: 21px;
+            }
+        }
+
+        & .filter-btn.all-btn {
+            padding: 25px;
+
+            & .filter-btn-text.all-text-btn {
+                font-size: 21px;
+            }
+        }
+    }
 }
 
 @media(max-width:800px) {

@@ -11,9 +11,19 @@
     padding: 15px 60px 15px 60px;
 
     p {
+        font-size: 21px;
         position: relative;
         z-index: 1;
         transition: color $transition-bg;
+    }
+}
+
+@media(max-width:2060px) {
+    .roundedButton {
+
+        p {
+            font-size: 18px;
+        }
     }
 }
 

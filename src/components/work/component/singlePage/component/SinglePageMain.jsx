@@ -70,7 +70,7 @@ export const SinglePageMain = ({ project, onNextProject, dataProject }) => {
               animate={inView ? "visible" : "hidden"}
               transition={{ delay: 0.4, duration: 1 }}
             >
-              <img src={project.secondary_img[0]} alt="" />
+              <img src={project.secondary_img[0]} alt="ERROR" />
             </motion.div>
           )}
           {project.secondary_img.length > 1 && (
@@ -81,7 +81,7 @@ export const SinglePageMain = ({ project, onNextProject, dataProject }) => {
               animate={inView ? "visible" : "hidden"}
               transition={{ delay: 0.6, duration: 1 }}
             >
-              <img src={project.secondary_img[1]} alt="" />
+              <img src={project.secondary_img[1]} alt="ERROR" />
             </motion.div>
           )}
         </div>

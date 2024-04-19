@@ -9,7 +9,7 @@
 
     & .icon-filter-btn {
         border-radius: 50%;
-        padding: 25px;
+        padding: 30px;
         position: relative;
         display: flex;
         align-items: center;
@@ -19,8 +19,8 @@
         & .filter-icon {
             transition: color $transition-bg;
             margin: 0px;
-            font-size: 24px;
-           
+            font-size: 36px;
+
             position: relative;
             z-index: 1;
         }
@@ -36,6 +36,19 @@
         transition: color $transition-bg;
         background-color: $secondary-black;
         color: white;
+    }
+}
+
+@media(max-width:2060px) {
+    .icon-filter {
+
+        & .icon-filter-btn {
+            padding: 25px;
+
+            & .filter-icon {
+                font-size: 24px;
+            }
+        }
     }
 }
 

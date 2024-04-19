@@ -101,15 +101,10 @@
 }
 
 @media(max-width:430px) {
-    .projects {
-
-        .projects-body {
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 100px;
-        }
+    .mob-projects-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 150px;
     }
 }
