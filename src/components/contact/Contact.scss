@@ -19,7 +19,8 @@
 
         .contact-section-title {
             border-bottom: 1px solid rgb(134, 134, 134);
-            padding-bottom: 70px;
+            // padding-bottom: 70px;
+            padding: 100px 0;
             position: relative;
 
             .contact-span-content-img {
@@ -165,27 +166,32 @@ a {
 
 @media (max-width:1024px) {
     .contact {
-        height: max-content;
+        // height: max-content;
 
         .contact-body {
-            padding-top: 200px;
+            padding-top: 0px;
             width: 80%;
+            height: 100%;
 
             .contact-section-title {
-                padding-bottom: 40px;
-                margin: 0;
                 position: relative;
                 width: 100%;
+                padding: 20px 0 40px 0;
 
                 .contact-btn-content {
                     position: absolute;
                     left: calc(100% - 250px);
-                    top: calc(100% - 90px);
+                    top: calc(100% - 80px);
+                }
+
+                .contact-btn {
+                    width: 160px;
+                    height: 160px;
                 }
             }
 
             .contact-navigation-section {
-                margin: 100px 0px 50px 0;
+                margin: 100px 0px 20px 0;
                 justify-content: flex-start;
             }
         }
@@ -197,74 +203,32 @@ a {
         width: 100%;
 
         .contact-body {
-            padding-top: 100px;
+            // padding-top: 30px;
             width: 90%;
 
             .contact-section-title {
-                border-bottom: 1px solid rgb(134, 134, 134);
-                padding-bottom: 50px;
-
-                margin: auto;
-                position: relative;
-                display: flex;
-                flex-direction: column;
+                padding: 20px 0 50px 0;
 
                 .contact-span-content-img {
-                    display: flex;
-                    align-items: center;
 
                     .img-contact-section {
-                        width: 100px;
-                        height: 100px;
-                        position: relative;
-                        border-radius: 50%;
-                        overflow: hidden;
-
-                        .img-contact {
-                            object-fit: cover;
-                        }
+                        width: 120px;
+                        height: 120px;
                     }
 
                     .contact-section-description-title {
-                        padding-left: 15px;
-                        font-size: 5vw;
-                        margin: 0px;
-                        font-weight: 300;
+                        font-size: 54px;
                     }
                 }
 
                 .contact-section-secondary-description-title {
-                    font-size: 5vw;
-                    margin: 0px;
-
-                    font-weight: 300;
-                }
-
-                .contact-btn-content {
-                    position: absolute;
-                    left: calc(100% - 250px);
-                    top: calc(100% - 85px);
-
+                    font-size: 54px;
                 }
 
                 .contact-btn {
-                    width: 180px;
-                    height: 180px;
-                    background-color: #455CE9;
-                    color: white;
-                    border-radius: 50%;
-                    position: absolute;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    cursor: pointer;
 
                     .contact-btn-text {
-                        margin: 0px;
                         font-size: 16px;
-                        font-weight: 300;
-                        z-index: 2;
-                        position: relative;
                     }
                 }
 
@@ -276,9 +240,7 @@ a {
             }
 
             .contact-navigation-section {
-
-
-                margin: 120px 0 10px 0;
+                margin: 120px 0 50px 0;
 
                 a {
                     width: 100%;
@@ -288,21 +250,17 @@ a {
             }
         }
     }
-
-    a {
-        text-decoration: none;
-    }
 }
 
 @media(max-width:430px) {
     .contact {
         height: auto;
-        justify-content: space-evenly;
+        justify-content: space-around;
 
         .contact-body {
-            padding: 70px 0 40px 0;
+            // padding: 70px 0 40px 0;
             height: auto;
-            gap: 100px;
+            gap: 80px;
             justify-content: space-evenly;
 
             .contact-section-title {
@@ -404,7 +362,7 @@ a {
                 align-items: flex-start;
                 flex-direction: column;
                 gap: 20px;
-                margin: 0;
+                margin: 0 0 15px 0;
             }
         }
     }

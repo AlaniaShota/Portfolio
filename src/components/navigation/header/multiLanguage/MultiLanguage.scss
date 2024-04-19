@@ -1,6 +1,9 @@
 .select-language {
     padding: 0;
     width: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
     & .select {
         width: 100%;
@@ -8,14 +11,13 @@
         justify-content: center;
         align-items: center;
         cursor: pointer;
-        border-radius: 105px;
 
         & .lng-text {
             padding: 0;
             margin: 0;
         }
     }
-    
+
     .custom-select__control {
         cursor: pointer;
     }
