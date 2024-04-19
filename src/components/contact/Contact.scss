@@ -256,9 +256,11 @@ a {
     .contact {
         // height: 70vh;
         justify-content: space-evenly;
+        // width: 100%;
 
         .contact-body {
             padding: 40px 0 0 0;
+            // width: 100%;
             // height: 100%;
             // gap: 80px;
             justify-content: center;
@@ -303,7 +305,7 @@ a {
                 align-items: flex-start;
                 flex-direction: column;
                 gap: 20px;
-                margin: 120px 0 35px 0;
+                margin: 170px 0 35px 0;
             }
         }
     }

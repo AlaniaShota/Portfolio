@@ -136,11 +136,12 @@ a {
 
     .contact-information {
         flex-direction: column-reverse;
+        width: 100%;
 
         & .stripe {
             display: block;
             width: 90%;
-            margin: 15px 20px;
+            margin: 15px 10px;
             height: 1px;
             background-color: rgb(134, 134, 134);
             opacity: 0.5;
@@ -150,13 +151,13 @@ a {
             justify-content: flex-start;
             align-items: flex-start;
             justify-content: space-between;
-            padding: 10px auto 20px 20px;
+            padding: 10px 10px 10px 10px;
             width: 90%;
         }
 
         & .contact-social-link {
             justify-content: flex-start;
-            padding: 10px 0 0 20px;
+            padding: 10px 0 0 10px;
             width: 90%;
         }
 
