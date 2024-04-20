@@ -12,6 +12,8 @@ import namari1 from "../assets/img/namari1.png";
 import namari4 from "../assets/img/namari4.png";
 import namari3 from "../assets/img/namari3.png";
 
+import { t } from "i18next";
+
 export const dataProject = [
   {
     id: 1,
@@ -24,8 +26,7 @@ export const dataProject = [
     liberties: ["TailwindCSS", "Framer-Motion", "GSAP", "Swiper"],
     github_link: "https://github.com/AlaniaShota/Georgia",
     live_link: "https://travel-georgia.netlify.app/",
-    description:
-      "Developed a project which showcases Georgia and it characteristics for tourists. Built using Vite + ReactJS.Implemented a design system using TailwindCSS and enhanced the user interface with features like framer-motion, gsap, and swiper. Data management was handled efficiently using Zustand.",
+    description: t("description_georgia"),
   },
   {
     id: 2,

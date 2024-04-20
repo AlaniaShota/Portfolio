@@ -1,3 +1,5 @@
+import { NextCase } from "./NextCase";
+
 import { AnimatePresence, motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { gsap } from "gsap";
@@ -5,7 +7,7 @@ import { TextPlugin } from "gsap/TextPlugin";
 import "./SinglePageMain.scss";
 import { useEffect, useRef } from "react";
 
-import { NextCase } from "./NextCase";
+import { t } from "i18next";
 
 gsap.registerPlugin(TextPlugin);
 
@@ -16,6 +18,8 @@ export const SinglePageMain = ({ project, onNextProject, dataProject }) => {
     triggerOnce: true,
     threshold: 0.5,
   });
+
+  
 
   useEffect(() => {
     const firstTextElement = descriptionTextRef.current;
@@ -52,7 +56,7 @@ export const SinglePageMain = ({ project, onNextProject, dataProject }) => {
     <AnimatePresence>
       <div className="main-content" key={project.id}>
         <div className="single-page-main-section">
-          <motion.h3 className="section-title">DESCRIPTION</motion.h3>
+          <motion.h3 className="section-title">{t("description_title")}</motion.h3>
           <div ref={ref} className="stripe"></div>
           <motion.p
             className="section-text"

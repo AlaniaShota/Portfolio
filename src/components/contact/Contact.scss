@@ -19,7 +19,6 @@
 
         .contact-section-title {
             border-bottom: 1px solid rgb(134, 134, 134);
-            // padding-bottom: 70px;
             padding: 100px 0;
             position: relative;
 
@@ -166,7 +165,6 @@ a {
 
 @media (max-width:1024px) {
     .contact {
-        // height: max-content;
 
         .contact-body {
             padding-top: 0px;
@@ -203,7 +201,6 @@ a {
         width: 100%;
 
         .contact-body {
-            // padding-top: 30px;
             width: 90%;
 
             .contact-section-title {
@@ -254,15 +251,10 @@ a {
 
 @media(max-width:430px) {
     .contact {
-        // height: 70vh;
         justify-content: space-evenly;
-        // width: 100%;
 
         .contact-body {
             padding: 40px 0 0 0;
-            // width: 100%;
-            // height: 100%;
-            // gap: 80px;
             justify-content: center;
 
             .contact-section-title {
@@ -272,11 +264,8 @@ a {
                 margin: 0 0 0px 0;
 
                 .contact-span-content-img {
-
-                    .img-contact-section {
-                        width: 100px;
-                        height: 100px;
-                    }
+                    align-items: center;
+                    justify-content: flex-start;
 
                     .contact-section-description-title {
                         padding-left: 15px;
@@ -295,7 +284,7 @@ a {
 
                 svg {
                     position: absolute;
-                    top: 80%;
+                    top: 85%;
                     left: 90%;
                 }
             }

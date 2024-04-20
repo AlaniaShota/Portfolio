@@ -7,11 +7,16 @@
     "socials": "Socials",
     "version": "Version",
     "code": "Code",
-    "about_me":"About Me",
-    "navigation":"Navigation",
-    "link_home":"Home",
+    "about_me": "About Me",
+    "navigation": "Navigation",
+    "link_home": "Home",
     "link_work": "Work",
-    "work_title":"My Projects",
+    "work_title": "My Projects",
     "link_about": "About",
-    "link_contact": "Contact"
+    "link_contact": "Contact",
+    "view": "View",
+    "type_title": "TYPE",
+    "liberties_title": "LIBERTIES",
+    "description_title": "DESCRIPTION",
+    "description_georgia": "Developed a project which showcases Georgia and it characteristics for tourists. Built using Vite + ReactJS.Implemented a design system using TailwindCSS and enhanced the user interface with features like framer-motion, gsap, and swiper. Data management was handled efficiently using Zustand."
 }

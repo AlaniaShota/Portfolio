@@ -41,13 +41,13 @@ export const Contact = () => {
   const tel = "+995568820317";
   const formattedTel = tel.replace(
     /(\d{3})(\d{3})(\d{2})(\d{2})(\d{2})/,
-    "$1 $2 $3 $4 $5"
+    "$1 $2 $3 $4 $5",
   );
 
   return (
     <div style={{ y }} ref={container} className="contact">
       <div className="contact-body">
-        <div className="contact-section-title">
+        <div className="contact-section-title ">
           <span className="contact-span-content-img">
             <div className="img-contact-section">
               <img alt="user" src={userImg} className="img-contact" />

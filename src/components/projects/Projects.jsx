@@ -8,6 +8,7 @@ import gsap from "gsap";
 import { motion } from "framer-motion";
 import { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
+import { t } from "i18next";
 
 const scaleAnimation = {
   initial: { scale: 0, x: "-50%", y: "-50%" },
@@ -97,9 +98,7 @@ export const Projects = ({ marginTop, data, categoryFilter }) => {
   if (isSmallScreen) {
     return (
       <div className="mob-projects-container">
-        {/* <Link to={`/work/${data.title}`}> */}
         <ImgProject data={displayedProject} />
-        {/* </Link> */}
       </div>
     );
   } else {
@@ -162,7 +161,7 @@ export const Projects = ({ marginTop, data, categoryFilter }) => {
               initial="initial"
               animate={active ? "enter" : "closed"}
             >
-              View
+              {t("view")}
             </motion.div>
           </Link>
         </>

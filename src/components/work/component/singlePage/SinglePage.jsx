@@ -11,6 +11,7 @@ import { HiArrowNarrowRight } from "react-icons/hi";
 import { useInView } from "react-intersection-observer";
 import "./SinglePage.scss";
 
+import { t } from "i18next";
 import { AnimatePresence, motion } from "framer-motion";
 
 export const SinglePage = () => {
@@ -34,12 +35,12 @@ export const SinglePage = () => {
     const nextProjectIndex = (projectIndex + 1) % dataProject.length;
     const nextProject = dataProject[nextProjectIndex];
 
-    setIsLoading(true); // Показываем preloader перед загрузкой следующего проекта
+    setIsLoading(true);
 
     setTimeout(() => {
-      setPreloadData(nextProject.preloader_title); // Обновляем preloadData с заголовком следующего проекта
+      setPreloadData(nextProject.preloader_title);
       navigate(`/work/${nextProject.title}`);
-    }, 1000); // Имитируем загрузку данных (задержка в 1 секунду)
+    }, 1000);
   };
 
   useEffect(() => {
@@ -53,11 +54,7 @@ export const SinglePage = () => {
     }
   }, [project]);
 
-  if (!project) {
-    return <div>Loading...</div>;
-  }
-
-  // const preloadData = project.preloader_title;
+  if (!project) return null;
 
   return (
     <div className="single-page-content" key={project.id}>
@@ -79,7 +76,7 @@ export const SinglePage = () => {
       </motion.div>
       <div className="single-page-header-content">
         <div className="single-page-header-type-section">
-          <div className="section-title">TYPE</div>
+          <div className="section-title">{t("type_title")}</div>
           <div className="stripe"></div>
           <motion.div
             animate={{ x: isHovered ? 15 : 0 }}
@@ -90,7 +87,7 @@ export const SinglePage = () => {
           </motion.div>
         </div>
         <div className="single-page-header-liberties-section">
-          <div className="section-title">LIBERTIES</div>
+          <div className="section-title">{t("liberties_title")}</div>
           <div className="stripe"></div>
           {project.liberties.map((item, index) => (
             <motion.ul
@@ -98,7 +95,7 @@ export const SinglePage = () => {
               transition={{ duration: 0.2 }}
               key={index}
             >
-              <li className="section-text ">{item}</li>
+              <li className="section-text">{item}</li>
             </motion.ul>
           ))}
         </div>
@@ -108,7 +105,6 @@ export const SinglePage = () => {
           </div>
         )}
       </div>
-
       <motion.div
         ref={ref}
         initial={{ opacity: 0, y: 100 }}
