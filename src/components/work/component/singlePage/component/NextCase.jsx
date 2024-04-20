@@ -6,6 +6,7 @@ import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 
 import { Link } from "react-router-dom";
+import { t } from "i18next";
 
 const scaleAnimation = {
   initial: { scale: 0, x: "-50%", y: "-50%" },
@@ -86,7 +87,7 @@ export const NextCase = ({ nextProject, onNextProject }) => {
     <div className="next-case-container">
       <div className="next-case-section">
         <div className="next-case-header-section">
-          <h4>NEXT CASE</h4>
+          {t("next_case")}
           <h1>{nextProject.title}</h1>
         </div>
         <div
@@ -120,12 +121,12 @@ export const NextCase = ({ nextProject, onNextProject }) => {
         initial="initial"
         animate={active ? "enter" : "closed"}
       >
-        NEXT CASE
+        {t("view")}
       </motion.div>
       <div className="back-all-link">
         <Link to="/work">
           <Rounded className="roundedButton btn-back">
-            <p className="btn-back-text">BACK TO ALL</p>
+            <p className="btn-back-text">{t("back_btn")}</p>
           </Rounded>
         </Link>
       </div>

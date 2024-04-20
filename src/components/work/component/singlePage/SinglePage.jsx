@@ -11,7 +11,8 @@ import { HiArrowNarrowRight } from "react-icons/hi";
 import { useInView } from "react-intersection-observer";
 import "./SinglePage.scss";
 
-import { t } from "i18next";
+import { useTranslation } from "react-i18next";
+
 import { AnimatePresence, motion } from "framer-motion";
 
 export const SinglePage = () => {
@@ -20,7 +21,7 @@ export const SinglePage = () => {
   const { id } = useParams();
   const [project, setProject] = useState(null);
   const [isHovered, setIsHovered] = useState(false);
-
+  const { t } = useTranslation();
   const navigate = useNavigate();
   const [ref, inView] = useInView({
     triggerOnce: true,

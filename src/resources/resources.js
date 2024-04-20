@@ -12,7 +12,12 @@ import namari1 from "../assets/img/namari1.png";
 import namari4 from "../assets/img/namari4.png";
 import namari3 from "../assets/img/namari3.png";
 
-import { t } from "i18next";
+import i18n from "i18next";
+
+const descriptionGeorgia = i18n.t("description_georgia");
+const descriptionVibrant = i18n.t("description_vibrant");
+const descriptionMarvel = i18n.t("description_marvel");
+const descriptionNamari = i18n.t("description_namari");
 
 export const dataProject = [
   {
@@ -26,7 +31,7 @@ export const dataProject = [
     liberties: ["TailwindCSS", "Framer-Motion", "GSAP", "Swiper"],
     github_link: "https://github.com/AlaniaShota/Georgia",
     live_link: "https://travel-georgia.netlify.app/",
-    description: t("description_georgia"),
+    descriptionKey: descriptionGeorgia,
   },
   {
     id: 2,
@@ -39,8 +44,7 @@ export const dataProject = [
     liberties: ["SASS", "Framer-Motion"],
     github_link: "https://github.com/AlaniaShota/vibrant",
     live_link: "https://vibrant-framer-motion.netlify.app/",
-    description:
-      "The vibrant project is a landing page. It was built using Vite + ReactJS. Designed the project's UI system using SCSS and enhanced with libraries like a framer-motion.",
+    description: descriptionVibrant,
   },
   {
     id: 3,
@@ -54,9 +58,7 @@ export const dataProject = [
       "There is'n demo version of the site, Marvel Api data is'n displayed for live versions",
     liberties: ["SASS", "Zustand"],
     github_link: "https://github.com/AlaniaShota/Marvel",
-    // live_link: "https://vibrant-framer-motion.netlify.app/",
-    description:
-      "The Marvel project, as utilized the Marvel API, which is one of the largest mock data available. It was built using Vite + ReactJS. Designed the project's UI system using SCSS. Data management was efficiently handled through Zustand",
+    description: descriptionMarvel,
   },
   {
     id: 4,
@@ -69,6 +71,6 @@ export const dataProject = [
     liberties: ["SASS", "React Icons", "Framer-Motion"],
     github_link: "https://github.com/AlaniaShota/Namari",
     live_link: "https://namari-vite.netlify.app/",
-    description: "test",
+    description: descriptionNamari,
   },
 ];
