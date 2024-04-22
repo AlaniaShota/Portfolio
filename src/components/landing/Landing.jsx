@@ -13,11 +13,12 @@ import { SlidingImages } from "../slidingImages";
 
 import { dataProject } from "../../resources/resources";
 
+import { Contact } from "../contact";
+
 import { useRef, useLayoutEffect, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
 import { AnimatePresence, motion } from "framer-motion";
-import { Contact } from "../contact";
 
 export const Landing = () => {
   const [isLoading, setIsLoading] = useState(true);

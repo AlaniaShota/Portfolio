@@ -4,20 +4,12 @@ import georgia3 from "../assets/img/why-georgia3.png";
 import vibrant1 from "../assets/img/vibrant1.png";
 import vibrant4 from "../assets/img/vibrant4.png";
 import vibrant3 from "../assets/img/vibrant3.png";
-
 import marvel1 from "../assets/img/marvel1.png";
 import marvel4 from "../assets/img/marvel4.png";
 import marvel3 from "../assets/img/marvel3.png";
 import namari1 from "../assets/img/namari1.png";
 import namari4 from "../assets/img/namari4.png";
 import namari3 from "../assets/img/namari3.png";
-
-import i18n from "i18next";
-
-const descriptionGeorgia = i18n.t("description_georgia");
-const descriptionVibrant = i18n.t("description_vibrant");
-const descriptionMarvel = i18n.t("description_marvel");
-const descriptionNamari = i18n.t("description_namari");
 
 export const dataProject = [
   {
@@ -31,7 +23,7 @@ export const dataProject = [
     liberties: ["TailwindCSS", "Framer-Motion", "GSAP", "Swiper"],
     github_link: "https://github.com/AlaniaShota/Georgia",
     live_link: "https://travel-georgia.netlify.app/",
-    descriptionKey: descriptionGeorgia,
+    descriptionKey: "description_georgia",
   },
   {
     id: 2,
@@ -44,7 +36,7 @@ export const dataProject = [
     liberties: ["SASS", "Framer-Motion"],
     github_link: "https://github.com/AlaniaShota/vibrant",
     live_link: "https://vibrant-framer-motion.netlify.app/",
-    description: descriptionVibrant,
+    descriptionKey: "description_vibrant",
   },
   {
     id: 3,
@@ -54,11 +46,10 @@ export const dataProject = [
     secondary_img: [marvel4, marvel3],
     color: "#EFE8D3",
     type: "ReactJS",
-    alert_smg:
-      "There is'n demo version of the site, Marvel Api data is'n displayed for live versions",
+    alert_smg: "alert_marvel",
     liberties: ["SASS", "Zustand"],
     github_link: "https://github.com/AlaniaShota/Marvel",
-    description: descriptionMarvel,
+    descriptionKey: "description_marvel",
   },
   {
     id: 4,
@@ -71,6 +62,6 @@ export const dataProject = [
     liberties: ["SASS", "React Icons", "Framer-Motion"],
     github_link: "https://github.com/AlaniaShota/Namari",
     live_link: "https://namari-vite.netlify.app/",
-    description: descriptionNamari,
+    descriptionKey: "description_namari",
   },
 ];

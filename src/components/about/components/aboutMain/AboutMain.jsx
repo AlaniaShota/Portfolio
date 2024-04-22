@@ -1,16 +1,11 @@
 import gsap from "gsap";
 import "./AboutMain.scss";
 import { useEffect, useRef } from "react";
-import { useScroll, useTransform, motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 
 export const AboutMain = () => {
+  const { t } = useTranslation();
   const container = useRef(null);
-  const { scrollYProgress } = useScroll({
-    target: container,
-    offset: ["start end", "end start"],
-  });
-
-  const height = useTransform(scrollYProgress, [0, 0.9], [50, 0]);
 
   useEffect(() => {
     const tl = gsap.timeline();
@@ -37,31 +32,28 @@ export const AboutMain = () => {
   const mainData = [
     {
       id: 1,
-      title: "Design",
-      description:
-        "With a solid track record in designing websites and apps, I deliver strong and user-friendly digital designs. Solid company branding is the foundation of any succesful website.",
+      title: t("learn_grow"),
+      description: t("learn_grow_description"),
     },
     {
       id: 2,
-      title: "Development",
-      description:
-        "I build scalable websites from scratch that fit seamlessly with design. My focus is on micro animations, transitions and interaction.",
+      title: t("hardworking_reliable"),
+      description: t("hardworking_reliable_description"),
     },
     {
       id: 3,
-      title: "The full package",
-      description:
-        "A complete website from concept to implementation, that's what makes me stand out. My great sense for design and my development skills enable me to create kick-ass projects.",
+      title: t("driven_succeed"),
+      description: t("driven_succeed_description"),
     },
   ];
 
   return (
-    // <div ref={container} className="main">
     <div ref={container} className="about-main">
       <div className="about-main-container">
         <div className="about-main-content-header">
           <h1 className="about-main-content-title">
-            I can help you with<span className="dot">.</span>
+            {t("how_i_can_help")}
+            <span className="dot">.</span>
             <span className="dot">.</span>
             <span className="dot">.</span>
           </h1>

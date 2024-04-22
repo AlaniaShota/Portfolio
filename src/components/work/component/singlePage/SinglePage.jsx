@@ -102,7 +102,7 @@ export const SinglePage = () => {
         </div>
         {project.alert_smg && (
           <div className="single-page-header-alert-section" key={project.id}>
-            <div className="alert-text">{project.alert_smg}</div>
+            <div className="alert-text">{t(project.alert_smg)}</div>
           </div>
         )}
       </div>

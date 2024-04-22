@@ -43,39 +43,11 @@
 
         & .about-description-content {
             width: 80%;
-            // display: grid;
             grid-template-columns: 50px 300px auto;
-            // gap: 50px;
 
             & .about-description-section {
-                // display: flex;
-                // flex-direction: column;
                 font-size: 18.5px;
-                // font-weight: 400;
-
-
-                // & .about-description-section-text {
-                //     width: auto;
-                //     margin-right: 15px;
-
-                // }
-
-                // & .about-description-section-span-text {
-                //     opacity: 0.5;
-                //     padding-top: 10px;
-                // }
             }
-
-            // & .about-description-img-content {
-            //     width: auto;
-            //     // width: 100%;
-            //     background: url('../../../../assets/img/background.jpg') center center no-repeat;
-            //     background-size: cover;
-            //     background-attachment: fixed;
-            //     // object-fit: cover;
-            //     height: 105vh;
-            // }
-
         }
     }
 }

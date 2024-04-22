@@ -3,12 +3,14 @@ import { useEffect, useState } from "react";
 import { motion, useAnimation, useViewportScroll } from "framer-motion";
 import gsap from "gsap";
 import "./AboutDescription.scss";
+import { useTranslation } from "react-i18next";
 
 export const AboutDescription = () => {
   const [scrollDirection, setScrollDirection] = useState("up");
   const controls = useAnimation();
   const arrowControls = useAnimation();
   const { scrollY } = useViewportScroll();
+  const { t } = useTranslation();
 
   useEffect(() => {
     return scrollY.onChange(() => {
@@ -82,12 +84,10 @@ export const AboutDescription = () => {
           transition={{ duration: 0.9 }}
         >
           <p className="about-description-section-text">
-            I help companies from all over the world with tailor-made solutions.
-            With each project, I push my work to new horizons, always putting
-            quality first.
+            {t("about_description")}
           </p>
           <span className="about-description-section-span-text">
-            Always exploring
+            {t("about_span")}
             <span className="dot">.</span>
             <span className="dot">.</span>
             <span className="dot">.</span>

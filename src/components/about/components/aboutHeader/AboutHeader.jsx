@@ -3,14 +3,16 @@ import { HeaderSection } from "../../../HeaderSection";
 
 import { motion } from "framer-motion";
 import { CiGlobe } from "react-icons/ci";
+import { useTranslation } from "react-i18next";
 
 export const AboutHeader = () => {
+  const { t } = useTranslation();
   const widthAboutSectionClass = "widthAboutSectionClass";
 
   return (
     <div className="about-header-section">
       <HeaderSection
-        title="Helping brands thrive in the digital world"
+        title={t("about_title")}
         widthAboutSectionClass={widthAboutSectionClass}
       />
       <div className="glob-animation-content">

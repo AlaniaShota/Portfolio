@@ -20,8 +20,19 @@
     "description_title": "DESCRIPTION",
     "description_georgia": "Developed a project which showcases Georgia and it characteristics for tourists. Built using Vite + ReactJS.Implemented a design system using TailwindCSS and enhanced the user interface with features like framer-motion, gsap, and swiper. Data management was handled efficiently using Zustand.",
     "description_vibrant": "The Vibrant project is a landing page. It was built using Vite + ReactJS. Designed the project's UI system using SCSS and enhanced with libraries like a framer-motion.",
+    "alert_marvel": "There is't demo version of the site, Marvel Api data is'n displayed for live versions",
     "description_marvel": "The Marvel project, as utilized the Marvel API, which is one of the largest mock data available. It was built using Vite + ReactJS. Designed the project's UI system using SCSS. Data management was efficiently handled through Zustand",
     "description_namari": "The Namari project is a landing page. It was built using Vite + ReactJS. Designed the project's UI system using SCSS and enhanced with libraries like a framer-motion.",
-    "next_case":"NEXT CASE",
-    "back_btn":"BACK TO ALL"
+    "next_case": "NEXT CASE",
+    "back_btn": "BACK TO ALL",
+    "about_title": "Why should you choose me",
+    "about_description": "I'm a beginner front-end developer, i have worked on my personal projects. With each project, I push my work to new horizons, always putting quality first.",
+    "about_span": "Always exploring",
+    "how_i_can_help": "I can help you with",
+    "learn_grow": "Learn and grow",
+    "learn_grow_description": "Ready to continually expand knowledge and skills, actively exploring new technologies and development methods to achieve high performance in work.",
+    "hardworking_reliable": "Hardworking and reliable",
+    "hardworking_reliable_description": "When I take on a task, I give it my all. You can count on me to get things done well and on time, taking full responsibility for the quality of my work.",
+    "driven_succeed": "Driven to succeed",
+    "driven_succeed_description": "I'm motivated by achieving my goals and seeing tangible results. I approach my work creatively and plan effectively to make sure I deliver the best outcomes possible."
 }

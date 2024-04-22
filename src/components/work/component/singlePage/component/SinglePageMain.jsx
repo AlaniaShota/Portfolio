@@ -35,7 +35,7 @@ export const SinglePageMain = ({ project, onNextProject, dataProject }) => {
         stagger: 0.02,
         duration: 5,
         delay: 1,
-        text: project.descriptionKey,
+        text: { value: t(project.descriptionKey) },
         ease: "power1.inOut",
       });
     }
@@ -66,7 +66,6 @@ export const SinglePageMain = ({ project, onNextProject, dataProject }) => {
             initial={{ opacity: 0 }}
             animate={descriptionAnimation}
           >
-            {/* {t("project.description")} */}
             Loading...
           </motion.p>
         </div>
