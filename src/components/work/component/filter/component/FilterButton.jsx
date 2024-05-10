@@ -40,13 +40,13 @@ export const FilterButton = ({ search, categoryFilter }) => {
         className={`filter-btn ${activeButton === "ReactJS" ? "active" : ""}`}
         onClick={() => handleButtonClick("ReactJS")}
       >
-        <p className="filter-btn-text">React</p>
+        <p className="filter-btn-text">ReactJS</p>
       </Rounded>
       <Rounded
-        className={`filter-btn ${activeButton === "Lending" ? "active" : ""}`}
-        onClick={() => handleButtonClick("Lending")}
+        className={`filter-btn ${activeButton === "ReactTS" ? "active" : ""}`}
+        onClick={() => handleButtonClick("ReactTS")}
       >
-        <p className="filter-btn-text">Lending</p>
+        <p className="filter-btn-text">ReactTS</p>
       </Rounded>
     </div>
   );

@@ -23,6 +23,7 @@
     "alert_marvel": "There is't demo version of the site, Marvel Api data is'n displayed for live versions",
     "description_marvel": "The Marvel project, as utilized the Marvel API, which is one of the largest mock data available. It was built using Vite + ReactJS. Designed the project's UI system using SCSS. Data management was efficiently handled through Zustand",
     "description_namari": "The Namari project is a landing page. It was built using Vite + ReactJS. Designed the project's UI system using SCSS and enhanced with libraries like a framer-motion.",
+    "description_sky_weather": "The Sky Weather project is a landing page. It was built using Vite + ReactTS. Designed the project's UI system using CSS and enhanced with library like a styled component",
     "next_case": "NEXT CASE",
     "back_btn": "BACK TO ALL",
     "about_title": "Why should you choose me",
