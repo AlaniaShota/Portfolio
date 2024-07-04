@@ -4,6 +4,10 @@ import georgia3 from "../assets/img/why-georgia3.png";
 import vibrant1 from "../assets/img/vibrant1.png";
 import vibrant4 from "../assets/img/vibrant4.png";
 import vibrant3 from "../assets/img/vibrant3.png";
+import anime1 from "../assets/img/aniProject1.png";
+import anime2 from "../assets/img/aniProject2.png";
+import anime3 from "../assets/img/aniProject3.png";
+import anime4 from "../assets/img/aniProject4.png";
 import marvel1 from "../assets/img/marvel1.png";
 import marvel4 from "../assets/img/marvel4.png";
 import marvel3 from "../assets/img/marvel3.png";
@@ -14,7 +18,9 @@ import skyWeather from "../assets/img/sky-weather.png";
 import skyWeather2 from "../assets/img/sky-weather2.png";
 import skyWeather3 from "../assets/img/sky-weather3.png";
 
-const __URL = "https://github.com/AlaniaShota/";
+const __HTTPS = "https://";
+const __URL = "github.com/AlaniaShota/";
+const __LIVE = ".netlify.app/";
 
 export const dataProject = [
   {
@@ -26,8 +32,8 @@ export const dataProject = [
     color: "#000000",
     type: "ReactJS",
     liberties: ["TailwindCSS", "Framer-Motion", "GSAP", "Swiper"],
-    github_link: `${__URL}Georgia`,
-    live_link: "https://travel-georgia.netlify.app/",
+    github_link: `${__HTTPS}${__URL}Georgia`,
+    live_link: `${__HTTPS}travel-georgia${__LIVE}`,
     descriptionKey: "description_georgia",
   },
   {
@@ -39,12 +45,26 @@ export const dataProject = [
     color: "#8C8C8C",
     type: "ReactJS",
     liberties: ["SASS", "Framer-Motion"],
-    github_link: `${__URL}vibrant`,
-    live_link: "https://vibrant-framer-motion.netlify.app/",
+    github_link: `${__HTTPS}${__URL}vibrant`,
+    live_link: `${__HTTPS}vibrant-framer-motion${__LIVE}`,
     descriptionKey: "description_vibrant",
   },
   {
     id: 3,
+    title: "Anime",
+    preloader_title: ["Anime"],
+    src: anime1,
+    secondary_img: [anime4, anime3],
+    color: "#706D63",
+    type: "ReactTS",
+
+    liberties: ["React Query", "Redux", "TailwindCSS"],
+    github_link: `${__HTTPS}${__URL}Anime`,
+    live_link: `${__HTTPS}anistar${__LIVE}`,
+    descriptionKey: "description_anime",
+  },
+  {
+    id: 4,
     title: "Marvel",
     preloader_title: ["Marvel"],
     src: marvel1,
@@ -53,11 +73,11 @@ export const dataProject = [
     type: "ReactJS",
     alert_smg: "alert_marvel",
     liberties: ["SASS", "Zustand"],
-    github_link: `${__URL}Marvel`,
+    github_link: `${__HTTPS}${__URL}Marvel`,
     descriptionKey: "description_marvel",
   },
   {
-    id: 4,
+    id: 5,
     title: "Namari",
     preloader_title: ["Namari"],
     src: namari1,
@@ -65,12 +85,12 @@ export const dataProject = [
     color: "#706D63",
     type: "ReactJS",
     liberties: ["SASS", "React Icons", "Framer-Motion"],
-    github_link: `${__URL}Namari`,
-    live_link: "https://namari-vite.netlify.app/",
+    github_link: `${__HTTPS}${__URL}Namari`,
+    live_link: `${__HTTPS}namari-vite${__LIVE}`,
     descriptionKey: "description_namari",
   },
   {
-    id: 5,
+    id: 6,
     title: "Sky Weather",
     preloader_title: ["Sky Weather"],
     src: skyWeather,
@@ -78,8 +98,8 @@ export const dataProject = [
     color: "#000000",
     type: "ReactTS",
     liberties: ["Styled Component"],
-    github_link: `${__URL}sky-weather`,
-    live_link: "https://skyweather24.netlify.app/",
+    github_link: `${__HTTPS}${__URL}sky-weather`,
+    live_link: `${__HTTPS}skyweather24${__LIVE}`,
     descriptionKey: "description_sky_weather",
   },
 ];
