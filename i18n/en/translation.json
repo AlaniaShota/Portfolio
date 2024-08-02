@@ -20,6 +20,7 @@
     "description_title": "DESCRIPTION",
     "description_georgia": "Developed a project which showcases Georgia and it characteristics for tourists. Built using Vite + ReactJS.Implemented a design system using TailwindCSS and enhanced the user interface with features like framer-motion, gsap, and swiper. Data management was handled efficiently using Zustand.",
     "description_vibrant": "The Vibrant project is a landing page. It was built using Vite + ReactJS. Designed the project's UI system using SCSS and enhanced with libraries like a framer-motion.",
+    "description_expense_tracker": "The Expense Tracker project leverages Firebase for its extensive mock data capabilities. It was built using Vite + ReactTS. Designed the project's UI system using SASS. Data management was efficiently handled through Context.",
     "alert_marvel": "There is't demo version of the site, Marvel Api data is'n displayed for live versions",
     "description_anime": "The Anime project, as utilized the Jikan API, which is one of the largest mock data available. It was built using Vite + ReactTS. Designed the project's UI system using TailwindCSS. Data management was efficiently handled through Redux.",
     "description_marvel": "The Marvel project, as utilized the Marvel API, which is one of the largest mock data available. It was built using Vite + ReactJS. Designed the project's UI system using SCSS. Data management was efficiently handled through Zustand",
