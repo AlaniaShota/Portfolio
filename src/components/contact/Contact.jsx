@@ -1,5 +1,5 @@
 import { Rounded } from "../Rounded";
-import userImg from "../../assets/img/background.jpg";
+import userImg from "../../assets/img/openart-image_y2laZRc7_1727342417409_raw.jpg";
 
 import { useTransform, useViewportScroll } from "framer-motion";
 import "./Contact.scss";

@@ -1,7 +1,7 @@
 import "./Landing.scss";
 import { slideUp } from "./index";
 
-import imgUser from "../../assets/img/background.jpg";
+import imgUser from "../../assets/img/openart-image_y2laZRc7_1727342417409_raw.jpg";
 
 import { Description } from "../description";
 
