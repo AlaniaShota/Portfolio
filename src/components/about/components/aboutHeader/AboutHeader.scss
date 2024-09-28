@@ -58,7 +58,7 @@
             width: 70%;
 
             & .digital-ball {
-                top: 72%;
+                top: 67%;
                 right: 250px;
             }
         }
@@ -72,6 +72,7 @@
             width: 70%;
 
             & .digital-ball {
+                top: 75%;
                 right: 150px;
             }
         }
@@ -90,8 +91,19 @@
 
             & .digital-ball {
                 border-radius: 50%;
-                top: 85%;
+                top: 75%;
                 right: 5%;
+            }
+        }
+    }
+}
+
+@media(max-width:430px) {
+    .about-header-section {
+
+        & .glob-animation-content {
+            & .digital-ball {
+                top: 80%;
             }
         }
     }

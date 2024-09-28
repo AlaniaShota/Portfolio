@@ -1,4 +1,4 @@
-import { SinglePageMain } from "./component";
+import { NextCase, SinglePageMain } from "./component";
 
 import { dataProject } from "../../../../resources/resources";
 
@@ -29,6 +29,8 @@ export const SinglePage = () => {
   });
 
   const handleNextProject = () => {
+    if (!project) return;
+
     const projectIndex = dataProject.findIndex(
       (proj) => proj.title === project.title,
     );
@@ -46,7 +48,7 @@ export const SinglePage = () => {
 
   useEffect(() => {
     const selectedProject = dataProject.find((project) => project.title === id);
-    setProject(selectedProject);
+    setProject(selectedProject || null);
   }, [id]);
 
   useEffect(() => {
@@ -55,7 +57,13 @@ export const SinglePage = () => {
     }
   }, [project]);
 
-  if (!project) return null;
+  if (!project) return null;  // Ensure project is available before rendering
+
+  const currentIndex = dataProject.findIndex(
+    (proj) => proj.title === project.title
+  );
+  const nextIndex = (currentIndex + 1) % dataProject.length;
+  const nextProject = dataProject[nextIndex];
 
   return (
     <div className="single-page-content" key={project.id}>
@@ -106,6 +114,11 @@ export const SinglePage = () => {
           </div>
         )}
       </div>
+      <SinglePageMain
+        project={project}
+        dataProject={dataProject}
+        onNextProject={handleNextProject}
+      />
       <motion.div
         ref={ref}
         initial={{ opacity: 0, y: 100 }}
@@ -147,11 +160,8 @@ export const SinglePage = () => {
           </a>
         </div>
       </motion.div>
-      <SinglePageMain
-        project={project}
-        dataProject={dataProject}
-        onNextProject={handleNextProject}
-      />
+     
+      <NextCase nextProject={nextProject} onNextProject={handleNextProject} />
     </div>
   );
 };

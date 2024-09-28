@@ -41,17 +41,6 @@ export const SinglePageMain = ({ project, onNextProject, dataProject }) => {
     }
   }, [inView, descriptionAnimation, project]);
 
-  const currentIndex = dataProject.findIndex(
-    (proj) => proj.title === project.title
-  );
-  const nextIndex = (currentIndex + 1) % dataProject.length;
-  const nextProject = dataProject[nextIndex];
-
-  const fadeInVariant = {
-    hidden: { opacity: 0 },
-    visible: { opacity: 1 },
-  };
-
   return (
     <AnimatePresence>
       <div className="main-content" key={project.id}>
@@ -73,28 +62,12 @@ export const SinglePageMain = ({ project, onNextProject, dataProject }) => {
           {project.secondary_img.length > 0 && (
             <motion.div
               className="single-page-main-img-first-content"
-              variants={fadeInVariant}
-              initial="hidden"
-              animate={inView ? "visible" : "hidden"}
-              transition={{ delay: 0.4, duration: 1 }}
             >
               <img src={project.secondary_img[0]} alt="ERROR" />
             </motion.div>
           )}
-          {project.secondary_img.length > 1 && (
-            <motion.div
-              className="single-page-main-img-second-content"
-              variants={fadeInVariant}
-              initial="hidden"
-              animate={inView ? "visible" : "hidden"}
-              transition={{ delay: 0.6, duration: 1 }}
-            >
-              <img src={project.secondary_img[1]} alt="ERROR" />
-            </motion.div>
-          )}
         </div>
       </div>
-      <NextCase nextProject={nextProject} onNextProject={onNextProject} />
     </AnimatePresence>
   );
 };
