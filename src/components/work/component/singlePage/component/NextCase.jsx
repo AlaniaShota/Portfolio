@@ -1,3 +1,4 @@
+import { Rounded } from "../../../../Rounded";
 
 import { motion } from "framer-motion";
 import "./NextCase.scss";
@@ -5,7 +6,7 @@ import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { Link } from "react-router-dom";
 import { t } from "i18next";
-import { Rounded } from "../../../../Rounded";
+
 
 const scaleAnimation = {
   initial: { scale: 0, x: "-50%", y: "-50%" },

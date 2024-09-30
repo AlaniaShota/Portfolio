@@ -8,7 +8,6 @@ import vibrant1 from "../../assets/img/vibrant1.png";
 import vibrant2 from "../../assets/img/vibrant2.png";
 import vibrant3 from "../../assets/img/vibrant3.png";
 import anime1 from "../../assets/img/aniProject1.png";
-import anime2 from "../../assets/img/aniProject2.png";
 import anime3 from "../../assets/img/aniProject3.png";
 import anime4 from "../../assets/img/aniProject4.png";
 import marvel1 from "../../assets/img/marvel1.png";
