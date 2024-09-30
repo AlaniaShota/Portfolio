@@ -34,6 +34,7 @@ export const Hamburger = () => {
       href: "#contact",
     },
   ];
+  
   return (
     <motion.div
       variants={menuSlide}

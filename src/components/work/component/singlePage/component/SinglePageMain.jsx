@@ -1,5 +1,3 @@
-import { NextCase } from "./NextCase";
-
 import { AnimatePresence, motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { gsap } from "gsap";
@@ -19,7 +17,6 @@ export const SinglePageMain = ({ project, onNextProject, dataProject }) => {
     triggerOnce: true,
     threshold: 0.5,
   });
-  // const { t } = useTranslation();
 
   useEffect(() => {
     const firstTextElement = descriptionTextRef.current;

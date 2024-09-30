@@ -44,7 +44,6 @@ export const Preloader = ({ preloadData, setIsLoading }) => {
       className="preloader"
     >
       {dimension.width > 0 && (
-        // <>
         <motion.p
           variants={opacity}
           initial="initial"
@@ -53,7 +52,6 @@ export const Preloader = ({ preloadData, setIsLoading }) => {
         >
           {preloadData[index]}
         </motion.p>
-        // {/* </> */}
       )}
     </motion.div>
   );

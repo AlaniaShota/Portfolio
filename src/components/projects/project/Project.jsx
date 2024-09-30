@@ -1,34 +1,7 @@
-import { useEffect, useState } from "react";
 import "./Project.scss";
 import { Link } from "react-router-dom";
 
-export const Project = ({ index, title, manageModal, imgSrc }) => {
-  // const [isSmallScreen, setIsSmallScreen] = useState(window.innerWidth <= 430);
-
-  // useEffect(() => {
-  //   const handleResize = () => {
-  //     setIsSmallScreen(window.innerWidth <= 430);
-  //   };
-  //   window.addEventListener("resize", handleResize);
-  //   return () => {
-  //     window.removeEventListener("resize", handleResize);
-  //   };
-  // }, []);
-
-  // if (isSmallScreen) {
-  // return (
-  //     <div className="mob-project">
-  //       <Link to={`/work/${title}`}>
-  //         <img src={imgSrc} alt={title} className="mob-project-img" />
-  //         <div className="mob-project-content">
-  //           <h2 className="mob-project-title">{title}</h2>
-  //           <div className="stripe"></div>
-  //           <p className="mob-project-description">ReactJS</p>
-  //         </div>
-  //       </Link>
-  //     </div>
-  //   );
-  // } else {
+export const Project = ({ index, title, manageModal,  }) => {
   return (
     <Link
       to={`/work/${title}`}
@@ -44,5 +17,4 @@ export const Project = ({ index, title, manageModal, imgSrc }) => {
       <p className="project-description">ReactJS</p>
     </Link>
   );
-  // }
 };

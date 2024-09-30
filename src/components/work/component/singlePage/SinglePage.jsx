@@ -60,7 +60,7 @@ export const SinglePage = () => {
   if (!project) return null;  // Ensure project is available before rendering
 
   const currentIndex = dataProject.findIndex(
-    (proj) => proj.title === project.title
+    (proj) => proj.title === project.title,
   );
   const nextIndex = (currentIndex + 1) % dataProject.length;
   const nextProject = dataProject[nextIndex];
@@ -160,7 +160,6 @@ export const SinglePage = () => {
           </a>
         </div>
       </motion.div>
-     
       <NextCase nextProject={nextProject} onNextProject={handleNextProject} />
     </div>
   );

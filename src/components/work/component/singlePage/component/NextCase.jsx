@@ -1,12 +1,11 @@
-import { Rounded } from "../../../../Rounded";
 
 import { motion } from "framer-motion";
 import "./NextCase.scss";
 import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
-
 import { Link } from "react-router-dom";
 import { t } from "i18next";
+import { Rounded } from "../../../../Rounded";
 
 const scaleAnimation = {
   initial: { scale: 0, x: "-50%", y: "-50%" },
@@ -39,7 +38,6 @@ export const NextCase = ({ nextProject, onNextProject }) => {
   const yMoveCursorLabel = useRef(null);
 
   useEffect(() => {
-    //Move Container
     xMoveContainer.current = gsap.quickTo(modalContainer.current, "left", {
       duration: 0.8,
       ease: "power3",
@@ -48,7 +46,6 @@ export const NextCase = ({ nextProject, onNextProject }) => {
       duration: 0.8,
       ease: "power3",
     });
-    //Move cursor
     xMoveCursor.current = gsap.quickTo(cursor.current, "left", {
       duration: 0.5,
       ease: "power3",
@@ -57,7 +54,6 @@ export const NextCase = ({ nextProject, onNextProject }) => {
       duration: 0.5,
       ease: "power3",
     });
-    //Move cursor label
     xMoveCursorLabel.current = gsap.quickTo(cursorLabel.current, "left", {
       duration: 0.45,
       ease: "power3",
