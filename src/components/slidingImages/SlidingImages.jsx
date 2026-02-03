@@ -19,7 +19,12 @@ import namari3 from "../../assets/img/namari3.png";
 import skyWeather1 from "../../assets/img/sky-weather.png";
 import skyWeather2 from "../../assets/img/sky-weather2.png";
 import skyWeather3 from "../../assets/img/sky-weather3.png";
-
+import mines1 from "../../assets/img/mines1.png";
+import mines2 from "../../assets/img/mines2.png";
+import mines3 from "../../assets/img/mines3.png";
+import sJob1 from "../../assets/img/sJob1.png";
+import sJob2 from "../../assets/img/sJob2.png";
+import sJob3 from "../../assets/img/sJob3.png";
 import "./SlidingImages.scss";
 
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -100,6 +105,20 @@ export const SlidingImages = () => {
       secondImg: skyWeather2,
       thirdImg: skyWeather3,
       color: "#d6d7dc",
+    },
+    {
+      id: 8,
+      img: mines1,
+      secondImg: mines2,
+      thirdImg: mines3,
+      color: "#21242b",
+    },
+    {
+      id: 9,
+      img: sJob1,
+      secondImg: sJob2,
+      thirdImg: sJob3,
+      color: "#8C8C8C",
     },
   ];
 

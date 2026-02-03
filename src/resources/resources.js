@@ -8,7 +8,7 @@ import vibrant1 from "../assets/img/vibrant1.png";
 import vibrant4 from "../assets/img/vibrant4.png";
 import vibrant3 from "../assets/img/vibrant3.png";
 import anime1 from "../assets/img/aniProject1.png";
-import anime2 from "../assets/img/aniProject2.png";
+// import anime2 from "../assets/img/aniProject2.png";
 import anime3 from "../assets/img/aniProject3.png";
 import anime4 from "../assets/img/aniProject4.png";
 import marvel1 from "../assets/img/marvel1.png";
@@ -20,7 +20,12 @@ import namari3 from "../assets/img/namari3.png";
 import skyWeather from "../assets/img/sky-weather.png";
 import skyWeather2 from "../assets/img/sky-weather2.png";
 import skyWeather3 from "../assets/img/sky-weather3.png";
-
+import mines1 from "../assets/img/mines1.png";
+import mines2 from "../assets/img/mines2.png";
+import mines3 from "../assets/img/mines3.png";
+import sJob1 from "../assets/img/sJob1.png";
+import sJob2 from "../assets/img/sJob2.png";
+import sJob3 from "../assets/img/sJob3.png";
 const __HTTPS = "https://";
 const __URL = "github.com/AlaniaShota/";
 const __LIVE = ".netlify.app/";
@@ -117,5 +122,31 @@ export const dataProject = [
     github_link: `${__HTTPS}${__URL}sky-weather`,
     live_link: `${__HTTPS}skyweather24${__LIVE}`,
     descriptionKey: "description_sky_weather",
+  },
+  {
+    id: 8,
+    title: "Mines",
+    preloader_title: ["Mines"],
+    src: mines1,
+    secondary_img: [mines3, mines2],
+    color: "#000000",
+    type: "ReactTS",
+    liberties: ["CSS"],
+    github_link: `${__HTTPS}${__URL}mines`,
+    live_link: `${__HTTPS}cmines${__LIVE}`,
+    descriptionKey: "description_mines",
+  },
+  {
+    id: 9,
+    title: "SJob",
+    preloader_title: ["SJob"],
+    src: sJob1,
+    secondary_img: [sJob3, sJob2],
+    color: "#8C8C8C",
+    type: "ReactTS",
+    liberties: ["Yup", "Zustand", "Framer Motion", "Axios", "TailwindCSS"],
+    github_link: `${__HTTPS}${__URL}career`,
+    live_link: `${__HTTPS}sjob${__LIVE}`,
+    descriptionKey: "description_sjob",
   },
 ];
