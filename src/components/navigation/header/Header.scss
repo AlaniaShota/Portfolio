@@ -1,234 +1,250 @@
-@import '../../../style/variables.scss';
+@import "../../../style/variables.scss";
 
 .header {
-    position: absolute;
+  position: absolute;
+  display: flex;
+  z-index: 1;
+  top: 0;
+  padding: 20px 80px;
+  justify-content: space-between;
+  width: 100%;
+  font-weight: 300;
+  box-sizing: border-box;
+  align-items: center;
+  &.header-white {
+    .copyright,
+    .codeBy,
+    .shota,
+    .alania,
+    .nav-link-main {
+      color: white !important;
+    }
+    .indicator {
+      background-color: white !important;
+    }
+  }
+
+  &.header-black {
+    .copyright,
+    .codeBy,
+    .shota,
+    .alania,
+    .nav-link-main {
+      color: $secondary-black !important;
+    }
+    .indicator {
+      background-color: $secondary-black !important;
+    }
+  }
+
+  & .logo {
     display: flex;
-    z-index: 1;
-    top: 0;
-    padding: 20px 80px;
-    justify-content: space-between;
-    width: 100%;
-    font-weight: 300;
-    box-sizing: border-box;
+    align-items: center;
+    cursor: pointer;
+
+    & .copyright {
+      margin: 0px;
+      font-size: 24px;
+      transition: all $transition-nav;
+      color: $secondary-black;
+    }
+
+    & .name {
+      display: flex;
+      position: relative;
+      overflow: hidden;
+      white-space: nowrap;
+      margin-left: 10px;
+      transition: all $transition-nav;
+
+      & p {
+        position: relative;
+        font-size: 24px;
+        transition: transform $transition-nav;
+        color: $secondary-black;
+
+        &:nth-of-type(3) {
+          position: absolute;
+          left: 120px;
+          padding-left: 40px;
+        }
+      }
+    }
+
+    &:hover {
+      & .copyright {
+        transform: rotate(360deg);
+      }
+
+      & .name {
+        padding-right: 30px;
+
+        & .codeBy {
+          transform: translateX(-100%);
+        }
+
+        & .shota,
+        & .alania {
+          transform: translateX(-65px);
+        }
+      }
+    }
+  }
+
+  & .nav {
+    display: flex;
     align-items: center;
 
-    & .logo {
-        display: flex;
-        align-items: center;
+    & .el {
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      z-index: 1;
+      padding: 15px;
+      cursor: pointer;
+
+      &:hover {
+        .indicator {
+          transform: scale(1);
+        }
+      }
+
+      & .indicator {
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        top: 45px;
+        left: 50%;
+        border-radius: 50%;
+        transform: scale(0) translateX(-50%);
+        transition: transform 0.2s cubic-bezier(0.76, 0, 0.24, 1);
+        background-color: $secondary-black;
+      }
+
+      & .nav-link-main {
         cursor: pointer;
+        text-decoration: none !important;
+        font-size: 24px;
+        color: $secondary-black;
+      }
+    }
+  }
 
-        & .copyright {
-            margin: 0px;
-            font-size: 24px;
-            transition: all $transition-nav;
-            color: $secondary-black;
+  & a {
+    cursor: pointer;
+    text-decoration: none !important;
+  }
+}
 
+.headerButtonContainer {
+  transform: scale(0);
+  position: fixed;
+  right: 0px;
+  z-index: 4;
+
+  .button {
+    position: relative;
+    margin: 20px;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background-color: $secondary-black;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .burger {
+    width: 100%;
+    position: relative;
+    z-index: 1000;
+
+    &::after,
+    &::before {
+      content: "";
+      display: block;
+      height: 1px;
+      width: 40%;
+      margin: auto;
+      background-color: white;
+      position: relative;
+      transition: transform 0.3s;
+    }
+
+    &::after {
+      top: -5px;
+    }
+
+    &::before {
+      top: 5px;
+    }
+  }
+
+  .burgerActive {
+    &::after {
+      transform: rotate(45deg);
+      top: -1px;
+    }
+
+    &::before {
+      transform: rotate(-45deg);
+      top: 0px;
+    }
+  }
+}
+
+@media (max-width: 2040px) {
+  .header {
+    padding: 20px;
+    justify-content: space-between;
+
+    & .logo {
+      & .copyright {
+        font-size: 18px;
+      }
+
+      & .name {
+        margin-left: 5px;
+
+        & p {
+          font-size: 18px;
+
+          &:nth-of-type(3) {
+            padding-left: 8px;
+          }
         }
-
-        & .name {
-            display: flex;
-            position: relative;
-            overflow: hidden;
-            white-space: nowrap;
-            margin-left: 10px;
-            transition: all $transition-nav;
-
-            & p {
-                position: relative;
-                font-size: 24px;
-                transition: transform $transition-nav;
-                color: $secondary-black;
-
-                &:nth-of-type(3) {
-                    position: absolute;
-                    left: 120px;
-                    padding-left: 40px;
-                }
-            }
-        }
-
-        &:hover {
-            & .copyright {
-                transform: rotate(360deg);
-            }
-
-            & .name {
-                padding-right: 30px;
-
-                & .codeBy {
-                    transform: translateX(-100%);
-                }
-
-                & .shota,
-                & .alania {
-                    transform: translateX(-65px);
-                }
-            }
-        }
+      }
     }
 
     & .nav {
-        display: flex;
-        align-items: center;
-
-        & .el {
-            display: flex;
-            flex-direction: column;
-            position: relative;
-            z-index: 1;
-            padding: 15px;
-            cursor: pointer;
-
-            &:hover {
-                .indicator {
-                    transform: scale(1);
-                }
-            }
-
-            & .indicator {
-                position: absolute;
-                width: 10px;
-                height: 10px;
-                top: 45px;
-                left: 50%;
-                border-radius: 50%;
-                transform: scale(0) translateX(-50%);
-                transition: transform 0.2s cubic-bezier(0.76, 0, 0.24, 1);
-                background-color: $secondary-black;
-            }
-
-            & .nav-link-main {
-                cursor: pointer;
-                text-decoration: none !important;
-                font-size: 24px;
-                color: $secondary-black;
-            }
+      & .el {
+        & .indicator {
+          width: 5px;
+          height: 5px;
         }
+
+        & .nav-link-main {
+          font-size: 18px;
+        }
+      }
     }
+  }
 
-    & a {
-        cursor: pointer;
-        text-decoration: none !important;
-    }
-}
-
-
-
-.headerButtonContainer {
-    transform: scale(0);
-    position: fixed;
-    right: 0px;
-    z-index: 4;
-
+  .headerButtonContainer {
     .button {
-        position: relative;
-        margin: 20px;
-        width: 120px;
-        height: 120px;
-        border-radius: 50%;
-        background-color: $secondary-black;
-        cursor: pointer;
-        display: flex;
-        align-items: center;
-        justify-content: center;
+      width: 80px;
+      height: 80px;
     }
-
-    .burger {
-        width: 100%;
-        position: relative;
-        z-index: 1000;
-
-        &::after,
-        &::before {
-            content: "";
-            display: block;
-            height: 1px;
-            width: 40%;
-            margin: auto;
-            background-color: white;
-            position: relative;
-            transition: transform 0.3s;
-        }
-
-        &::after {
-            top: -5px;
-        }
-
-        &::before {
-            top: 5px;
-        }
-    }
-
-    .burgerActive {
-        &::after {
-            transform: rotate(45deg);
-            top: -1px;
-        }
-
-        &::before {
-            transform: rotate(-45deg);
-            top: 0px;
-        }
-    }
+  }
 }
 
-@media(max-width:2040px) {
-    .header {
-        padding: 20px;
-        justify-content: space-between;
-
-        & .logo {
-
-            & .copyright {
-                font-size: 18px;
-            }
-
-            & .name {
-                margin-left: 5px;
-
-                & p {
-                    font-size: 18px;
-
-                    &:nth-of-type(3) {
-                        padding-left: 8px;
-                    }
-                }
-            }
-        }
-
-        & .nav {
-
-            & .el {
-
-                & .indicator {
-                    width: 5px;
-                    height: 5px;
-                }
-
-                & .nav-link-main {
-                    font-size: 18px;
-                }
-            }
-        }
+@media (max-width: 430px) {
+  .header {
+    & .nav {
+      & .el {
+        display: none;
+      }
     }
-
-    .headerButtonContainer {
-
-        .button {
-            width: 80px;
-            height: 80px;
-        }
-    }
-}
-
-@media (max-width:430px) {
-    .header {
-
-        & .nav {
-
-            & .el {
-                display: none;
-            }
-        }
-    }
+  }
 }
