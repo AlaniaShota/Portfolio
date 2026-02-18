@@ -14,6 +14,8 @@ import { SlidingImages } from "../slidingImages";
 import { dataProject } from "../../resources/resources";
 
 import { Contact } from "../contact";
+// import { AIButton } from "../ai/AIButton";
+import { AIPopup } from "../ai/AIPopup";
 
 import { useRef, useLayoutEffect, useState } from "react";
 import gsap from "gsap";
@@ -113,6 +115,7 @@ export const Landing = () => {
       <Projects marginTop="300px" data={dataProject} />
       <SlidingImages />
       <Contact />
+      <AIPopup />
     </>
   );
 };
