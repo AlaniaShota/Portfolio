@@ -36,8 +36,10 @@ export const Contact = () => {
     };
   }, []);
 
-  const mail = "alaniashota08@gmail.com";
-  const subject = t("subject_email");
+  const mail = "https://mail.google.com/mail/?view=cm&to=";
+  const alaniaShota = "alaniashota08@gmail.com";
+  const subject = encodeURIComponent(t("subject_email"));
+  console.log("t(subject_email):", subject);
   const tel = "+995568820317";
   const formattedTel = tel.replace(
     /(\d{3})(\d{3})(\d{2})(\d{2})(\d{2})/,
@@ -60,9 +62,7 @@ export const Contact = () => {
             {t("subject_second_word")}
           </h2>
           <div style={{ x }} className="contact-btn-content">
-            <a
-              href={`https://mail.google.com/mail/?view=cm&to=${mail}&subject=${subject}`}
-            >
+            <a href={`${mail}${alaniaShota}&su=${subject}`}>
               <Rounded backgroundColor={"#334BD3"} className="contact-btn">
                 <p className="contact-btn-text">{t("connect")}</p>
               </Rounded>
@@ -82,11 +82,9 @@ export const Contact = () => {
           </svg>
         </div>
         <div className="contact-navigation-section" id="contact">
-          <a
-            href={`https://mail.google.com/mail/?view=cm&to=${mail}&subject=${subject}`}
-          >
+          <a href={`${mail}${alaniaShota}&su=${subject}`}>
             <Rounded>
-              <p>{mail}</p>
+              <p>{alaniaShota}</p>
             </Rounded>
           </a>
           <a href={`tel:${tel}`}>
