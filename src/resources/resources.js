@@ -17,9 +17,6 @@ import marvel3 from "../assets/img/marvel3.png";
 import namari1 from "../assets/img/namari1.png";
 import namari4 from "../assets/img/namari4.png";
 import namari3 from "../assets/img/namari3.png";
-import skyWeather from "../assets/img/sky-weather.png";
-import skyWeather2 from "../assets/img/sky-weather2.png";
-import skyWeather3 from "../assets/img/sky-weather3.png";
 import mines1 from "../assets/img/mines1.png";
 import mines2 from "../assets/img/mines2.png";
 import mines3 from "../assets/img/mines3.png";
@@ -33,16 +30,16 @@ const __LIVE = ".netlify.app/";
 export const dataProject = [
   {
     id: 1,
-    title: "Georgia",
-    preloader_title: ["Georgia"],
-    src: georgia1,
-    secondary_img: [georgia4, georgia3],
+    title: "Mines",
+    preloader_title: ["Mines"],
+    src: mines1,
+    secondary_img: [mines3, mines2],
     color: "#000000",
-    type: "ReactJS",
-    liberties: ["TailwindCSS", "Framer-Motion", "GSAP", "Swiper"],
-    github_link: `${__HTTPS}${__URL}Georgia`,
-    live_link: `${__HTTPS}travel-georgia${__LIVE}`,
-    descriptionKey: "description_georgia",
+    type: "ReactTS",
+    liberties: ["CSS"],
+    github_link: `${__HTTPS}${__URL}mines`,
+    live_link: `${__HTTPS}cmines${__LIVE}`,
+    descriptionKey: "description_mines",
   },
   {
     id: 2,
@@ -72,6 +69,33 @@ export const dataProject = [
   },
   {
     id: 4,
+    title: "Namari",
+    preloader_title: ["Namari"],
+    src: namari1,
+    secondary_img: [namari4, namari3],
+    color: "#000000",
+    type: "ReactJS",
+    liberties: ["SASS", "React Icons", "Framer-Motion"],
+    github_link: `${__HTTPS}${__URL}Namari`,
+    live_link: `${__HTTPS}namari-vite${__LIVE}`,
+    descriptionKey: "description_namari",
+  },
+  {
+    id: 5,
+    title: "Georgia",
+    preloader_title: ["Georgia"],
+    src: georgia1,
+    secondary_img: [georgia4, georgia3],
+    color: "#000000",
+    type: "ReactJS",
+    liberties: ["TailwindCSS", "Framer-Motion", "GSAP", "Swiper"],
+    github_link: `${__HTTPS}${__URL}Georgia`,
+    live_link: `${__HTTPS}travel-georgia${__LIVE}`,
+    descriptionKey: "description_georgia",
+  },
+
+  {
+    id: 6,
     title: "Anime",
     preloader_title: ["Anime"],
     src: anime1,
@@ -85,7 +109,7 @@ export const dataProject = [
     descriptionKey: "description_anime",
   },
   {
-    id: 5,
+    id: 7,
     title: "Marvel",
     preloader_title: ["Marvel"],
     src: marvel1,
@@ -97,47 +121,9 @@ export const dataProject = [
     github_link: `${__HTTPS}${__URL}Marvel`,
     descriptionKey: "description_marvel",
   },
-  {
-    id: 6,
-    title: "Namari",
-    preloader_title: ["Namari"],
-    src: namari1,
-    secondary_img: [namari4, namari3],
-    color: "#000000",
-    type: "ReactJS",
-    liberties: ["SASS", "React Icons", "Framer-Motion"],
-    github_link: `${__HTTPS}${__URL}Namari`,
-    live_link: `${__HTTPS}namari-vite${__LIVE}`,
-    descriptionKey: "description_namari",
-  },
-  {
-    id: 7,
-    title: "Sky Weather",
-    preloader_title: ["Sky Weather"],
-    src: skyWeather,
-    secondary_img: [skyWeather3, skyWeather2],
-    color: "#8C8C8C",
-    type: "ReactTS",
-    liberties: ["Styled Component"],
-    github_link: `${__HTTPS}${__URL}sky-weather`,
-    live_link: `${__HTTPS}skyweather24${__LIVE}`,
-    descriptionKey: "description_sky_weather",
-  },
+
   {
     id: 8,
-    title: "Mines",
-    preloader_title: ["Mines"],
-    src: mines1,
-    secondary_img: [mines3, mines2],
-    color: "#000000",
-    type: "ReactTS",
-    liberties: ["CSS"],
-    github_link: `${__HTTPS}${__URL}mines`,
-    live_link: `${__HTTPS}cmines${__LIVE}`,
-    descriptionKey: "description_mines",
-  },
-  {
-    id: 9,
     title: "SJob",
     preloader_title: ["SJob"],
     src: sJob1,

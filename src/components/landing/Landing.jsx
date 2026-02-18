@@ -1,7 +1,7 @@
 import "./Landing.scss";
 import { slideUp } from "./index";
 
-import imgUser from "../../assets/img/openart-image_y2laZRc7_1727342417409_raw.jpg";
+import imgUser from "../../assets/img/Gemini_Generated_Image_6qxynw6qxynw6qxy.png";
 
 import { Description } from "../description";
 
@@ -14,8 +14,6 @@ import { SlidingImages } from "../slidingImages";
 import { dataProject } from "../../resources/resources";
 
 import { Contact } from "../contact";
-// import { AIButton } from "../ai/AIButton";
-import { AIPopup } from "../ai/AIPopup";
 
 import { useRef, useLayoutEffect, useState } from "react";
 import gsap from "gsap";
@@ -115,7 +113,6 @@ export const Landing = () => {
       <Projects marginTop="300px" data={dataProject} />
       <SlidingImages />
       <Contact />
-      <AIPopup />
     </>
   );
 };

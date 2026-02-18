@@ -1,5 +1,5 @@
 import { Rounded } from "../Rounded";
-import userImg from "../../assets/img/openart-image_y2laZRc7_1727342417409_raw.jpg";
+import userImg from "../../assets/img/Gemini_Generated_Image_6qxynw6qxynw6qxy.png";
 
 import { useTransform, useViewportScroll } from "framer-motion";
 import "./Contact.scss";
@@ -60,7 +60,9 @@ export const Contact = () => {
             {t("subject_second_word")}
           </h2>
           <div style={{ x }} className="contact-btn-content">
-            <a href={`mailto:${mail}?subject=${subject}`}>
+            <a
+              href={`https://mail.google.com/mail/?view=cm&to=${mail}&subject=${subject}`}
+            >
               <Rounded backgroundColor={"#334BD3"} className="contact-btn">
                 <p className="contact-btn-text">{t("connect")}</p>
               </Rounded>
@@ -80,7 +82,9 @@ export const Contact = () => {
           </svg>
         </div>
         <div className="contact-navigation-section" id="contact">
-          <a href={`mailto:${mail}?subject=${subject}`}>
+          <a
+            href={`https://mail.google.com/mail/?view=cm&to=${mail}&subject=${subject}`}
+          >
             <Rounded>
               <p>{mail}</p>
             </Rounded>

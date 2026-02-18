@@ -4,7 +4,7 @@ import { Rounded } from "../Rounded";
 import "./Description.scss";
 
 import { useInView, motion } from "framer-motion";
-import {  useRef } from "react";
+import { useRef } from "react";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
@@ -17,7 +17,6 @@ export const Description = () => {
 
   return (
     <div ref={description} className="description-content">
-     
       <div className="description-body">
         <p className="description-section">
           {phrase.split(" ").map((word, index) => {
@@ -47,7 +46,7 @@ export const Description = () => {
         <Link to="/about">
           <div data-scroll data-scroll-speed={0.1}>
             <Rounded className="button">
-              <p className="description-btn-text">{t('about_me')}</p>
+              <p className="description-btn-text">{t("about_me")}</p>
             </Rounded>
           </div>
         </Link>
