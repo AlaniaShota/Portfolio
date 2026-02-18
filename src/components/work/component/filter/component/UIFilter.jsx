@@ -1,16 +1,17 @@
+import "./style/UIFilter.scss";
 import { Rounded } from "../../../../Rounded";
+import { workData } from "../../../../../mockData";
 
 import { FiLayers } from "react-icons/fi";
 import { PiSquaresFour } from "react-icons/pi";
 import { useState } from "react";
-import "./style/UIFilter.scss";
 
 export const UIFilter = ({ setCustomComponent }) => {
-  const [activeButton, setActiveButton] = useState("B");
-  const buttonData = [
-    { type: "A", icon: <FiLayers className="filter-icon" /> },
-    { type: "B", icon: <PiSquaresFour className="filter-icon" /> },
-  ];
+  const [activeButton, setActiveButton] = useState(workData.defaultComponent);
+  const iconMap = {
+    layers: FiLayers,
+    squares: PiSquaresFour,
+  };
 
   const handleItemClick = (componentType) => {
     setActiveButton(componentType);
@@ -19,17 +20,20 @@ export const UIFilter = ({ setCustomComponent }) => {
 
   return (
     <div className="icon-filter">
-      {buttonData.map((button) => (
-        <Rounded
-          key={button.type}
-          onClick={() => handleItemClick(button.type)}
-          className={`icon-filter-btn ${
-            activeButton === button.type ? "active" : ""
-          }`}
-        >
-          {button.icon}
-        </Rounded>
-      ))}
+      {workData.uiFilterButtons.map((button) => {
+        const Icon = iconMap[button.icon];
+        return (
+          <Rounded
+            key={button.type}
+            onClick={() => handleItemClick(button.type)}
+            className={`icon-filter-btn ${
+              activeButton === button.type ? "active" : ""
+            }`}
+          >
+            {Icon ? <Icon className="filter-icon" /> : null}
+          </Rounded>
+        );
+      })}
     </div>
   );
 };

@@ -11,7 +11,7 @@ export const Preloader = ({ preloadData, setIsLoading }) => {
   useEffect(() => {
     (async () => {
       const LocomotiveScroll = (await import("locomotive-scroll")).default;
-      const locomotiveScroll = new LocomotiveScroll();
+      new LocomotiveScroll();
 
       setTimeout(() => {
         setIsLoading(false);
@@ -19,7 +19,7 @@ export const Preloader = ({ preloadData, setIsLoading }) => {
         window.scrollTo(0, 0);
       }, 2000);
     })();
-  }, []);
+  }, [setIsLoading]);
 
   useEffect(() => {
     setDimension({ width: window.innerWidth });
@@ -31,7 +31,7 @@ export const Preloader = ({ preloadData, setIsLoading }) => {
         () => {
           setIndex(index + 1);
         },
-        index === 0 ? 1000 : 150
+        index === 0 ? 1000 : 150,
       );
     }
   }, [index, preloadData]);

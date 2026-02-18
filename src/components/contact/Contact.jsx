@@ -1,25 +1,42 @@
+import "./Contact.scss";
+
 import { Rounded } from "../Rounded";
 import userImg from "../../assets/img/Gemini_Generated_Image_6qxynw6qxynw6qxy.png";
+import { contactData } from "../../mockData";
 
 import { useTransform, useViewportScroll } from "framer-motion";
-import "./Contact.scss";
 import { useEffect, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
+
 export const Contact = () => {
   const container = useRef(null);
   const { scrollYProgress } = useViewportScroll();
   const { t } = useTranslation();
 
-  const x = useTransform(scrollYProgress, [0, 1], [0, 100]);
-  const [y, setY] = useState([-500, 0]);
+  const { config, mailBase, email, tel } = contactData;
+  const {
+    xTransformRange,
+    xTransformOutput,
+    mobileMaxWidth,
+    yDesktop,
+    yMobile,
+    subjectKey,
+    subjectFirstWordKey,
+    subjectSecondWordKey,
+    connectKey,
+    telFormatPattern,
+    telFormatTemplate,
+  } = config;
+  const x = useTransform(scrollYProgress, xTransformRange, xTransformOutput);
+  const [y, setY] = useState(yDesktop);
 
   useEffect(() => {
     function handleResize() {
-      const isMobile = window.innerWidth <= 800;
+      const isMobile = window.innerWidth <= mobileMaxWidth;
       if (isMobile) {
-        setY([0, 0]);
+        setY(yMobile);
       } else {
-        setY([-500, 0]);
+        setY(yDesktop);
       }
     }
 
@@ -34,17 +51,10 @@ export const Contact = () => {
     return () => {
       window.removeEventListener("resize", resizeListener);
     };
-  }, []);
+  }, [mobileMaxWidth, yDesktop, yMobile]);
 
-  const mail = "https://mail.google.com/mail/?view=cm&to=";
-  const alaniaShota = "alaniashota08@gmail.com";
-  const subject = encodeURIComponent(t("subject_email"));
-  console.log("t(subject_email):", subject);
-  const tel = "+995568820317";
-  const formattedTel = tel.replace(
-    /(\d{3})(\d{3})(\d{2})(\d{2})(\d{2})/,
-    "$1 $2 $3 $4 $5",
-  );
+  const subject = encodeURIComponent(t(subjectKey));
+  const formattedTel = tel.replace(telFormatPattern, telFormatTemplate);
 
   return (
     <div style={{ y }} ref={container} className="contact">
@@ -55,17 +65,17 @@ export const Contact = () => {
               <img alt="user" src={userImg} className="img-contact" />
             </div>
             <h2 className="contact-section-description-title">
-              {t("subject_first_word")}
+              {t(subjectFirstWordKey)}
             </h2>
           </span>
           <h2 className="contact-section-secondary-description-title">
-            {t("subject_second_word")}
+            {t(subjectSecondWordKey)}
           </h2>
           <div style={{ x }} className="contact-btn-content">
-            <a href={`${mail}${alaniaShota}&su=${subject}`}>
+            <a href={`${mailBase}${email}&su=${subject}`}>
               <Rounded backgroundColor={"#334BD3"} className="contact-btn">
-                <p className="contact-btn-text">{t("connect")}</p>
-              </Rounded>
+                <p className="contact-btn-text">{t(connectKey)}</p>
+            </Rounded>
             </a>
           </div>
           <svg
@@ -82,9 +92,9 @@ export const Contact = () => {
           </svg>
         </div>
         <div className="contact-navigation-section" id="contact">
-          <a href={`${mail}${alaniaShota}&su=${subject}`}>
+          <a href={`${mailBase}${email}&su=${subject}`}>
             <Rounded>
-              <p>{alaniaShota}</p>
+              <p>{email}</p>
             </Rounded>
           </a>
           <a href={`tel:${tel}`}>

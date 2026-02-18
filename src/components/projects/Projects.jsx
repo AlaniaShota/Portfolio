@@ -1,8 +1,8 @@
-import { Project } from "./project/Project";
-
 import "./Projects.scss";
-
+import { Project } from "./project/Project";
 import { ImgProject } from "./ImgProject";
+
+import { projectsData } from "../../mockData";
 
 import gsap from "gsap";
 import { motion } from "framer-motion";
@@ -10,24 +10,12 @@ import { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import { t } from "i18next";
 
-const scaleAnimation = {
-  initial: { scale: 0, x: "-50%", y: "-50%" },
-  enter: {
-    scale: 1,
-    x: "-50%",
-    y: "-50%",
-    transition: { duration: 0.4, ease: [0.76, 0, 0.24, 1] },
-  },
-  closed: {
-    scale: 0,
-    x: "-50%",
-    y: "-50%",
-    transition: { duration: 0.4, ease: [0.32, 0, 0.67, 0] },
-  },
-};
+const scaleAnimation = projectsData.scaleAnimation;
 
 export const Projects = ({ marginTop, data, categoryFilter }) => {
-  const [isSmallScreen, setIsSmallScreen] = useState(window.innerWidth <= 430);
+  const [isSmallScreen, setIsSmallScreen] = useState(
+    window.innerWidth <= projectsData.config.mobileBreakpoint,
+  );
   const [modal, setModal] = useState({ active: false, index: 0 });
   const { active, index } = modal;
   const modalContainer = useRef(null);
@@ -43,7 +31,9 @@ export const Projects = ({ marginTop, data, categoryFilter }) => {
 
   useEffect(() => {
     const handleResize = () => {
-      setIsSmallScreen(window.innerWidth <= 430);
+      setIsSmallScreen(
+        window.innerWidth <= projectsData.config.mobileBreakpoint,
+      );
     };
     window.addEventListener("resize", handleResize);
     return () => {
@@ -116,6 +106,9 @@ export const Projects = ({ marginTop, data, categoryFilter }) => {
               <Project
                 index={index}
                 title={project.title}
+                type={project.type}
+                workRouteBase={projectsData.config.workRouteBase}
+                typeLabelFallback={projectsData.config.typeLabel}
                 manageModal={manageModal}
                 key={index}
                 imgSrc={project.src}
@@ -161,7 +154,7 @@ export const Projects = ({ marginTop, data, categoryFilter }) => {
               initial="initial"
               animate={active ? "enter" : "closed"}
             >
-              {t("view")}
+              {t(projectsData.config.viewKey)}
             </motion.div>
           </Link>
         </>

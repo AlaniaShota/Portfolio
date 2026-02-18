@@ -1,23 +1,28 @@
+import "./style/FilterButton.scss";
 import { Rounded } from "../../../../Rounded";
+import { workData } from "../../../../../mockData";
 
 import { useEffect, useState } from "react";
-import "./style/FilterButton.scss";
 
-export const FilterButton = ({ search, categoryFilter }) => {
+export const FilterButton = ({ search }) => {
   const [activeButton, setActiveButton] = useState(() => {
-    const savedType = localStorage.getItem("activeType");
-    return savedType ? savedType : "All";
+    const savedType = localStorage.getItem(workData.filterConfig.storageKey);
+    return savedType ? savedType : workData.filterConfig.defaultType;
   });
 
   const handleButtonClick = (type) => {
     setActiveButton(type);
-    search(type === "All" ? {} : { type });
-    localStorage.setItem("activeType", type);
+    search(
+      type === workData.filterConfig.defaultType
+        ? {}
+        : { [workData.filterConfig.queryKey]: type },
+    );
+    localStorage.setItem(workData.filterConfig.storageKey, type);
   };
 
   useEffect(() => {
     const handleStorageChange = () => {
-      const savedType = localStorage.getItem("activeType");
+      const savedType = localStorage.getItem(workData.filterConfig.storageKey);
       if (savedType && savedType !== activeButton) {
         setActiveButton(savedType);
       }
@@ -28,26 +33,27 @@ export const FilterButton = ({ search, categoryFilter }) => {
 
   return (
     <div className="filter-btn-section">
-      <Rounded
-        className={`filter-btn all-btn ${
-          activeButton === "All" ? "active" : ""
-        }`}
-        onClick={() => handleButtonClick("All")}
-      >
-        <p className="filter-btn-text all-text-btn">All</p>
-      </Rounded>
-      <Rounded
-        className={`filter-btn ${activeButton === "ReactJS" ? "active" : ""}`}
-        onClick={() => handleButtonClick("ReactJS")}
-      >
-        <p className="filter-btn-text">ReactJS</p>
-      </Rounded>
-      <Rounded
-        className={`filter-btn ${activeButton === "ReactTS" ? "active" : ""}`}
-        onClick={() => handleButtonClick("ReactTS")}
-      >
-        <p className="filter-btn-text">ReactTS</p>
-      </Rounded>
+      {workData.filterConfig.options.map((option) => (
+        <Rounded
+          key={option.type}
+          className={`filter-btn ${
+            option.type === workData.filterConfig.defaultType ? "all-btn" : ""
+          } ${option.className} ${
+            activeButton === option.type ? "active" : ""
+          }`}
+          onClick={() => handleButtonClick(option.type)}
+        >
+          <p
+            className={`filter-btn-text ${
+              option.type === workData.filterConfig.defaultType
+                ? "all-text-btn"
+                : ""
+            }`}
+          >
+            {option.label}
+          </p>
+        </Rounded>
+      ))}
     </div>
   );
 };

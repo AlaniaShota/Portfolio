@@ -1,5 +1,7 @@
-import gsap from "gsap";
 import "./AboutMain.scss";
+import { aboutData } from "../../../../mockData";
+
+import gsap from "gsap";
 import { useEffect, useRef } from "react";
 import { useTranslation } from "react-i18next";
 
@@ -29,30 +31,18 @@ export const AboutMain = () => {
     animateDots();
   }, []);
 
-  const mainData = [
-    {
-      id: 1,
-      title: t("learn_grow"),
-      description: t("learn_grow_description"),
-    },
-    {
-      id: 2,
-      title: t("hardworking_reliable"),
-      description: t("hardworking_reliable_description"),
-    },
-    {
-      id: 3,
-      title: t("driven_succeed"),
-      description: t("driven_succeed_description"),
-    },
-  ];
+  const mainData = aboutData.mainItems.map((item) => ({
+    id: item.id,
+    title: t(item.titleKey),
+    description: t(item.descriptionKey),
+  }));
 
   return (
     <div ref={container} className="about-main">
       <div className="about-main-container">
         <div className="about-main-content-header">
           <h1 className="about-main-content-title">
-            {t("how_i_can_help")}
+            {t(aboutData.mainConfig.titleKey)}
             <span className="dot">.</span>
             <span className="dot">.</span>
             <span className="dot">.</span>

@@ -1,7 +1,8 @@
+import "./Description.scss";
 import { slideUp, opacity } from "./animation";
 
 import { Rounded } from "../Rounded";
-import "./Description.scss";
+import { landingData } from "../../mockData";
 
 import { useInView, motion } from "framer-motion";
 import { useRef } from "react";
@@ -10,7 +11,16 @@ import { useTranslation } from "react-i18next";
 
 export const Description = () => {
   const { t } = useTranslation();
-  const phrase = t("welcome");
+  const {
+    descriptionConfig: {
+      skillsText,
+      aboutRoute,
+      scrollSpeed,
+      welcomeKey,
+      aboutMeKey,
+    },
+  } = landingData;
+  const phrase = t(welcomeKey);
 
   const description = useRef(null);
   const isInView = useInView(description);
@@ -39,14 +49,12 @@ export const Description = () => {
           variants={opacity}
           animate={isInView ? "open" : "closed"}
         >
-          HTML, CSS, JavaScript, React, Vite, React Router, SCSS, Formik,
-          Zustand, TailwindCSS, Material-UI (MUI), Yup, React Hook Form,
-          Framer-motion, GSAP, Swiper, Redux, Redux Toolkit
+          {skillsText}
         </motion.p>
-        <Link to="/about">
-          <div data-scroll data-scroll-speed={0.1}>
+        <Link to={aboutRoute}>
+          <div data-scroll data-scroll-speed={scrollSpeed}>
             <Rounded className="button">
-              <p className="description-btn-text">{t("about_me")}</p>
+              <p className="description-btn-text">{t(aboutMeKey)}</p>
             </Rounded>
           </div>
         </Link>

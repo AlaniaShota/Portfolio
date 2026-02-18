@@ -37,12 +37,13 @@
         ],
         "no-console": "warn",
         "prefer-const": "error",
-        "comma-dangle": [
-            "error",
-            "always-multiline"
-        ],
-        "import/order": [
-            "error",
+    "comma-dangle": [
+        "error",
+        "always-multiline"
+    ],
+    "react/prop-types": "off",
+    "import/order": [
+        "error",
             {
                 "groups": [
                     "index",

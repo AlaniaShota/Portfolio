@@ -1,12 +1,34 @@
+import "./AboutDescription.scss";
+import { aboutData } from "../../../../mockData";
+
 import { HiArrowNarrowRight } from "react-icons/hi";
 import { useEffect, useState } from "react";
 import { motion, useAnimation, useViewportScroll } from "framer-motion";
 import gsap from "gsap";
-import "./AboutDescription.scss";
 import { useTranslation } from "react-i18next";
 
 export const AboutDescription = () => {
-  const [scrollDirection, setScrollDirection] = useState("up");
+  const {
+    descriptionConfig,
+    descriptionTextKeys: { descriptionKey, spanKey },
+  } = aboutData;
+  const {
+    scrollDirectionDefault,
+    scrollDirectionDown,
+    mediaQuery,
+    smallScreenY,
+    scrollDownY,
+    scrollUpY,
+    arrowRotateDown,
+    arrowRotateUp,
+    dotFadeInDuration,
+    dotFadeOutDuration,
+    dotDelay,
+    dotStagger,
+  } = descriptionConfig;
+  const [scrollDirection, setScrollDirection] = useState(
+    scrollDirectionDefault,
+  );
   const controls = useAnimation();
   const arrowControls = useAnimation();
   const { scrollY } = useViewportScroll();
@@ -14,23 +36,27 @@ export const AboutDescription = () => {
 
   useEffect(() => {
     return scrollY.onChange(() => {
-      setScrollDirection(scrollY.getPrevious() < scrollY.get() ? "down" : "up");
+      setScrollDirection(
+        scrollY.getPrevious() < scrollY.get()
+          ? scrollDirectionDown
+          : scrollDirectionDefault,
+      );
     });
-  }, [scrollY]);
+  }, [scrollY, scrollDirectionDown, scrollDirectionDefault]);
 
   useEffect(() => {
-    const mediaQuery = window.matchMedia("(max-width: 800px)");
+    const mediaQueryList = window.matchMedia(mediaQuery);
 
     function handleResize() {
-      if (mediaQuery.matches) {
-        controls.start({ y: 10 });
+      if (mediaQueryList.matches) {
+        controls.start({ y: smallScreenY });
       } else {
-        if (scrollDirection === "down") {
-          controls.start({ y: 100 });
-          arrowControls.start({ rotate: 30 });
+        if (scrollDirection === scrollDirectionDown) {
+          controls.start({ y: scrollDownY });
+          arrowControls.start({ rotate: arrowRotateDown });
         } else {
-          controls.start({ y: 0 });
-          arrowControls.start({ rotate: 0 });
+          controls.start({ y: scrollUpY });
+          arrowControls.start({ rotate: arrowRotateUp });
         }
       }
     }
@@ -46,7 +72,18 @@ export const AboutDescription = () => {
     return () => {
       window.removeEventListener("resize", resizeListener);
     };
-  }, [scrollDirection, controls, arrowControls]);
+  }, [
+    scrollDirection,
+    controls,
+    arrowControls,
+    mediaQuery,
+    smallScreenY,
+    scrollDirectionDown,
+    scrollDownY,
+    scrollUpY,
+    arrowRotateDown,
+    arrowRotateUp,
+  ]);
 
   useEffect(() => {
     const tl = gsap.timeline();
@@ -54,13 +91,13 @@ export const AboutDescription = () => {
     function animateDots() {
       tl.to(".dot", {
         opacity: 1,
-        duration: 0.5,
-        stagger: 1,
+        duration: dotFadeInDuration,
+        stagger: dotStagger,
         onComplete: function () {
           tl.to(".dot", {
             opacity: 0,
-            duration: 0.2,
-            delay: 1,
+            duration: dotFadeOutDuration,
+            delay: dotDelay,
             onComplete: animateDots,
           });
         },
@@ -68,7 +105,12 @@ export const AboutDescription = () => {
     }
 
     animateDots();
-  }, []);
+  }, [
+    dotDelay,
+    dotFadeInDuration,
+    dotFadeOutDuration,
+    dotStagger,
+  ]);
 
   return (
     <div className="about-description">
@@ -84,10 +126,10 @@ export const AboutDescription = () => {
           transition={{ duration: 0.9 }}
         >
           <p className="about-description-section-text">
-            {t("about_description")}
+            {t(descriptionKey)}
           </p>
           <span className="about-description-section-span-text">
-            {t("about_span")}
+            {t(spanKey)}
             <span className="dot">.</span>
             <span className="dot">.</span>
             <span className="dot">.</span>

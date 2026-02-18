@@ -1,18 +1,14 @@
+import "./Work.scss";
 import { Filter } from "./component/filter";
 
 import { HeaderSection } from "../HeaderSection";
-
-import "./Work.scss";
 import { Preloader } from "../preloader";
-
 import { Projects, ImgProject } from "../projects";
-
 import { dataProject } from "../../resources/resources";
-
 import { Contact } from "../contact";
+import { workData } from "../../mockData";
 
 import { motion, AnimatePresence } from "framer-motion";
-
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useSearchParams } from "react-router-dom";
@@ -20,20 +16,22 @@ import { useSearchParams } from "react-router-dom";
 export const Work = () => {
   const [isLoading, setIsLoading] = useState(true);
 
-  const [customComponent, setCustomComponent] = useState("B");
+  const [customComponent, setCustomComponent] = useState(
+    workData.defaultComponent,
+  );
   const [searchParams, setSearchParams] = useSearchParams();
 
   const { t } = useTranslation();
 
-  const categoryFilter = searchParams.get("type");
+  const categoryFilter = searchParams.get(workData.filterConfig.queryKey);
 
-  const preloadData = [t("link_work")];
+  const preloadData = workData.preloadKeys.map((key) => t(key));
 
-  const widthWorkSectionClass = "widthWorkSectionClass";
+  const widthWorkSectionClass = workData.widthSectionClass;
 
   const renderComponent = () => {
     switch (customComponent) {
-      case "A":
+      case workData.componentTypes.list:
         return (
           <Projects
             marginTop="70px"
@@ -42,7 +40,7 @@ export const Work = () => {
           />
         );
 
-      case "B":
+      case workData.componentTypes.grid:
         return (
           <ImgProject data={dataProject} categoryFilter={categoryFilter} />
         );
@@ -51,11 +49,7 @@ export const Work = () => {
     }
   };
 
-  const variants = {
-    initial: { opacity: 0 },
-    animate: { opacity: 1, transition: { duration: 0.5 } },
-    exit: { opacity: 0, transition: { duration: 0.5 } },
-  };
+  const variants = workData.pageVariants;
 
   return (
     <>
@@ -66,7 +60,7 @@ export const Work = () => {
           )}
         </AnimatePresence>
         <HeaderSection
-          title={t("work_title")}
+          title={t(workData.pageTextKeys.titleKey)}
           widthWorkSectionClass={widthWorkSectionClass}
         />
         <Filter

@@ -1,5 +1,6 @@
 import "./AboutHeader.scss";
 import { HeaderSection } from "../../../HeaderSection";
+import { aboutData } from "../../../../mockData";
 
 import { motion } from "framer-motion";
 import { CiGlobe } from "react-icons/ci";
@@ -7,13 +8,13 @@ import { useTranslation } from "react-i18next";
 
 export const AboutHeader = () => {
   const { t } = useTranslation();
-  const widthAboutSectionClass = "widthAboutSectionClass";
+  const { headerConfig, widthSectionClass } = aboutData;
 
   return (
     <div className="about-header-section">
       <HeaderSection
-        title={t("about_title")}
-        widthAboutSectionClass={widthAboutSectionClass}
+        title={t(headerConfig.titleKey)}
+        widthAboutSectionClass={widthSectionClass}
       />
       <div className="glob-animation-content">
         <div className="stripe"></div>
@@ -22,9 +23,13 @@ export const AboutHeader = () => {
           <div className="globe">
             <motion.div
               animate={{ rotate: 360 }}
-              transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
+              transition={{
+                duration: headerConfig.globeRotateDuration,
+                repeat: headerConfig.globeRotateRepeat,
+                ease: headerConfig.globeRotateEase,
+              }}
             >
-              <CiGlobe className="icon-glob" size={80} />
+              <CiGlobe className="icon-glob" size={headerConfig.globeIconSize} />
             </motion.div>
           </div>
         </div>

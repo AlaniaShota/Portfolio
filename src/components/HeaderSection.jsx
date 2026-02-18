@@ -5,7 +5,6 @@ export const HeaderSection = ({
   widthAboutSectionClass,
   widthWorkSectionClass,
 }) => {
-  console.log(widthAboutSectionClass);
   return (
     <div
       className={`about-header-title-content ${widthAboutSectionClass} ${widthWorkSectionClass}`}

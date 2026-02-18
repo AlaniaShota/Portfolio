@@ -1,28 +1,14 @@
+import "./NextCase.scss";
 import { Rounded } from "../../../../Rounded";
+import { workData } from "../../../../../mockData";
 
 import { motion } from "framer-motion";
-import "./NextCase.scss";
 import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { Link } from "react-router-dom";
 import { t } from "i18next";
 
-
-const scaleAnimation = {
-  initial: { scale: 0, x: "-50%", y: "-50%" },
-  enter: {
-    scale: 1,
-    x: "-50%",
-    y: "-50%",
-    transition: { duration: 0.4, ease: [0.76, 0, 0.24, 1] },
-  },
-  closed: {
-    scale: 0,
-    x: "-50%",
-    y: "-50%",
-    transition: { duration: 0.4, ease: [0.32, 0, 0.67, 0] },
-  },
-};
+const scaleAnimation = workData.nextCaseScaleAnimation;
 
 export const NextCase = ({ nextProject, onNextProject }) => {
   const [modal, setModal] = useState({ active: false, index: 0 });
@@ -84,7 +70,7 @@ export const NextCase = ({ nextProject, onNextProject }) => {
     <div className="next-case-container">
       <div className="next-case-section">
         <div className="next-case-header-section">
-          {t("next_case")}
+          {t(workData.nextCaseTextKeys.nextCaseKey)}
           <h1>{nextProject.title}</h1>
         </div>
         <div
@@ -118,12 +104,14 @@ export const NextCase = ({ nextProject, onNextProject }) => {
         initial="initial"
         animate={active ? "enter" : "closed"}
       >
-        {t("view")}
+        {t(workData.nextCaseTextKeys.viewKey)}
       </motion.div>
       <div className="back-all-link">
-        <Link to="/work">
+        <Link to={workData.nextCaseConfig.backRoute}>
           <Rounded className="roundedButton btn-back">
-            <p className="btn-back-text">{t("back_btn")}</p>
+            <p className="btn-back-text">
+              {t(workData.nextCaseTextKeys.backKey)}
+            </p>
           </Rounded>
         </Link>
       </div>

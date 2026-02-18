@@ -1,5 +1,7 @@
-import { Link } from "react-router-dom";
 import "./ImgProject.scss";
+import { projectsData } from "../../mockData";
+
+import { Link } from "react-router-dom";
 
 export const ImgProject = ({ data, categoryFilter }) => {
   const displayedProject = categoryFilter
@@ -10,7 +12,7 @@ export const ImgProject = ({ data, categoryFilter }) => {
     <div className="project-img-content mob-project">
       {displayedProject.map((item) => (
         <div key={item.id} className="project-img-section">
-          <Link to={`/work/${item.title}`}>
+          <Link to={`${projectsData.config.workRouteBase}${item.title}`}>
             <div
               className="project-img-content-img "
               style={{ background: item.color }}
@@ -28,7 +30,7 @@ export const ImgProject = ({ data, categoryFilter }) => {
               </h2>
               <div className="stripe"></div>
               <p className="project-img-content-description mob-project-description">
-                ReactJS
+                {item.type || projectsData.config.typeLabel}
               </p>
             </div>
           </Link>

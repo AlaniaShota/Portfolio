@@ -1,14 +1,13 @@
+import "./About.scss";
 import { AboutHeader } from "./components/aboutHeader";
-
 import { AboutDescription } from "./components/aboutDescription";
 import { AboutMain } from "./components/aboutMain";
 
 import { Contact } from "../contact";
-
 import { Preloader } from "../preloader";
+import { aboutData } from "../../mockData";
 
 import { useState } from "react";
-import "./About.scss";
 import { AnimatePresence } from "framer-motion";
 import { useTranslation } from "react-i18next";
 
@@ -16,7 +15,7 @@ export const About = () => {
   const [isLoading, setIsLoading] = useState(true);
   const { t } = useTranslation();
 
-  const preloadData = [t("link_about")];
+  const preloadData = aboutData.preloadKeys.map((key) => t(key));
 
   return (
     <div className="about">
@@ -25,7 +24,7 @@ export const About = () => {
           <Preloader preloadData={preloadData} setIsLoading={setIsLoading} />
         )}
       </AnimatePresence>
-      <AboutHeader  />
+      <AboutHeader />
       <AboutDescription />
       <AboutMain />
       <Contact />

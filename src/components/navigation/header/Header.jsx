@@ -126,20 +126,19 @@
 //     </>
 //   );
 // };
+import "./Header.scss";
 import { Hamburger } from "./hamburger/Hamburger";
-
 import { MultiLanguage } from "./multiLanguage";
 
 import { Magnetic } from "../../Magnetic";
-
 import { Rounded } from "../../Rounded";
+import { navigationData } from "../../../mockData";
 
 import { AnimatePresence } from "framer-motion";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
 import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import "./Header.scss";
 import { useTranslation } from "react-i18next";
 
 export const Header = () => {
@@ -151,15 +150,27 @@ export const Header = () => {
   const { pathname } = location;
   const button = useRef(null);
 
-  const navData = [
-    { id: 1, title: t("link_work"), href: "/work" },
-    { id: 2, title: t("link_about"), href: "/about" },
-    { id: 3, title: t("link_contact"), href: "#contact" },
-  ];
+  const {
+    header: {
+      items,
+      contactHash,
+      logo: {
+        codeByKey,
+        firstNameKey,
+        lastNameKey,
+        copyright,
+      },
+    },
+  } = navigationData;
+
+  const navData = items.map((item) => ({
+    ...item,
+    title: t(item.titleKey),
+  }));
 
   useEffect(() => {
     if (isActive) setIsActive(false);
-  }, [pathname]);
+  }, [pathname, isActive]);
 
   useLayoutEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
@@ -223,11 +234,11 @@ export const Header = () => {
       >
         <Link to="/">
           <div className="logo">
-            <p className="copyright">©</p>
+            <p className="copyright">{copyright}</p>
             <div className="name">
-              <p className="codeBy">Code by</p>
-              <p className="shota">Shota</p>
-              <p className="alania">Alania</p>
+              <p className="codeBy">{t(codeByKey)}</p>
+              <p className="shota">{t(firstNameKey)}</p>
+              <p className="alania">{t(lastNameKey)}</p>
             </div>
           </div>
         </Link>
@@ -235,7 +246,7 @@ export const Header = () => {
           {navData.map((item) => (
             <Magnetic key={item.id}>
               <div className="el">
-                {item.href === "#contact" ? (
+                {item.href === contactHash ? (
                   <a href={item.href} className="nav-link-main">
                     {item.title}
                   </a>

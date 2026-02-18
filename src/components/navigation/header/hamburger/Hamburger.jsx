@@ -4,9 +4,9 @@ import { menuSlide } from "../animation";
 import { LinkNav } from "../link/Link";
 
 import { HamburgerFooter } from "../../footer/HamburgerFooter";
+import { navigationData } from "../../../../mockData";
 
 import { useState } from "react";
-
 import { motion } from "framer-motion";
 import { useLocation } from "react-router-dom";
 import { useTranslation } from "react-i18next";
@@ -16,24 +16,10 @@ export const Hamburger = () => {
   const [selectedIndicator, setSelectedIndicator] = useState(pathname);
   const { t } = useTranslation();
 
-  const navItems = [
-    {
-      title: t("link_home"),
-      href: "/",
-    },
-    {
-      title: t("link_work"),
-      href: "/work",
-    },
-    {
-      title: t("link_about"),
-      href: "/about",
-    },
-    {
-      title: t("link_contact"),
-      href: "#contact",
-    },
-  ];
+  const navItems = navigationData.hamburger.items.map((item) => ({
+    ...item,
+    title: t(item.titleKey),
+  }));
   
   return (
     <motion.div
@@ -51,7 +37,7 @@ export const Hamburger = () => {
           className="hamburger-nav"
         >
           <div className="hamburger-header">
-            <p>{t("navigation")}</p>
+            <p>{t(navigationData.hamburger.titleKey)}</p>
           </div>
           {navItems.map((data, index) => {
             return (

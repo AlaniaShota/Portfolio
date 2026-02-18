@@ -12,6 +12,7 @@ import { Preloader } from "../preloader";
 import { SlidingImages } from "../slidingImages";
 
 import { dataProject } from "../../resources/resources";
+import { landingData } from "../../mockData";
 
 import { Contact } from "../contact";
 
@@ -26,45 +27,65 @@ export const Landing = () => {
   const secondText = useRef(null);
   const slider = useRef(null);
 
-  let xPercent = 0;
-  const direction = -1;
+  const { preloadData, sliderConfig, heroConfig } = landingData;
+  const {
+    initialXPercent,
+    minXPercent,
+    maxXPercent,
+    loopStep,
+    direction,
+    scrollScrub,
+    scrollStart,
+    scrollEndMultiplier,
+    sliderTranslateX,
+  } = sliderConfig;
+  const xPercentRef = useRef(initialXPercent);
 
   useLayoutEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
     gsap.to(slider.current, {
       scrollTrigger: {
         trigger: document.documentElement,
-        scrub: 0.25,
-        start: 0,
-        end: window.innerHeight,
+        scrub: scrollScrub,
+        start: scrollStart,
+        end: window.innerHeight * scrollEndMultiplier,
       },
-      x: "-500px",
+      x: sliderTranslateX,
     });
 
-    requestAnimationFrame(animate);
-  }, []);
+    let frameId;
 
-  const animate = () => {
-    if (xPercent <= -100) xPercent = 0;
-    if (xPercent > 0) xPercent = -100;
+    const animate = () => {
+      if (xPercentRef.current <= minXPercent) {
+        xPercentRef.current = maxXPercent;
+      }
+      if (xPercentRef.current > maxXPercent) {
+        xPercentRef.current = minXPercent;
+      }
 
-    gsap.set(firstText.current, { xPercent: xPercent });
-    gsap.set(secondText.current, { xPercent: xPercent });
-    requestAnimationFrame(animate);
-    xPercent += 0.1 * direction;
-  };
+      gsap.set(firstText.current, { xPercent: xPercentRef.current });
+      gsap.set(secondText.current, { xPercent: xPercentRef.current });
+      frameId = requestAnimationFrame(animate);
+      xPercentRef.current += loopStep * direction;
+    };
 
-  const preloadData = [
-    "გამარჯობა",
-    "Hello",
-    "Bonjour",
-    "Ciao",
-    "Olà",
-    "やあ",
-    "Hallå",
-    "Guten tag",
-    "Hallo",
-  ];
+    xPercentRef.current = initialXPercent;
+    frameId = requestAnimationFrame(animate);
+
+    return () => {
+      cancelAnimationFrame(frameId);
+    };
+  }, [
+    scrollScrub,
+    scrollStart,
+    scrollEndMultiplier,
+    sliderTranslateX,
+    minXPercent,
+    maxXPercent,
+    loopStep,
+    direction,
+    initialXPercent,
+  ]);
 
   return (
     <>
@@ -81,18 +102,26 @@ export const Landing = () => {
         animate="enter"
         className="main"
       >
-        <img src={imgUser} alt="Shota Alania" className="user-img" />
+        <img
+          src={imgUser}
+          alt={heroConfig.userImgAlt}
+          className="user-img"
+        />
         <div className="slider-container">
           <div ref={slider} className="slider">
             <p ref={firstText} className="main-slider-text">
-              Shota Alania -
+              {heroConfig.sliderText}
             </p>
             <p ref={secondText} className="main-slider-text">
-              Shota Alania -
+              {heroConfig.sliderText}
             </p>
           </div>
         </div>
-        <div data-scroll data-scroll-speed={0.1} className="description">
+        <div
+          data-scroll
+          data-scroll-speed={heroConfig.descriptionScrollSpeed}
+          className="description"
+        >
           <svg
             width="9"
             height="9"
@@ -105,8 +134,8 @@ export const Landing = () => {
               fill="white"
             />
           </svg>
-          <p className="user-status">Developer</p>
-          <h1 className="user">React Developer</h1>
+          <p className="user-status">{heroConfig.statusText}</p>
+          <h1 className="user">{heroConfig.roleText}</h1>
         </div>
       </motion.main>
       <Description />
