@@ -40,7 +40,9 @@ export const SinglePage = () => {
 
     setTimeout(() => {
       setPreloadData(nextProject.preloader_title);
-      navigate(`${workData.singlePageConfig.workRouteBase}${nextProject.title}`);
+      navigate(
+        `${workData.singlePageConfig.workRouteBase}${nextProject.title}`,
+      );
     }, workData.singlePageConfig.preloaderDelayMs);
   };
 
@@ -55,7 +57,7 @@ export const SinglePage = () => {
     }
   }, [project]);
 
-  if (!project) return null;  // Ensure project is available before rendering
+  if (!project) return null; // Ensure project is available before rendering
 
   const currentIndex = dataProject.findIndex(
     (proj) => proj.title === project.title,
@@ -144,7 +146,9 @@ export const SinglePage = () => {
               <a target="_blank" href={project.live_link} key={project.id}>
                 <motion.div
                   data-scroll
-                  data-scroll-speed={workData.singlePageConfig.buttonScrollSpeed}
+                  data-scroll-speed={
+                    workData.singlePageConfig.buttonScrollSpeed
+                  }
                   onHoverStart={() => setIsHovered(true)}
                   onHoverEnd={() => setIsHovered(false)}
                 >

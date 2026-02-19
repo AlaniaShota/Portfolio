@@ -102,11 +102,7 @@ export const Landing = () => {
         animate="enter"
         className="main"
       >
-        <img
-          src={imgUser}
-          alt={heroConfig.userImgAlt}
-          className="user-img"
-        />
+        <img src={imgUser} alt={heroConfig.userImgAlt} className="user-img" />
         <div className="slider-container">
           <div ref={slider} className="slider">
             <p ref={firstText} className="main-slider-text">

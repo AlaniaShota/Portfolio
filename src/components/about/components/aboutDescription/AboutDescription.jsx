@@ -105,12 +105,7 @@ export const AboutDescription = () => {
     }
 
     animateDots();
-  }, [
-    dotDelay,
-    dotFadeInDuration,
-    dotFadeOutDuration,
-    dotStagger,
-  ]);
+  }, [dotDelay, dotFadeInDuration, dotFadeOutDuration, dotStagger]);
 
   return (
     <div className="about-description">
@@ -125,9 +120,7 @@ export const AboutDescription = () => {
           animate={controls}
           transition={{ duration: 0.9 }}
         >
-          <p className="about-description-section-text">
-            {t(descriptionKey)}
-          </p>
+          <p className="about-description-section-text">{t(descriptionKey)}</p>
           <span className="about-description-section-span-text">
             {t(spanKey)}
             <span className="dot">.</span>
