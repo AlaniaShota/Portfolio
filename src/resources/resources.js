@@ -25,7 +25,7 @@ import sJob2 from "../assets/img/sJob2.png";
 import sJob3 from "../assets/img/sJob3.png";
 const __HTTPS = "https://";
 const __URL = "github.com/AlaniaShota/";
-const __LIVE = ".netlify.app/";
+const __LIVE = ".vercel.app/";
 
 export const dataProject = [
   {
@@ -38,7 +38,7 @@ export const dataProject = [
     type: "ReactTS",
     liberties: ["CSS"],
     github_link: `${__HTTPS}${__URL}mines`,
-    live_link: `${__HTTPS}cmines${__LIVE}`,
+    live_link: `${__HTTPS}mines-taupe-phi${__LIVE}`,
     descriptionKey: "description_mines",
   },
   {
@@ -51,7 +51,7 @@ export const dataProject = [
     type: "ReactTS",
     liberties: ["SASS", "chart.js", "formik", "react-toastify", "yup"],
     github_link: `${__HTTPS}${__URL}ExpenseTracker`,
-    live_link: `${__HTTPS}money24tracker${__LIVE}`,
+    live_link: `${__HTTPS}expense-tracker-pi-bice-81${__LIVE}`,
     descriptionKey: "description_expense_tracker",
   },
   {
@@ -64,7 +64,7 @@ export const dataProject = [
     type: "ReactJS",
     liberties: ["SASS", "Framer-Motion"],
     github_link: `${__HTTPS}${__URL}vibrant`,
-    live_link: `${__HTTPS}vibrant-framer-motion${__LIVE}`,
+    live_link: `${__HTTPS}vibrant-gilt${__LIVE}`,
     descriptionKey: "description_vibrant",
   },
   {
@@ -77,7 +77,7 @@ export const dataProject = [
     type: "ReactJS",
     liberties: ["SASS", "React Icons", "Framer-Motion"],
     github_link: `${__HTTPS}${__URL}Namari`,
-    live_link: `${__HTTPS}namari-vite${__LIVE}`,
+    live_link: `${__HTTPS}namari-ten${__LIVE}`,
     descriptionKey: "description_namari",
   },
   {
@@ -90,7 +90,7 @@ export const dataProject = [
     type: "ReactJS",
     liberties: ["TailwindCSS", "Framer-Motion", "GSAP", "Swiper"],
     github_link: `${__HTTPS}${__URL}Georgia`,
-    live_link: `${__HTTPS}travel-georgia${__LIVE}`,
+    live_link: `${__HTTPS}georgia-green${__LIVE}`,
     descriptionKey: "description_georgia",
   },
 
@@ -105,7 +105,7 @@ export const dataProject = [
 
     liberties: ["React Query", "Redux", "TailwindCSS"],
     github_link: `${__HTTPS}${__URL}Anime`,
-    live_link: `${__HTTPS}anistar${__LIVE}`,
+    live_link: `${__HTTPS}anime-ruddy-omega${__LIVE}`,
     descriptionKey: "description_anime",
   },
   {
@@ -132,7 +132,7 @@ export const dataProject = [
     type: "ReactTS",
     liberties: ["Yup", "Zustand", "Framer Motion", "Axios", "TailwindCSS"],
     github_link: `${__HTTPS}${__URL}career`,
-    live_link: `${__HTTPS}sjob${__LIVE}`,
+    live_link: `${__HTTPS}career-one-theta${__LIVE}`,
     descriptionKey: "description_sjob",
   },
 ];
